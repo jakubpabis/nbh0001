@@ -7,6 +7,10 @@
         &-text {
             padding-right: 45px;
 
+            @media(max-width: 1199px) {
+                padding-right: 30px;
+            }
+
             .title {
                 margin-bottom: 15px;
             }
@@ -44,6 +48,11 @@
             &+.cards__item-text {
                 padding-right: 15px;
                 padding-left: 45px;
+
+                @media(max-width: 1199px) {
+                    padding-left: 30px;
+                }
+
             }
 
         }

@@ -78,6 +78,15 @@ section {
 	display: block;
 	overflow: hidden;
 	padding-top: 100px;
+
+	@media(max-width: 1199px) {
+        padding-top: 80px;
+    }
+
+	@media(max-width: 991px) {
+        padding-top: 70px;
+    }
+
 }
 
 .bg-cover {

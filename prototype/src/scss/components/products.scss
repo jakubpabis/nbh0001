@@ -23,6 +23,11 @@
                     img {
                         min-height: 250px;
                         transition: all 300ms ease;
+
+                        @media(max-width: 991px) {
+                            min-height: 200px;
+                        }
+
                     }
 
                 }
