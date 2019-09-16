@@ -12,6 +12,10 @@
         padding: 20px 0;
     }
 
+    @media(max-width: 767px) {
+        padding: 12px 0;
+    }
+
     .logo {
 
         img {
@@ -25,6 +29,26 @@
                 max-height: 30px;
             }
 
+        }
+
+    }
+
+    .main-menu-container {
+
+        @media(max-width: 767px) {
+            display: none;
+        }
+
+    }
+
+    .side-menu-container {
+
+        @media(max-width: 767px) {
+            position: absolute;
+            top: 54px;
+            left: 0;
+            right: 0;
+            background-color: black;
         }
 
     }
@@ -94,6 +118,10 @@
 
         @media(max-width: 1199px) {
             margin: 0 -8px 0 0;
+        }
+
+        @media(max-width: 767px) {
+            
         }
 
         > li {
