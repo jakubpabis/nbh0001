@@ -1,8 +1,16 @@
 .cards {
     padding: 80px 0 5px;
 
+    @media(max-width: 767px) {
+        padding: 60px 0 1px;
+    }
+
     &__item {
         margin-bottom: 100px;
+
+        @media(max-width: 767px) {
+            margin-bottom: 60px;
+        }
 
         &-text {
             padding-right: 45px;
@@ -11,13 +19,28 @@
                 padding-right: 30px;
             }
 
+            @media(max-width: 767px) {
+                padding-right: 15px;
+            }
+
             .title {
                 margin-bottom: 15px;
+
+                @media(max-width: 767px) {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+
             }
 
             .btn {
                 margin-top: 20px;
                 transform-origin: left center;
+
+                @media(max-width: 767px) {
+                    margin-top: 10px;
+                }
+
             }
 
         }
@@ -51,6 +74,10 @@
 
                 @media(max-width: 1199px) {
                     padding-left: 30px;
+                }
+
+                @media(max-width: 767px) {
+                    padding-left: 15px;
                 }
 
             }

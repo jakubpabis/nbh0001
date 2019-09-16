@@ -6,6 +6,16 @@
         display: flex;
         background-color: black;
 
+        @media(orientation: portrait) and (max-width: 991px) {
+            max-height: 60vh;
+            min-height: 60vh;
+        }
+
+        @media(orientation: portrait) and (max-width: 767px) {
+            max-height: 60vh;
+            min-height: 60vh;
+        }
+
         &-slider {
             min-height: 100%;
             min-width: 100vw;
@@ -15,6 +25,7 @@
                 min-height: 100%;
                 min-width: 100vw;
                 display: flex;
+                align-items: stretch;
 
                 .carousel-item {
 
@@ -31,14 +42,32 @@
                     right: auto;
                     transform: translateX(-50%) translateY(-50%);
 
+                    @media(orientation: portrait) and (max-width: 767px) {
+                        padding: 15px;
+                    }
+
                     h1,
                     .text-size-xxxxlarge {
                         text-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.5);
                         text-transform: uppercase;
+
+                        @media(max-width: 991px) {
+                            font-size: 40px;
+                        }
+
+                        @media(max-width: 767px) {
+                            font-size: 32px;
+                        }
+
                     }
 
                     .btn {
                         margin-top: 30px;
+
+                        @media(max-width: 767px) {
+                            margin-top: 15px;
+                        }
+
                     }
 
                 }
@@ -49,10 +78,20 @@
             .carousel-control-prev-icon {
                 width: 48px;
                 height: 48px;
+
+                @media(max-width: 767px) {
+                    width: 36px;
+                    height: 36px;
+                }
+
             }
 
             .carousel-indicators {
                 margin-bottom: 30px;
+
+                @media(max-width: 767px) {
+                    margin-bottom: 15px;
+                }
 
                 li {
                     width: 48px;
@@ -63,10 +102,23 @@
                     opacity: 1;
                     vertical-align: middle;
 
+                    @media(max-width: 767px) {
+                        width: 36px;
+                        height: 3px;
+                        margin-left: 6px;
+                        margin-right: 6px;
+                    }
+
                     &.active {
                         background-color: $color-tertiary;
                         height: 8px;
                         margin-top: -2px;
+
+                        @media(max-width: 767px) {
+                            height: 5px;
+                            margin-top: -1px;
+                        }
+
                     }
 
                 }
@@ -80,8 +132,8 @@
     &__insta {
         padding: 80px 0;
 
-        &-title {
-
+        @media(max-width: 767px) {
+            padding: 60px 0;
         }
 
         &-grid {

@@ -83,6 +83,19 @@ function menuScroll()
 	}
 }
 
+function menuOpen(el)
+{
+	if($(el).hasClass('opened')) {
+		$('.main-menu-container').removeClass('opened');
+		$(el).removeClass('opened');
+		$(el).find('i').removeClass().addClass('fas fa-bars');
+	} else {
+		$(el).find('i').removeClass().addClass('fas fa-times');
+		$(el).addClass('opened');
+		$('.main-menu-container').addClass('opened');
+	}
+}
+
 function lazyImages()
 {
 	$('.lazyset').each(function() {

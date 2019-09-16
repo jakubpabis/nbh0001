@@ -55,20 +55,33 @@
 
             .pretty.p-default.p-thick .state label:before {
                 border: 2px solid white;
+                top: -1px;
             }
 
-            .pretty .state label span {
-                font-size: 14px;
-                font-weight: 700;
-                color: $color-tertiary;
+            .pretty.p-default.p-thick .state label:after {
+                top: -1px;
+            }
 
-                a {
-                    text-decoration: underline;
-                    position: relative;
-                    z-index: 999;
+            .pretty .state label {
+                text-indent: 0;
 
-                    &:hover {
-                        color: $color-yellow3;
+                span {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $color-tertiary;
+                    padding-left: 30px;
+                    white-space: normal;
+                    display: block;
+
+                    a {
+                        text-decoration: underline;
+                        position: relative;
+                        z-index: 999;
+
+                        &:hover {
+                            color: $color-yellow3;
+                        }
+
                     }
 
                 }
@@ -94,6 +107,8 @@
 
                 @media(max-width: 767px) {
                     max-width: 59%;
+                    border: 2px solid white;
+                    height: 40px;
                 }
 
                 @media(max-width: 575px) {
