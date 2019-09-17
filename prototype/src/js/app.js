@@ -164,10 +164,8 @@ $(window).on('load', function() {
 				$container.html($newContent);
 			}
 		},
-		onAfter: {
-			render: function () {
-				lazyImages();
-			}
+		onAfter: function () {
+			lazyImages();
 		}
 	},
 	smoothState = $('#wrapper').smoothState(options).data('smoothState');
