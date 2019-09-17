@@ -105,7 +105,8 @@ function lazyImages()
 	$('.lazy').each(function() {
 		var $src = $(this).data('src');
 		$(this).attr('src', $src).removeAttr('data-src');	
-    });
+	});
+	console.log('loading img');
 }
 
 $(document).ready(function() {
@@ -155,7 +156,7 @@ $(window).on('load', function() {
 			}
 		},
 		onReady: {
-			duration: 250,
+			duration: 500,
 			render: function ($container, $newContent) {
 				// Remove your CSS animation reversing class
 				$container.removeClass('is-exiting');
