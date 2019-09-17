@@ -149,6 +149,7 @@ $(window).on('load', function() {
 		onStart: {
 			duration: 500, // Duration of our animation
 			render: function ($container) {
+				lazyImages();
 				// Add your CSS animation reversing class
 				$container.addClass('is-exiting');
 				// Restart your animation
@@ -158,6 +159,7 @@ $(window).on('load', function() {
 		onReady: {
 			duration: 500,
 			render: function ($container, $newContent) {
+				lazyImages();
 				// Remove your CSS animation reversing class
 				$container.removeClass('is-exiting');
 				// Inject the new content
