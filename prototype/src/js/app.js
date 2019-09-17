@@ -163,9 +163,6 @@ $(window).on('load', function() {
 				// Inject the new content
 				$container.html($newContent);
 			}
-		},
-		onAfter: function () {
-			lazyImages();
 		}
 	},
 	smoothState = $('#wrapper').smoothState(options).data('smoothState');
