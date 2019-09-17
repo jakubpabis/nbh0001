@@ -31,6 +31,26 @@
 
 	}
 
+	&__full {
+		border: 3px solid $color-tertiary;
+		background-color: $color-tertiary;
+		color: white!important;
+		font-size: 19px;
+		transform-origin: right bottom;
+		box-shadow: 3px 3px 0 0 $color-yellow2;
+
+		@media(max-width: 767px) {
+			border-width: 2px;
+			font-size: 16px;
+		}
+
+		&:hover {
+			color: $color-yellow3!important;
+			box-shadow: 5px 5px 0 0 $color-yellow3;
+			transform: translateX(-2px) translateY(-2px) scale(1.05)!important;
+		}
+	}
+
 	&.black {
 		background-color: rgba($color: #000000, $alpha: 0.7);
 

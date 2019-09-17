@@ -1,5 +1,7 @@
 // BASE
 @import "base/variables";
+@import "base/keyframes";
+@import "base/transitions";
 @import "base/typography";
 @import "base/buttons";
 @import "base/layout";
@@ -10,6 +12,7 @@
 
 // MODULES
 @import "components/navigation";
+@import "components/breadcrumbs";
 @import "components/home";
 @import "components/products";
 @import "components/cards";

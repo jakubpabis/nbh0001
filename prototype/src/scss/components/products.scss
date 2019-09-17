@@ -2,19 +2,20 @@
 
     &__list {
         position: relative;
+        padding: 40px 0 80px;
 
         &.home {
-            padding: 80px 0;
+            padding: 60px 0 80px;
 
             @media(max-width: 767px) {
-                padding: 40px 0;
+                padding: 20px 0 40px;
             }
 
         }
 
         &-item {
-            padding-top: 20px;
-            padding-bottom: 20px;
+            padding-top: 40px;
+            padding-bottom: 40px;
 
             &-content {
                 position: relative;
@@ -79,6 +80,50 @@
 
                     }
 
+                }
+
+            }
+
+        }
+
+        &-top {
+            margin-bottom: 40px;
+        }
+
+        &-title {
+
+            > * {
+                line-height: 1!important;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+        }
+
+        &-filter {
+
+            form {
+                position: relative;
+                margin-bottom: 8px;
+            }
+
+            select {
+                appearance: none;
+                border-radius: 0;
+                border: 2px solid black;
+                padding: 6px 40px 6px 20px;
+                font-size: 16px;
+                font-weight: 700;
+                min-width: 250px;
+                cursor: pointer;
+
+                &+i {
+                    position: absolute;
+                    pointer-events: none;
+                    font-size: 22px;
+                    color: black;
+                    top: 10px;
+                    right: 10px;
                 }
 
             }
