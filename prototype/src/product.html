@@ -43,14 +43,14 @@
                             <img data-src="https://cdn.shoplo.com/0813/products/th2048/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" class="lazy bg-cover" alt="">
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#product_carousel" role="button" data-slide="prev">
+                    <!--<a class="carousel-control-prev" href="#product_carousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Poprzedni</span>
                     </a>
                     <a class="carousel-control-next" href="#product_carousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Następny</span>
-                    </a>
+                    </a>-->
                     <ol class="carousel-indicators">
                         <li data-target="#product_carousel" data-slide-to="0" class="active">
                             <img data-src="https://cdn.shoplo.com/0813/products/th2048/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" class="lazy bg-cover" alt="">
@@ -85,6 +85,21 @@
                         </select>
                         <i class="fas fa-chevron-down"></i>
                     </div>
+                </div>
+                <div class="addtocart">
+                    <div class="number">
+                        <input type="text" name="qty" value="1" id="qty">
+                        <i class="fas fa-chevron-up" onclick="plusOne('#qty')"></i>
+                        <i class="fas fa-chevron-down" onclick="minusOne('#qty')"></i>
+                    </div>
+                    <button type="submit" class="btn btn__normal">Kupuje to!</button>
+                </div>
+                <div class="shipping mt-4">
+                    <i class="fas fa-shipping-fast text-size-xxxlarge"></i>
+                    <span class="text-size-normal text-bold">
+                        Mordo, będzie szybko!<br/>
+                        <strong>24h</strong> i towar jest u Ciebie!
+                    </span>
                 </div>
             </div>
 		</div>

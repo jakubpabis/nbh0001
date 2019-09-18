@@ -12,6 +12,21 @@
 	}
 
 	&__normal {
+		border: 3px solid black;
+		color: black!important;
+		background-color: $color-tertiary;
+		font-size: 19px;
+
+		@media(max-width: 767px) {
+			border-width: 2px;
+			font-size: 16px;
+		}
+
+		&:hover {
+			border-color: $color-tertiary;
+			background-color: black;
+			color: $color-tertiary!important;
+		}
 
 	}
 

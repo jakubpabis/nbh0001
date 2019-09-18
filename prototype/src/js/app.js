@@ -109,6 +109,20 @@ function lazyImages()
 	console.log('loading img');
 }
 
+function plusOne(el)
+{
+	var newVal = parseInt($(el).val(), 10) + 1;
+	$(el).val(newVal);
+}
+
+function minusOne(el)
+{
+	var newVal = parseInt($(el).val(), 10) - 1;
+	if(newVal > 0) {
+		$(el).val(newVal);
+	}
+}
+
 $(document).ready(function() {
 
 });
