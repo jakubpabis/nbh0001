@@ -4,6 +4,10 @@
         position: relative;
         padding: 40px 0 80px;
 
+        @media(max-width: 767px) {
+            padding: 20px 0 40px;
+        }
+
         &.home {
             padding: 60px 0 80px;
 
@@ -16,6 +20,16 @@
         &-item {
             padding-top: 40px;
             padding-bottom: 40px;
+
+            @media(max-width: 767px) {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            @media(max-width: 575px) {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
 
             &-content {
                 position: relative;
@@ -102,9 +116,18 @@
 
         &-filter {
 
+            @media(max-width: 767px) {
+                margin-top: 30px;
+            }
+
             form {
                 position: relative;
                 margin-bottom: 8px;
+
+                @media(max-width: 991px) {
+                    margin-bottom: 6px;
+                }
+
             }
 
             select {
@@ -116,6 +139,8 @@
                 font-weight: 700;
                 min-width: 250px;
                 cursor: pointer;
+                background-color: white;
+                outline: 0!important;
 
                 &+i {
                     position: absolute;
@@ -124,6 +149,100 @@
                     color: black;
                     top: 10px;
                     right: 10px;
+                }
+
+            }
+
+        }
+
+    }
+
+    &__single {
+        padding: 40px 0 60px;
+
+        &-slider {
+
+            .carousel-control-next-icon, 
+            .carousel-control-prev-icon {
+                width: 32px;
+                height: 32px;
+                margin-top: -84px;
+
+                @media(max-width: 767px) {
+                    width: 24px;
+                    height: 24px;
+                }
+
+            }
+
+            .carousel-control-next-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+            }
+
+            .carousel-control-prev-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+            }
+
+            .carousel-indicators {
+                position: relative;
+                margin: 20px auto;
+                bottom: auto;
+
+                li {
+                    width: 64px;
+                    height: 64px;
+                    padding: 4px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    background-color: white;
+                    opacity: 1;
+                    vertical-align: middle;
+                    border: 1px solid $color-tertiary;
+                    opacity: 0.6;
+
+                    &.active {
+                        opacity: 1;
+                        padding: 3px;
+                        border-width: 2px;
+                    }
+
+                }
+
+            }
+
+        }
+
+        &-text {
+
+            .specs {
+                margin-top: 30px;
+
+                .select {
+                    position: relative;
+                    display: inline-block;
+
+                    select {
+                        appearance: none;
+                        border-radius: 0;
+                        border: 2px solid black;
+                        padding: 6px 42px 6px 20px;
+                        font-size: 16px;
+                        font-weight: 700;
+                        cursor: pointer;
+                        background-color: white;
+                        outline: 0!important;
+    
+                        &+i {
+                            position: absolute;
+                            pointer-events: none;
+                            font-size: 22px;
+                            color: black;
+                            top: 10px;
+                            right: 10px;
+                        }
+                        
+                    }
+
                 }
 
             }

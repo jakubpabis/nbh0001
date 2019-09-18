@@ -36,6 +36,10 @@
                 margin-top: 30px;
             }
 
+            @media(max-width: 400px) {
+                text-align: center;
+            }
+
             .line {
                 display: flex;
                 flex-wrap: nowrap;
@@ -51,6 +55,14 @@
 
             .check {
                 margin-top: 12px;
+
+                @media(max-width: 400px) {
+                    display: inline-block;
+                    width: auto;
+                    max-width: 225px;
+                    margin-right: 0;
+                }
+
             }
 
             .pretty.p-default.p-thick .state label:before {
@@ -64,6 +76,7 @@
 
             .pretty .state label {
                 text-indent: 0;
+                text-align: left;
 
                 span {
                     font-size: 14px;
@@ -133,6 +146,7 @@
 
                 @media(max-width: 400px) {
                     max-width: 100%;
+                    text-align: center;
                 }
 
                 &::placeholder {
@@ -147,9 +161,24 @@
                 transform-origin: center left;
 
                 @media(max-width: 400px) {
-                    display: block;
-                    width: 100%;
                     margin-top: 10px;
+                }
+
+                &.mobile {
+                    display: none;
+
+                    @media(max-width: 400px) {
+                        display: inline-block;
+                    }
+
+                }
+
+                &.desktop {
+
+                    @media(max-width: 400px) {
+                        display: none;
+                    }
+
                 }
 
             }
