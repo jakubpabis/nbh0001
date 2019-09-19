@@ -116,7 +116,6 @@ function lazyImages()
 		var $src = $(this).data('src');
 		$(this).attr('src', $src).removeAttr('data-src');	
 	});
-	console.log('loading img');
 }
 
 function plusOne(el)
@@ -133,10 +132,14 @@ function minusOne(el)
 	}
 }
 
+// function zoomImage(el)
+// {
+// 	$('.products__single-modal').find('.modal-body').empty().html('<img src="'+$(el).data("zoom")+'" class="bg-cover"/>');
+// }
+
 function centerZoom()
 {
 	$('.products__single-modal').on('shown.bs.modal', function() {
-		console.log('test');
 		$(this).find('.modal-body').animate({
 			scrollTop: ($(this).find('img').height() - $(this).find('.modal-body').height()) / 2,
 			scrollLeft: ($(this).find('img').width() - $(this).find('.modal-body').width()) / 2
