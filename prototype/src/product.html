@@ -33,13 +33,13 @@
 			<div class="col-lg-7 scene_element scene_element--fadeinleft-wide scene_element--delayed2">
                 <div id="product_carousel" class="products__single-slider carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" data-toggle="modal" data-target="#sliderZoomModal">
                             <img src="https://cdn.shoplo.com/0813/products/th2048/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" class=" bg-cover" alt="">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-toggle="modal" data-target="#sliderZoomModal">
                             <img data-src="https://cdn.shoplo.com/0813/products/th2048/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" class="lazy bg-cover" alt="">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-toggle="modal" data-target="#sliderZoomModal">
                             <img data-src="https://cdn.shoplo.com/0813/products/th2048/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" class="lazy bg-cover" alt="">
                         </div>
                     </div>
@@ -110,5 +110,19 @@
         </div>
 	</div>
 </section>
+  
+<!-- Modal -->
+<div class="products__single-modal modal fade" id="sliderZoomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <img src="https://cdn.shoplo.com/0813/products/th2048/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" class="bg-cover" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 
 @@include('footer.html')

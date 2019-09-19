@@ -163,6 +163,10 @@
         &-slider {
             padding-right: 30px;
 
+            .carousel-item {
+                cursor: zoom-in;
+            }
+
             .carousel-control-next-icon, 
             .carousel-control-prev-icon {
                 width: 32px;
@@ -326,6 +330,36 @@
 
                 }
 
+            }
+
+        }
+
+        &-modal {
+
+            .modal-dialog {
+                max-width: 92vw;
+                margin: 30px auto;
+            }
+
+            .modal-content {
+                border-radius: 0;
+                border: none;
+            }
+
+            .close {
+                position: absolute;
+                top: 5px;
+                right: 15px;
+                font-size: 48px;
+                z-index: 99;
+                outline: 0!important;
+            }
+
+            .bg-cover {
+                width: auto;
+                min-width: 100%;
+                height: auto;
+                max-width: 5000px;
             }
 
         }
