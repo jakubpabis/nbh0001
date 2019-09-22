@@ -61,7 +61,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="javascript:void(0)">
+						<a href="javascript:void(0)" class="cartOpen" onclick="cartOpen()">
 							<i class="fas fa-shopping-cart"></i>
 						</a>
 					</li>
@@ -91,7 +91,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)">
+							<a href="javascript:void(0)" class="cartOpen" onclick="cartOpen()">
 								<i class="fas fa-shopping-cart"></i>
 							</a>
 						</li>
@@ -423,6 +423,73 @@
 				</div>
 			</div>
 		</footer>
+		<div class="cart-shadow" onclick="cartOpen()"></div>
+<aside class="cart">
+    <div class="cart__container">
+        <button type="button" class="close" onclick="cartOpen()" aria-label="Zamknij">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="cart-title text-size-xxxxlarge text-upper">
+            Twój Kołczan
+        </span>
+        <div class="cart__content">
+            <div class="row cart__content-item align-items-center">
+                <div class="col-5 cart__content-item-img">
+                    <img data-src="https://cdn.shoplo.com/0813/products/th100/aaag/84-de_19111-deck-charge-artcoop-bares-medium-concave-_resize.jpeg" alt="" class="lazy bg-cover">
+                </div>
+                <div class="col-7 cart__content-item-text">
+                    <h4 class="text-upper text-bold text-size-small nomargin">
+                        DESKA CHARGE<br/>
+                        ARTCOOP BARES
+                    </h4>
+                    <small>
+                        Rozmiar: <strong>8.125”</strong>
+                    </small>
+                    <a href="" class="remove">
+                        Wyciep to!
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row cart__content-item align-items-center">
+                <div class="col-5 cart__content-item-img">
+                    <img data-src="assets/img/10-wh_19104_55s3-wheels-socket-wolan-55mm-s3-pic1.jpg" alt="" class="lazy bg-cover">
+                </div>
+                <div class="col-7 cart__content-item-text">
+                    <h4 class="text-upper text-bold text-size-small nomargin">
+                        Koła Socket Emil Wolan 55mm S3
+                    </h4>
+                    <small>
+                        Rozmiar: <strong>55 mm</strong>
+                    </small>
+                    <a href="" class="remove">
+                        Wyciep to!
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row cart__content-item align-items-center">
+                <div class="col-5 cart__content-item-img">
+                    <img data-src="assets/img/24-be_18201_7-bearings-socket-abec-7.jpg" alt="" class="lazy bg-cover">
+                </div>
+                <div class="col-7 cart__content-item-text">
+                    <h4 class="text-upper text-bold text-size-small nomargin">
+                        Łożyska Socket<br/>
+                        Abec 7
+                    </h4>
+                    <a href="" class="remove">
+                        Wyciep to!
+                    </a>
+                </div>
+            </div>
+            <div class="row justify-content-center cart__content-btn">
+                <div class="col-auto">
+                    <button type="submit" class="btn btn__normal">Idź do płacenia hajsu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
 	</div><!-- /Wrapper -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" defer></script>

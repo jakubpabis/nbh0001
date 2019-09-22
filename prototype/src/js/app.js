@@ -153,6 +153,19 @@ function centerZoom()
 	});
 }
 
+function cartOpen()
+{
+	if($('.cart').hasClass('opened')) {
+		$('body').removeClass('modal-open');
+		$('.cart').removeClass('opened');
+		$('.cart-shadow').fadeOut(250);
+	} else {
+		$('body').addClass('modal-open');
+		$('.cart').addClass('opened');
+		$('.cart-shadow').fadeIn(250);
+	}
+}
+
 $(document).ready(function() {
 	centerZoom();
 });
