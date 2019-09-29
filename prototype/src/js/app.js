@@ -167,6 +167,34 @@ function cartOpen()
 }
 
 $(document).ready(function() {
+
+	var options = {
+		prefetch: true,
+		cacheLength: 10,
+		onStart: {
+			duration: 500, // Duration of our animation
+			render: function ($container) {
+				// Add your CSS animation reversing class
+				$container.addClass('is-exiting');
+				// Restart your animation
+				smoothState.restartCSSAnimations();
+			}
+		},
+		onReady: {
+			duration: 500,
+			render: function ($container, $newContent) {
+				// Remove your CSS animation reversing class
+				$container.removeClass('is-exiting');
+				// Inject the new content
+				$container.html($newContent);
+			}
+		},
+		onAfter: function () {
+			lazyImages();
+		}
+	},
+	smoothState = $('#wrapper').smoothState(options).data('smoothState');
+
 	centerZoom();
 });
 
@@ -199,32 +227,5 @@ $(window).on('load', function() {
 	$('.owl-prev').click(function() {
 		$owl.trigger('prev.owl.carousel');
 	});
-
-	var options = {
-		prefetch: true,
-		cacheLength: 10,
-		onStart: {
-			duration: 500, // Duration of our animation
-			render: function ($container) {
-				// Add your CSS animation reversing class
-				$container.addClass('is-exiting');
-				// Restart your animation
-				smoothState.restartCSSAnimations();
-			}
-		},
-		onReady: {
-			duration: 500,
-			render: function ($container, $newContent) {
-				// Remove your CSS animation reversing class
-				$container.removeClass('is-exiting');
-				// Inject the new content
-				$container.html($newContent);
-			}
-		},
-		onAfter: function () {
-			lazyImages();
-		}
-	},
-	smoothState = $('#wrapper').smoothState(options).data('smoothState');
 
 });

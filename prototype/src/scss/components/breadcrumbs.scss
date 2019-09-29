@@ -7,32 +7,44 @@
         padding: 20px 0;
     }
 
-    ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0;
-        margin-left: -8px;
+    .col-12 {
 
-        @media(max-width: 767px) {
-            margin-left: -5px;
-        }
-
-        li {
-            padding: 0 8px;
-            color: $color-grey3;
+        > span {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin-left: -8px;
 
             @media(max-width: 767px) {
-                padding: 0 5px;
+                margin-left: -5px;
             }
 
-            a {
-                font-size: 14px;
-                font-weight: 700;
+            > span {
+                padding: 0 8px;
                 color: $color-grey3;
+                line-height: 1;
+                vertical-align: middle;
 
                 @media(max-width: 767px) {
-                    font-size: 13px;
+                    padding: 0 5px;
+                }
+
+                a,
+                > span {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $color-grey3;
+                    vertical-align: 1px;
+
+                    @media(max-width: 767px) {
+                        font-size: 13px;
+                    }
+
+                }
+
+                .breadcrumb_last {
+                    color: $color-grey4!important;
                 }
 
             }
@@ -40,5 +52,42 @@
         }
 
     }
+
+    // ul {
+    //     list-style: none;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     padding: 0;
+    //     margin-left: -8px;
+
+    //     @media(max-width: 767px) {
+    //         margin-left: -5px;
+    //     }
+
+    //     li {
+    //         padding: 0 8px;
+    //         color: $color-grey3;
+    //         line-height: 1;
+    //         vertical-align: middle;
+
+    //         @media(max-width: 767px) {
+    //             padding: 0 5px;
+    //         }
+
+    //         a {
+    //             font-size: 14px;
+    //             font-weight: 700;
+    //             color: $color-grey3;
+    //             vertical-align: 1px;
+
+    //             @media(max-width: 767px) {
+    //                 font-size: 13px;
+    //             }
+
+    //         }
+
+    //     }
+
+    // }
 
 }
