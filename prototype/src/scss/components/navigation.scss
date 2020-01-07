@@ -134,7 +134,8 @@
 
             }
 
-            &.active {
+            &.active,
+            &.current_page_parent {
 
                 a {
                     color: $color-tertiary!important;
