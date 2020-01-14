@@ -49,9 +49,9 @@
 					endif;
 
 					if ( 'post' === get_post_type() ) : ?>
-					<div class="entry-meta">
-						<?php wp_bootstrap_starter_posted_on(); ?>
-					</div><!-- .entry-meta -->
+						<div class="entry-meta">
+							<?php wp_bootstrap_starter_posted_on(); ?>
+						</div><!-- .entry-meta -->
 					<?php
 					endif; ?>
 				</header><!-- .entry-header -->
@@ -63,7 +63,6 @@
 					else :
 						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-bootstrap-starter' ) );
 					endif;
-
 						wp_link_pages( array(
 							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-bootstrap-starter' ),
 							'after'  => '</div>',

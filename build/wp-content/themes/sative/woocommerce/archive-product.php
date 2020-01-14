@@ -32,14 +32,14 @@ do_action( 'woocommerce_before_main_content' );
 <section class="products__list">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-xl-10 col-lg-11 col-12">
-				<div class="row products__list-top justify-content-between align-items-start scene_element scene_element--fadeindown scene_element--delayed">
-					<div class="col-xl-8 products__list-title">
+			<div class="col-12">
+				<div class="row products__list-top justify-content-center align-items-start scene_element scene_element--fadeindown scene_element--delayed">
+					<div class="col-xl-6 col-md-7 col-sm-6 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 						<h1><?php woocommerce_page_title(); ?></h1>
 					<?php endif; ?>
 					</div>
-					<div class="col-auto products__list-filter">
+					<div class="col-lg-4 col-md-5 col-sm-6 products__list-filter">
 						<?php sative_catalog_ordering(); ?>
 					</div>
 				</div>

@@ -14,8 +14,8 @@
 			<div class="container">
 				<div class="row justify-content-center align-items-end footer__upper">
 					<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 logo">
-						<a href="index.html">
-							<img data-src="<?= get_template_directory_uri(); ?>/assets/img/logoW.png" class="lazy" alt="">
+						<a href="/">
+							<img src="<?= get_template_directory_uri(); ?>/assets/img/logoW.png" alt="Neighbourhood Skateshop logo - NBHD Skate">
 						</a>
 					</div>
 					<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 newsletter">

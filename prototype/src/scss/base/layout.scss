@@ -162,3 +162,19 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance:textfield;
 }
+
+#sb_instagram {
+
+	.sbi_photo_wrap {
+		overflow: hidden;
+	}
+
+	.sbi_photo {
+
+		img {
+			display: none;
+		}
+
+	}
+
+}
