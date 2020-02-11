@@ -13,7 +13,7 @@ if ( post_password_required() ) {
 <section class="products__single" id="product-<?php the_ID(); ?>">
 	<div class="container">
 		<div class="row justify-content-center align-items-center">
-			<div class="col-lg-7 col-md-10 scene_element scene_element--fadeinleft-wide scene_element--delayed2">
+			<div class="col-lg-7 col-md-10">
                 <div id="product_carousel" class="products__single-slider carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-toggle="modal" data-target="#sliderZoomModal" data-zoom="zoom0">
@@ -37,7 +37,7 @@ if ( post_password_required() ) {
                     </ol>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-8 products__single-text scene_element scene_element--fadeinright-wide scene_element--delayed3">
+            <div class="col-lg-5 col-md-8 products__single-text">
                 <?php
                     $tags = get_the_terms( get_the_ID(), 'product_tag' );
                     if($tags[0]) :
@@ -69,7 +69,7 @@ if ( post_password_required() ) {
             </div>
         </div>
     </div> 
-    <div class="products__single-more scene_element scene_element--fadeinup scene_element--delayed3">
+    <div class="products__single-more">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-12">
@@ -209,7 +209,7 @@ if ( post_password_required() ) {
             </div>
         </div>
     </div>
-    <div class="products__single-share scene_element scene_element--fadeinup scene_element--delayed4">
+    <div class="products__single-share">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-12">
@@ -274,7 +274,7 @@ if ( post_password_required() ) {
 </section>
 
 <?php if ( isset($related_products) ) : ?>
-    <section class="products__single-related products__list scene_element scene_element--fadeinup scene_element--delayed4">
+    <section class="products__single-related products__list">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">

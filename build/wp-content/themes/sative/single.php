@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <?php if ( function_exists('yoast_breadcrumb') ) : ?>
-	<aside class="breadcrumbs scene_element scene_element--fadeindown scene_element--delayed">
+	<aside class="breadcrumbs">
 		<div class="container">
 			<div class="row">
 				<?php //yoast_breadcrumb( '<div class="col-12">','</div>' ); ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 	</aside>
 <?php endif; ?>
 
-<section id="singlePage" class="scene_element scene_element scene_element--fadeindown scene_element--delayed2">
+<section id="singlePage">
 	<main id="main" class="site-main" role="main">
 		<div class="container">
 			<div class="row justify-content-center">

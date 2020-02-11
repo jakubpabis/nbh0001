@@ -33,7 +33,7 @@ do_action( 'woocommerce_before_main_content' );
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12">
-				<div class="row products__list-top justify-content-center align-items-start scene_element scene_element--fadeindown scene_element--delayed">
+				<div class="row products__list-top justify-content-center align-items-start">
 					<div class="col-xl-6 col-md-7 col-sm-6 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 						<h1><?php woocommerce_page_title(); ?></h1>
@@ -63,7 +63,7 @@ do_action( 'woocommerce_before_main_content' );
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-center mt-5 scene_element scene_element--fadeinup scene_element--delayed11">
+		<div class="row justify-content-center mt-5">
 			<div class="col-12 text-center">
 				<a href="" class="btn btn__full">Ładuj więcej stuff'u!</a>
 			</div>

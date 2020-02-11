@@ -10,7 +10,7 @@
 ?>
 
 <?php if ( function_exists('yoast_breadcrumb') ) : ?>
-	<aside class="breadcrumbs scene_element scene_element--fadeindown scene_element--delayed">
+	<aside class="breadcrumbs">
 		<div class="container">
 			<div class="row">
 				<?php //yoast_breadcrumb( '<div class="col-12">','</div>' ); ?>
@@ -29,7 +29,7 @@
 	</aside>
 <?php endif; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('scene_element scene_element--fadeindown scene_element--delayed2'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-10 col-12">
@@ -61,10 +61,10 @@
 					if ( is_single() ) :
 						the_content();
 					else :
-						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-bootstrap-starter' ) );
+						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sative' ) );
 					endif;
 						wp_link_pages( array(
-							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-bootstrap-starter' ),
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sative' ),
 							'after'  => '</div>',
 						) );
 					?>

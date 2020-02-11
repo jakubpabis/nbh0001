@@ -1,4 +1,4 @@
-<header class="home__header scene_element scene_element--fadeinright-wide scene_element--delayed">
+<header class="home__header">
 	<div id="home_carousel" class="home__header-slider carousel slide" data-ride="carousel">
 	<?php if( have_rows('slides') ) : ?>
 		<?php if(sizeof(get_field('slides')) > 1) : ?>

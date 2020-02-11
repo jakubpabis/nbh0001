@@ -246,30 +246,6 @@ show_admin_bar(false);
 //add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 /**
- * Add Welcome message to dashboard
- */
-function sative_reminder(){
-
-    $theme_page_url = 'https://afterimagedesigns.com/sative/?dashboard=1';
-
-    if(!get_option( 'triggered_welcomet')){
-        $message = sprintf(__( 'Welcome to WP Bootstrap Starter Theme! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'sative' ),
-            esc_url( $theme_page_url )
-        );
-
-        printf(
-            '<div class="notice is-dismissible" style="background-color: #6C2EB9; color: #fff; border-left: none;">
-                <p>%1$s</p>
-            </div>',
-            $message
-        );
-        add_option( 'triggered_welcomet', '1', '', 'yes' );
-    }
-
-}
-add_action( 'admin_notices', 'sative_reminder' );
-
-/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -333,9 +309,9 @@ add_action( 'widgets_init', 'sative_widgets_init' );
  */
 function sative_scripts() {
 	// load bootstrap css
-    wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
+    //wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
 
-	wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
+	//wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
 
 	//wp_deregister_script('jquery');
 
@@ -344,9 +320,9 @@ function sative_scripts() {
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
 
 	// load bootstrap js
-    wp_enqueue_script('sative-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '', true );
-    wp_enqueue_script('sative-bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '', true );
-    wp_enqueue_script('sative-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
+    //wp_enqueue_script('sative-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '', true );
+    //wp_enqueue_script('sative-bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '', true );
+    //wp_enqueue_script('sative-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
 	wp_enqueue_script( 'sative-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

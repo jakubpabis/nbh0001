@@ -11,7 +11,7 @@ if(get_field('slides')) {
 
 if(!empty(wc_get_featured_product_ids())) : ?>
 
-<section class="products__list home scene_element scene_element--fadeinleft-wide scene_element--delayed2">
+<section class="products__list home">
 	<div class="container">
         <?php get_template_part( 'template-parts/content', 'featured' ); ?>
     </div>
@@ -26,7 +26,7 @@ if(!empty(wc_get_featured_product_ids())) : ?>
 
 if(have_rows('section_big_cards')) : ?>
 
-<section class="cards grey-bg scene_element scene_element--fadeinright-wide scene_element--delayed3">
+<section class="cards grey-bg">
 	<div class="container">
         <?php while ( have_rows('section_big_cards') ) : the_row(); ?>
 		<div class="row justify-content-center align-items-center cards__item">
@@ -76,7 +76,7 @@ if(have_rows('section_big_cards')) : ?>
 
 <?php endif; ?>
 
-<section class="home__insta scene_element scene_element--fadeinleft-wide scene_element--delayed4">
+<section class="home__insta">
 	<div class="container">
         <div class="row justify-content-center">
             <div class="col-12 text-center">

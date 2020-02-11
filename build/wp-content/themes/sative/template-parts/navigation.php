@@ -5,7 +5,7 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
     $shop = false;
 }
 ?>
-<nav role="navigation" class="main-navigation <?= $shop == true ? 'shop_page' : null ?> scene_element scene_element--fadeindown scene_element--delayed">
+<nav role="navigation" class="main-navigation <?= $shop == true ? 'shop_page' : null ?>">
 	<div class="container">
 		<div class="row justify-content-between align-items-center">
 			<div class="col-auto logo">
@@ -111,31 +111,6 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
                                 </a>
                             </li>
                             <?php endforeach; ?>
-                            <!--<li>
-                                <a href="shop.html">
-                                    Kompletne deski
-                                </a>
-                            </li>
-                            <li>
-                                <a href="shop.html">
-                                    Kółka
-                                </a>
-                            </li>
-                            <li>
-                                <a href="shop.html">
-                                    Trucki
-                                </a>
-                            </li>
-                            <li>
-                                <a href="shop.html">
-                                    Łożyska
-                                </a>
-                            </li>
-                            <li>
-                                <a href="shop.html">
-                                    Akcesoria   
-                                </a>
-                            </li>-->
                         </ul>
                     </div>
                 </div>

@@ -14,7 +14,7 @@
 
 get_header(); ?>
     <?php if ( function_exists('yoast_breadcrumb') ) : ?>
-        <aside class="breadcrumbs scene_element scene_element--fadeindown scene_element--delayed">
+        <aside class="breadcrumbs">
             <div class="container">
                 <div class="row">
                     <?php 
@@ -38,7 +38,7 @@ get_header(); ?>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10 col-lg-11 col-12">
-                        <div class="row products__list-top justify-content-between align-items-start scene_element scene_element--fadeindown scene_element--delayed">
+                        <div class="row products__list-top justify-content-between align-items-start">
                             <div class="col-xl-8 products__list-title">
                                 <h1>
                                     <?php if(is_shop()) : ?>
@@ -75,7 +75,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-5 scene_element scene_element--fadeinup scene_element--delayed11">
+                <div class="row justify-content-center mt-5">
                     <div class="col-12 text-center">
                         <a href="" class="btn btn__full">Ładuj więcej stuff'u!</a>
                     </div>

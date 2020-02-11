@@ -10,7 +10,7 @@
  */
 
 ?>
-		<footer class="footer scene_element scene_element--fadeinup scene_element--delayed">
+		<footer class="footer">
 			<div class="container">
 				<div class="row justify-content-center align-items-end footer__upper">
 					<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 logo">
@@ -128,8 +128,10 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer></script>
+	<script src="<?= get_template_directory_uri(); ?>/assets/js/app.js" defer></script>
 	<?php wp_footer(); ?>
-	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/assets/js/app.js" defer></script>
 </body>
 </html>
