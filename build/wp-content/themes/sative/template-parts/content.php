@@ -32,7 +32,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('scene_element scene_element--fadeindown scene_element--delayed2'); ?>>
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-lg-8 col-12">
+			<div class="col-lg-10 col-12">
 
 				<?php if(get_the_post_thumbnail()): ?>
 					<div class="post-thumbnail">

@@ -419,12 +419,18 @@
 
             @media(max-width: 991px) {
                 margin-top: 120px;
+                padding-bottom: 50px;
+            }
+
+            @media(max-width: 767px) {
+                padding-bottom: 40px;
             }
 
             @media(max-width: 575px) {
                 margin-top: 60px;
                 padding-top: 0;
                 border-top: none;
+                padding-bottom: 30px;
             }
 
             .nav-tabs {
@@ -522,6 +528,18 @@
 
             .tab-pane { 
                 padding: 60px 0 0;
+
+                @media(max-width: 991px) {
+                    padding: 50px 0 0;
+                }
+
+                @media(max-width: 767px) {
+                    padding: 40px 0 0;
+                }
+
+                @media(max-width: 575px) {
+                    padding: 30px 0 0;
+                }
 
                 ul,
                 li,

@@ -59,65 +59,37 @@
 								<span class="text-size-xxlarge">
 									Pomoc:
 								</span>
-								<ul>
-									<li>
-										<a href="">
-											Tabele rozmiarów
-										</a>
-									</li>
-									<li>
-										<a href="">
-											Płatności
-										</a>
-									</li>
-									<li>
-										<a href="">
-											Wysyłka i czas dostawy
-										</a>
-									</li>
-									<li>
-										<a href="">
-											Zwroty i reklamacje
-										</a>
-									</li>
-									<li>
-										<a href="">
-											Twoje konto
-										</a>
-									</li>
-								</ul>
+								<?php
+									wp_nav_menu(array(
+										'theme_location'    => 'footer1',
+										'container'       => '',
+										'container_id'    => '',
+										'container_class' => '',
+										'menu_id'         => false,
+										'menu_class'      => '',
+										'depth'           => 1,
+										'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+										'walker'          => new wp_bootstrap_navwalker()
+									));
+								?>
 							</div>
 							<div class="col-sm-4 col-12">
 								<span class="text-size-xxlarge">
 									Mapa strony:
 								</span>
-								<ul>
-									<li>
-										<a href="index.html">
-											Strona główna
-										</a>
-									</li>
-									<li>
-										<a href="shop.html">
-											Sklep
-										</a>
-									</li>
-									<li>
-										<a href="about.html">
-											O nas
-										</a>
-									</li>
-									<li>
-										<a href="">
-											Koszyk
-										</a>
-									</li>
-									<li>
-										<a href="contact.html">
-											Kontakt
-										</a>
-									</li>
-								</ul>
+								<?php
+									wp_nav_menu(array(
+										'theme_location'    => 'footer2',
+										'container'       => '',
+										'container_id'    => '',
+										'container_class' => '',
+										'menu_id'         => false,
+										'menu_class'      => '',
+										'depth'           => 1,
+										'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+										'walker'          => new wp_bootstrap_navwalker()
+									));
+								?>
 							</div>
 						</div>
 					</div>

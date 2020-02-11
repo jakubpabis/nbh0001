@@ -197,6 +197,8 @@ function sative_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'sative' ),
+		'footer1' => esc_html__( 'Footer 1', 'sative' ),
+		'footer2' => esc_html__( 'Footer 2', 'sative' ),
 	) );
 
 	/*

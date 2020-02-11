@@ -110,12 +110,12 @@ function lazyImages()
 {
 
 	$('.lazyset').each(function() {
-		if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+		if($(this).visible( true, true ) && !$(this).hasClass('loaded')) {
 			$(this).attr('srcset', $(this).data('srcset')).removeAttr('data-srcset').addClass('loaded');
 		}
 	});
 	$('.lazy').each(function() {
-		if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+		if($(this).visible( true, true ) && !$(this).hasClass('loaded')) {
 			$(this).attr('src', $(this).data('src')).removeAttr('data-src').addClass('loaded');
 		}	
 	});
@@ -123,12 +123,12 @@ function lazyImages()
 	$(window).on('scroll', function() {
 	
 		$('.lazyset').each(function() {
-			if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+			if($(this).visible( true, true ) && !$(this).hasClass('loaded')) {
 				$(this).attr('srcset', $(this).data('srcset')).removeAttr('data-srcset').addClass('loaded');
 			}
 		});
 		$('.lazy').each(function() {
-			if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+			if($(this).visible( true, true ) && !$(this).hasClass('loaded')) {
 				$(this).attr('src', $(this).data('src')).removeAttr('data-src').addClass('loaded');
 			}	
 		});
@@ -198,6 +198,7 @@ function centerZoom()
 $(document).ready(function() {
 
 	var options = {
+		blacklist: '.no-smoothState',
 		prefetch: true,
 		cacheLength: 10,
 		onStart: {
