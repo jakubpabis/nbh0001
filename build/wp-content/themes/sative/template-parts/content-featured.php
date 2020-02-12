@@ -5,7 +5,7 @@
         <div class="col-md-4 col-sm-6 col-10 products__list-item">
             <div class="products__list-item-content text-center">
                 <div class="products__list-item-content-img">
-                    <img src="<?= wp_get_attachment_image_src( $product->get_image_id(), 'medium' )[0]; ?>" width="<?= wp_get_attachment_image_src( $product->get_image_id(), 'medium' )[1]; ?>" height="<?= wp_get_attachment_image_src( $product->get_image_id(), 'medium' )[2]; ?>" class=" bg-cover" alt="">
+                    <img data-src="<?= wp_get_attachment_image_src( $product->get_image_id(), 'medium' )[0]; ?>" width="<?= wp_get_attachment_image_src( $product->get_image_id(), 'medium' )[1]; ?>" height="<?= wp_get_attachment_image_src( $product->get_image_id(), 'medium' )[2]; ?>" class=" bg-cover lazy" alt="">
                 </div>
                 <div class="products__list-item-content-text">
                     <h2 class="title text-size-normal text-bold">

@@ -40,21 +40,21 @@ if ( post_password_required() ) {
                 <div id="product_carousel" class="products__single-slider carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-toggle="modal" data-target="#sliderZoomModal" data-zoom="zoom0">
-                            <img src="<?= get_the_post_thumbnail_url('', 'size640') ?>" alt="" class="bg-cover">
+                            <img data-src="<?= get_the_post_thumbnail_url('', 'size640') ?>" alt="" class="bg-cover lazy">
                         </div>
                         <?php foreach ( $attachment_ids as $key => $attachment_id ) : ?>
                             <div class="carousel-item" data-toggle="modal" data-target="#sliderZoomModal" data-zoom="zoom<?= $key + 1; ?>">
-                                <img src="<?= wp_get_attachment_image_url($attachment_id, 'size640'); ?>" alt="" class="bg-cover">
+                                <img data-src="<?= wp_get_attachment_image_url($attachment_id, 'size640'); ?>" alt="" class="bg-cover lazy">
                             </div>
                         <?php endforeach; ?>
                     </div>
                     <ol class="carousel-indicators">
                         <li data-target="#product_carousel" data-slide-to="0" class="active">
-                            <img src="<?= get_the_post_thumbnail_url('', 'thumbnail') ?>" alt="" class="bg-cover">
+                            <img data-src="<?= get_the_post_thumbnail_url('', 'thumbnail') ?>" alt="" class="bg-cover lazy">
                         </li>
                         <?php foreach ( $attachment_ids as $key => $attachment_id ) : ?>
                             <li data-target="#product_carousel" data-slide-to="<?= $key + 1; ?>">
-                                <img src="<?= wp_get_attachment_image_url($attachment_id, 'thumbnail'); ?>" alt="" class="bg-cover">
+                                <img data-src="<?= wp_get_attachment_image_url($attachment_id, 'thumbnail'); ?>" alt="" class="bg-cover lazy">
                             </li>
                         <?php endforeach; ?>
                     </ol>
@@ -355,11 +355,11 @@ if ( post_password_required() ) {
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="modal-body" data-zoom="zoom0">
-                <img src="<?= get_the_post_thumbnail_url('', 'full') ?>" alt="" class="bg-cover">
+                <img data-src="<?= get_the_post_thumbnail_url('', 'full') ?>" alt="" class="bg-cover lazy">
             </div>
             <?php foreach ( $attachment_ids as $key => $attachment_id ) : ?>
                 <div class="modal-body" data-zoom="zoom<?= $key + 1; ?>">
-                    <img src="<?= wp_get_attachment_image_url($attachment_id, 'full'); ?>" alt="" class="bg-cover">
+                    <img data-src="<?= wp_get_attachment_image_url($attachment_id, 'full'); ?>" alt="" class="bg-cover lazy">
                 </div>
             <?php endforeach; ?>
         </div>

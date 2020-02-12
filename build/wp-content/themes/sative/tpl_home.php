@@ -42,7 +42,7 @@ if(have_rows('section_big_cards')) : ?>
                 <div class="col-xl-6 col-md-7 col-sm-10 col-11 cards__item-img">
                     <div class="cards__item-img-cont">
                         <a href="<?= $button['url']; ?>">
-                            <img src="<?= esc_url($size); ?>" class="bg-cover" alt="<?= $alt; ?>">
+                            <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
                         </a>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ if(have_rows('section_big_cards')) : ?>
                 <div class="col-xl-6 col-md-7 col-sm-10 col-11 order-md-12 order-1 cards__item-img">
                     <div class="cards__item-img-cont">
                         <a href="<?= $button['url']; ?>">
-                            <img src="<?= esc_url($size); ?>" class="bg-cover" alt="<?= $alt; ?>">
+                            <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
                         </a>
                     </div>
                 </div>

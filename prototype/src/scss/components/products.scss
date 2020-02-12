@@ -48,8 +48,8 @@
                         min-height: 250px;
                         transition: all 300ms ease;
                         position: absolute;
-                        top: 0;
-                        bottom: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
 
                         @media(max-width: 991px) {
                             min-height: 200px;
@@ -86,7 +86,7 @@
                     &-img {
 
                         > * {
-                            transform: scale(2) rotate(30deg);
+                            transform: translateY(-50%) scale(2) rotate(30deg);
                         }
 
                     }
@@ -321,12 +321,13 @@
                         appearance: none;
                         border-radius: 0;
                         border: 2px solid black;
-                        padding: 8px 24px 8px 16px;
                         font-size: 18px;
                         font-weight: 700;
                         background-color: white;
                         outline: 0!important;
-                        max-width: 70px;
+                        padding: 8px 30px 8px 8px;
+                        width: 100%;
+                        max-width: 72px;
     
                         &+i {
                             position: absolute;

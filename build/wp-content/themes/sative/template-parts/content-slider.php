@@ -11,7 +11,7 @@
 		<div class="carousel-inner">
 		<?php while ( have_rows('slides') ) : the_row(); ?>
 			<div class="carousel-item <?= get_row_index() == 1 ? 'active' : null ?>">
-				<img src="<?= get_sub_field('image')['url']; ?>" class="bg-cover" alt="<?= get_sub_field('image')['title']; ?>">
+				<img data-src="<?= get_sub_field('image')['url']; ?>" class="bg-cover lazy" alt="<?= get_sub_field('image')['title']; ?>">
 				<div class="carousel-caption">
 					<h1><?= get_sub_field('title'); ?></h1>
 					<?php if(get_sub_field('text')):
