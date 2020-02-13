@@ -528,3 +528,18 @@ if ( ! function_exists( 'woocommerce_output_related_products' ) )
 }
 
 add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
+
+
+/**
+ * @snippet       Display "Quantity: #" @ WooCommerce Single Product Page
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @testedwith    WooCommerce 3.6.2
+ */
+add_filter( 'woocommerce_get_availability_text', 'bbloomer_custom_get_availability_text', 99, 2 );  
+function bbloomer_custom_get_availability_text( $availability, $product ) 
+{
+	$stock = $product->get_stock_quantity();
+	if ( $product->is_in_stock() && $product->managing_stock() &&  $stock == 1 ) $availability = __( 'Ostatnia sztuka!', 'woocommerce' );
+	return $availability;
+}
