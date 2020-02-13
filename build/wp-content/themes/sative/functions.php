@@ -230,7 +230,8 @@ endif;
 add_action( 'after_setup_theme', 'sative_setup' );
 
 // Remove all WooCommerce styles and scripts
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
 
 /**
  * Remove Post from menu
