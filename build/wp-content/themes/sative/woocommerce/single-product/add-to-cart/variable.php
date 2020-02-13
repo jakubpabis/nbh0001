@@ -30,15 +30,19 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
-		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'Sorry mordeczko, ale nie już tego nie mamy... ', 'woocommerce' ) ) ); ?></p>
+		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'Sorry mordeczko, ale nie już tego nie ... ', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
 		<div class="specs">
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 				<div class="select">
 					<label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
 					<?php
-						$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
-						wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected, 'show_option_none' => wc_attribute_label( $attribute_name ), ) );
+						wc_dropdown_variation_attribute_options( array(
+							'options'   => $options,
+							'attribute' => $attribute_name,
+							'product'   => $product,
+							'show_option_none' => wc_attribute_label( $attribute_name ),
+						) );
 					?>
 					<i class="fas fa-chevron-down"></i>
 				</div>
