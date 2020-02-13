@@ -132,9 +132,9 @@ function selectChange()
 			$(this).prev('label').fadeOut(200);
 		}
 		if($(document).find('input[name="quantity"]').attr('max') == 1) {
-			$(document).find('input[name="quantity"]').css({'display' : 'none'});
+			$(document).find('input[name="quantity"]').paren().parent().css({'display' : 'none'});
 		} else {
-			$(document).find('input[name="quantity"]').css({'display' : 'block'});
+			$(document).find('input[name="quantity"]').paren().parent().css({'display' : 'block'});
 		}
 	});
 }
@@ -142,13 +142,13 @@ function selectChange()
 function hideQty() 
 {
 	if($(document).find('input[name="quantity"]').attr('max') == 1) {
-		$(document).find('input[name="quantity"]').css({'display' : 'none'});
+		$(document).find('input[name="quantity"]').paren().parent().css({'display' : 'none'});
 	}
 	$(document).on('change', 'input[name="quantity"]', function() {
 		if($(this).attr('max') == 1) {
-			$(this).css({'display' : 'none'});
+			$(this).paren().parent().css({'display' : 'none'});
 		} else {
-			$(this).css({'display' : 'block'});
+			$(this).paren().parent().css({'display' : 'block'});
 		}
 	});
 }
