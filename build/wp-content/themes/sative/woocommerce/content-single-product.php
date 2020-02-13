@@ -365,6 +365,7 @@ if ( post_password_required() ) {
 
 
 <?php
+do_action( 'woocommerce_single_product_summary' );
 /*
  * Hook: woocommerce_after_single_product_summary.
  *
@@ -372,7 +373,7 @@ if ( post_password_required() ) {
  * @hooked woocommerce_upsell_display - 15
  * @hooked woocommerce_output_related_products - 20
  
-do_action( 'woocommerce_after_single_product_summary' ); */
+do_action( 'woocommerce_after_single_product_summary' ); 
 ?>
 
 
