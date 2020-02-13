@@ -269,7 +269,9 @@
 
                     label {
                         font-weight: 700;
-                        display: block;
+                        display: none;
+                        position: absolute;
+                        top: -1.75em;
                     }
 
                     select {

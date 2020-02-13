@@ -120,6 +120,13 @@ function minusOne($el)
 	}
 }
 
+function selectChange()
+{
+	$(document).on('change', '.select > select', function() {
+		console.log($(this).prop('selectedIndex'));
+	});
+}
+
 // function zoomImage(el)
 // {
 // 	$('.products__single-modal').find('.modal-body').empty().html('<img src="'+$(el).data("zoom")+'" class="bg-cover"/>');
@@ -154,6 +161,7 @@ $(document).ready(function() {
 	if($('.products__single-modal')) {
 		centerZoom();
 	}
+	selectChange();
 
 });
 
