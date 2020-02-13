@@ -32,9 +32,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'Sorry mordeczko, ale nie już tego nie ... ', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
-		<div class="specs">
+		<div class="specs variations">
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-				<div class="select">
+				<div class="select value">
 					<label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
 					<?php
 						wc_dropdown_variation_attribute_options( array(
