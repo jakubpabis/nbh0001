@@ -103,14 +103,17 @@ function lazyImages()
 
 function plusOne($el)
 {
-	$input = $($el).parent().find('input[type="number"]');
+	var $input = $($el).parent().find('input[type="number"]');
+	var maxVal = $input.attr('max');
 	var newVal = parseInt($input.val(), 10) + 1;
-	$input.val(newVal);
+	if(newVal < maxVal) {
+		$input.val(newVal);
+	}
 }
 
 function minusOne($el)
 {
-	$input = $($el).parent().find('input[type="number"]');
+	var $input = $($el).parent().find('input[type="number"]');
 	var newVal = parseInt($input.val(), 10) - 1;
 	if(newVal > 0) {
 		$input.val(newVal);
@@ -146,19 +149,6 @@ function centerZoom()
 	});
 }
 
-// function cartOpen()
-// {
-// 	if($('.cart').hasClass('opened')) {
-// 		$('body').removeClass('modal-open');
-// 		$('.cart').removeClass('opened');
-// 		$('.cart-shadow').fadeOut(250);
-// 	} else {
-// 		$('body').addClass('modal-open');
-// 		$('.cart').addClass('opened');
-// 		$('.cart-shadow').fadeIn(250);
-// 	}
-// }
-
 $(document).ready(function() {
 
 	if($('.products__single-modal')) {
@@ -170,31 +160,5 @@ $(document).ready(function() {
 $(window).on('load', function() {
 
 	lazyImages();
-	var $owl = $('.owl-carousel');
-	$owl.owlCarousel({
-		loop: false,
-		rewind: true,
-		margin: 0,
-		nav: false,
-		dots: false,
-		responsive: {
-			0: {
-				items: 1
-			},
-			576: {
-				items: 2
-			},
-			768: {
-				items: 3
-			},
-		}
-	});
-	
-	$('.owl-next').click(function() {
-		$owl.trigger('next.owl.carousel');
-	});
-	$('.owl-prev').click(function() {
-		$owl.trigger('prev.owl.carousel');
-	});
 
 });
