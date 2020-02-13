@@ -34,7 +34,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<div class="specs">
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 				<div class="select">
-					<?php /*<label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label> */ ?>
+					<label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
 					<?php
 						wc_dropdown_variation_attribute_options( array(
 							'options'   => $options,
