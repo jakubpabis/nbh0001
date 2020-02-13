@@ -131,6 +131,11 @@ function selectChange()
 		} else {
 			$(this).prev('label').fadeOut(200);
 		}
+		if($(document).find('input[name="quantity"]').attr('max') == 1) {
+			$(document).find('input[name="quantity"]').css({'display' : 'none'});
+		} else {
+			$(document).find('input[name="quantity"]').css({'display' : 'block'});
+		}
 	});
 }
 
