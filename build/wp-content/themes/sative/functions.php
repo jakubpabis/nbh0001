@@ -506,3 +506,25 @@ function wcbv_variation_is_active( $active, $variation )
 	return $active;
 }
 add_filter( 'woocommerce_variation_is_active', 'wcbv_variation_is_active', 10, 2 );
+
+
+/**
+ * Output the related products.
+ */
+if ( ! function_exists( 'woocommerce_output_related_products' ) ) 
+{
+	function woocommerce_output_related_products() 
+	{
+		global $upsellsused;
+		if($upsellsused == false) { 
+			$args = array(
+				'posts_per_page' => 3,
+				'columns'        => 3,
+				'orderby'        => 'rand', // @codingStandardsIgnoreLine.
+			);
+			woocommerce_related_products( apply_filters( 'woocommerce_output_related_products_args', $args ) );
+		}
+	}
+}
+
+add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
