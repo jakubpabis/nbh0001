@@ -123,7 +123,11 @@ function minusOne($el)
 function selectChange()
 {
 	$(document).on('change', '.select > select', function() {
-		console.log($(this).prop('selectedIndex'));
+		if($(this).prop('selectedIndex') > 0){
+			$(this).prev('label').fadeIn(200);
+		} else {
+			$(this).prev('label').fadeOut(200);
+		}
 	});
 }
 
