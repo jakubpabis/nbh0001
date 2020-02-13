@@ -37,7 +37,7 @@ function wc_form_field_args( $args, $key, $value = null ) {
     );
     /*********************************************************************************************/
 
-// Start field type switch case
+    // Start field type switch case
 
     switch ( $args['type'] ) {
 

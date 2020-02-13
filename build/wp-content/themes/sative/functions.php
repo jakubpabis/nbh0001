@@ -492,3 +492,17 @@ function woo_custom_ajax_variation_threshold( $qty, $product )
     return 500;
 }       
 add_filter( 'woocommerce_ajax_variation_threshold', 'woo_custom_ajax_variation_threshold', 10, 2 );
+
+/**
+ * Disable out of stock variations
+ * https://github.com/woocommerce/woocommerce/blob/826af31e1e3b6e8e5fc3c1004cc517c5c5ec25b1/includes/class-wc-product-variation.php
+ * @return Boolean
+ */
+function wcbv_variation_is_active( $active, $variation ) 
+{
+	if( ! $variation->is_in_stock() ) {
+		return false;
+	}
+	return $active;
+}
+add_filter( 'woocommerce_variation_is_active', 'wcbv_variation_is_active', 10, 2 );
