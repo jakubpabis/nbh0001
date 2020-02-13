@@ -293,57 +293,6 @@ if ( post_password_required() ) {
     </div>
 </section>
 
-<?php if ( isset($related_products) ) : ?>
-    <section class="products__single-related products__list">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <h3 class="text-size-xxxlarge text-upper text-tertiary mb-4">
-                        Obczaj też te fanty!
-                    </h3>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-11 col-12">
-                    <div class="row justify-content-center">
-                        <?php woocommerce_product_loop_start(); ?>
-
-                            <?php foreach ( $related_products as $related_product ) : ?>
-
-                                <?php
-                                    $post_object = get_post( $related_product->get_id() );
-
-                                    setup_postdata( $GLOBALS['post'] =& $post_object );
-
-                                    wc_get_template_part( 'content', 'product' ); ?>
-
-                            <?php endforeach; ?>
-
-                        <?php woocommerce_product_loop_end(); ?>
-                        <div class="col-md-4 col-sm-6 col-10 products__list-item">
-                            <div class="products__list-item-content text-center">
-                                <div class="products__list-item-content-img">
-                                    <img src="assets/img/8-3311_de-19112.jpg" class=" bg-cover" alt="">
-                                </div>
-                                <div class="products__list-item-content-text">
-                                    <h2 class="title text-size-normal text-bold">
-                                        Deska Charge<br/>
-                                        Artcoop Bares
-                                    </h2>
-                                    <span class="price text-size-xlarge">
-                                        169.00 PLN
-                                    </span>
-                                </div>
-                                <a href="product.html" class="whole-element-link"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </div>
-    </section>
-<?php endif; wp_reset_postdata(); ?>
-
 <!-- Modal -->
 <div class="products__single-modal modal fade" id="sliderZoomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
