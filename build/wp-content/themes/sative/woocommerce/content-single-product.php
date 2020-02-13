@@ -62,14 +62,11 @@ if ( post_password_required() ) {
             </div>
             <div class="col-lg-5 col-md-8 products__single-text">
                 <?php
-                    $tags = get_the_terms( get_the_ID(), 'product_tag' );
-                    if($tags[0]) :
+                    $marki = get_the_terms(get_the_ID(), 'marka')[0]; 
+                    if($marki) :
                 ?>
                 <h2 class="text-size-small text-bold text-tertiary text-upper nomargin">
-                    <?php 
-                        $marki = get_the_terms(get_the_ID(), 'marka')[0]; 
-                        echo $marki->name;
-                    ?>
+                    <?= $marki->name; ?>
                 </h2>
                 <?php endif; ?>
                 <h1 class="text-upper mt-1">
