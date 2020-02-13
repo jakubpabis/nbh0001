@@ -94,7 +94,7 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
     </div>
     <?php if($shop): ?>
     <?php
-        $categories = get_terms( ['taxonomy' => 'product_cat'] );
+        $categories = get_terms( ['taxonomy' => 'product_cat', 'parent' => 0] );
         //var_dump($categories);
         global $wp;
         $curr = home_url( $wp->request ).'/';
