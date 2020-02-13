@@ -122,6 +122,9 @@ function minusOne($el)
 
 function selectChange()
 {
+	if($(document).find('.select > select').prop('selectedIndex') > 0){
+		$(document).find('.select > select').prev('label').css({'display' : 'block'});
+	}
 	$(document).on('change', '.select > select', function() {
 		if($(this).prop('selectedIndex') > 0){
 			$(this).prev('label').fadeIn(200);
