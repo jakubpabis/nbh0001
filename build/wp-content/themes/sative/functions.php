@@ -483,3 +483,8 @@ if ( ! function_exists( 'sative_catalog_ordering' ) ) {
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
+add_filter( 'woocommerce_ajax_variation_threshold', 'wc_ninja_ajax_threshold' );
+function wc_ninja_ajax_threshold() {
+	return 300;
+}
