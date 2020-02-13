@@ -48,7 +48,7 @@ if ( post_password_required() ) {
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    <?php if(count($attachment_ids) > 1): ?>
+                    <?php if(count($attachment_ids) >= 1): ?>
                     <ol class="carousel-indicators">
                         <li data-target="#product_carousel" data-slide-to="0" class="active">
                             <img data-src="<?= get_the_post_thumbnail_url('', 'thumbnail') ?>" alt="" class="bg-cover lazy">
