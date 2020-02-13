@@ -229,19 +229,6 @@ function sative_setup() {
 endif;
 add_action( 'after_setup_theme', 'sative_setup' );
 
-
-/**
- * Remove Post from menu
- */
-function post_remove() 
-{ 
-   remove_menu_page('edit.php');
-}
-add_action('admin_menu', 'post_remove'); 
-
-/* Disable WordPress Admin Bar for all users but admins. */
-show_admin_bar(false);
-
 /**
  * 
  * Add WooCommerce support
@@ -255,8 +242,17 @@ function woocommerce_support()
 // Remove all WooCommerce styles and scripts
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-// Remove all WooCommerce styles and scripts
-//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+/**
+ * Remove Post from menu
+ */
+function post_remove() 
+{ 
+   remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'post_remove'); 
+
+/* Disable WordPress Admin Bar for all users but admins. */
+show_admin_bar(false);
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -494,10 +490,14 @@ if ( ! function_exists( 'sative_catalog_ordering' ) ) {
 	}
 }
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+//remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+//remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 
-add_filter( 'woocommerce_ajax_variation_threshold', 'wc_ninja_ajax_threshold' );
-function wc_ninja_ajax_threshold() {
-	return 300;
-}
+/**
+ * Ensure variation combinations are working properly - standard limit is 30
+ */
+function woo_custom_ajax_variation_threshold( $qty, $product ) 
+{
+    return 500;
+}       
+add_filter( 'woocommerce_ajax_variation_threshold', 'woo_custom_ajax_variation_threshold', 10, 2 );
