@@ -106,7 +106,7 @@ function plusOne($el)
 	var $input = $($el).parent().find('input[type="number"]');
 	var maxVal = $input.attr('max');
 	var newVal = parseInt($input.val(), 10) + 1;
-	if(newVal < maxVal) {
+	if(newVal <= maxVal) {
 		$input.val(newVal);
 	}
 }
