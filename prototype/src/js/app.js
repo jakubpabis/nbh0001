@@ -134,6 +134,20 @@ function selectChange()
 	});
 }
 
+function hideQty() 
+{
+	if($(document).find('input[name="quantity"]').attr('max') == 1) {
+		$(document).find('input[name="quantity"]').css({'display' : 'none'});
+	}
+	$(document).on('change', 'input[name="quantity"]', function() {
+		if($(this).attr('max') == 1) {
+			$(this).css({'display' : 'none'});
+		} else {
+			$(this).css({'display' : 'block'});
+		}
+	});
+}
+
 // function zoomImage(el)
 // {
 // 	$('.products__single-modal').find('.modal-body').empty().html('<img src="'+$(el).data("zoom")+'" class="bg-cover"/>');
@@ -169,6 +183,7 @@ $(document).ready(function() {
 		centerZoom();
 	}
 	selectChange();
+	hideQty();
 
 });
 
