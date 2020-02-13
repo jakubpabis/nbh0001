@@ -242,6 +242,19 @@ add_action('admin_menu', 'post_remove');
 /* Disable WordPress Admin Bar for all users but admins. */
 show_admin_bar(false);
 
+/**
+ * 
+ * Add WooCommerce support
+ * 
+ */
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() 
+{
+    add_theme_support( 'woocommerce' );
+}
+// Remove all WooCommerce styles and scripts
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
 // Remove all WooCommerce styles and scripts
 //add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
