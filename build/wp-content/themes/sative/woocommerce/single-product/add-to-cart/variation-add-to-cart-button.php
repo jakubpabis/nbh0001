@@ -16,7 +16,7 @@ global $product;
 
 	<?php
 	do_action( 'woocommerce_before_add_to_cart_quantity' );
-	?><div class="number"><?php
+	?><div class="number" <?= $product->get_max_purchase_quantity() == 1 ? 'style="display:none!important;"' : null ?>><?php
 	woocommerce_quantity_input( array(
 		'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
 		'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
