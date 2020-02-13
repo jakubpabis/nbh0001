@@ -207,6 +207,8 @@
                 position: relative;
                 margin: 10px auto;
                 bottom: auto;
+                display: flex;
+                flex-wrap: wrap;
 
                 li {
                     width: 64px;
