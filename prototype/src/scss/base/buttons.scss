@@ -5,10 +5,15 @@
 	padding: 11px 40px;
 	line-height: 1;
 	border-radius: 0!important;
-	transition: all 300ms ease;
+	transition: all 333ms cubic-bezier(0.65,-0.25,0.25,1.95);
 
 	@media(max-width: 767px) {
 		padding: 7px 24px;
+	}
+
+	&.disabled,
+	&:disabled {
+		cursor: not-allowed;
 	}
 
 	&__normal {
@@ -23,9 +28,17 @@
 		}
 
 		&:hover {
-			border-color: $color-tertiary;
-			background-color: black;
-			color: $color-tertiary!important;
+			//border-color: $color-tertiary;
+			//background-color: black;
+			//color: $color-tertiary!important;
+
+			&.disabled,
+			&:disabled {
+				color: black!important;
+				background-color: $color-tertiary!important;
+				//border-color: black!important;
+			}
+
 		}
 
 	}
@@ -89,18 +102,32 @@
 	&:focus,
 	&:active {
 		text-decoration: none!important;
-		outline: none!important;
+		outline: 0!important;
+		box-shadow: none;
 
 		* {
 			text-decoration: none!important;
-			outline: none!important;
+			outline: 0!important;
+			box-shadow: none;
 		}
 
 	}
 
 	&:hover {
-		transform: translateY(-3px) scale(1.1);
+		//transform: translateY(-5px) scale(1.075);
+		letter-spacing: 0.15rem;
+
+		&.disabled,
+		&:disabled {
+			transform: translateY(0) scale(1);
+			letter-spacing: initial;
+		}
+
 	}
+
+	// &:active {
+	// 	filter: brightness(75%);
+	// }
 
 }
 
