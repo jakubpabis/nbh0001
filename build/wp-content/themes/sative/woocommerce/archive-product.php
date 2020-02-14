@@ -64,9 +64,6 @@ get_header( 'shop' );
 			</div>
 		</div>
 		<div class="row justify-content-center mt-5">
-			<div class="col-12 text-center">
-				<a href="" class="btn btn__full">Ładuj więcej stuff'u!</a>
-			</div>
 			<?php do_action( 'woocommerce_after_shop_loop' ); ?>
 		</div>
 	</div>

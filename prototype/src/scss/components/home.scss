@@ -143,11 +143,11 @@
 
                 &-cont {
                     overflow: hidden;
-                    transition: all 300ms ease;
+                    @extend .trans;
                     box-shadow: 4px 4px 0 0 $color-tertiary;
 
                     img {
-                        transition: all 300ms ease;
+                        @extend .trans;
                     }
 
                     &:hover {
