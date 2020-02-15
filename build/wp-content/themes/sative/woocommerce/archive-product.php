@@ -63,7 +63,7 @@ get_header( 'shop' );
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-center mt-5">
+		<div class="row justify-content-center">
 			<?php do_action( 'woocommerce_after_shop_loop' ); ?>
 		</div>
 	</div>
