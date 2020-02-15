@@ -304,6 +304,27 @@ add_action( 'widgets_init', 'sative_widgets_init' );
 
 
 
+//Remove Gutenberg Block Library CSS from loading on the frontend
+function smartwp_remove_wp_block_library_css()
+{
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+}
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
+
+add_action('wp_enqueue_scripts', function(){
+	if (!is_admin()) {
+		wp_deregister_script('jquery');
+		wp_deregister_script('wp-embed');
+		wp_deregister_script('wp-emoji');
+	}
+});
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
+remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -314,7 +335,7 @@ function sative_scripts() {
 
 	//wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('sative-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '', true );
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '', false );
 	wp_enqueue_script('sative-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array(), '', true );
 	wp_enqueue_script('sative-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '', true );
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/app.js', array(), '', true );
@@ -524,27 +545,6 @@ if ( ! function_exists( 'woocommerce_output_related_products' ) )
 	}
 }
 add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
-
-//Remove Gutenberg Block Library CSS from loading on the frontend
-function smartwp_remove_wp_block_library_css()
-{
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wp-block-library-theme' );
-}
-add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
-
-add_action('wp_enqueue_scripts', function(){
-	if (!is_admin()) {
-		//wp_deregister_script('jquery');
-		wp_deregister_script('wp-embed');
-		wp_deregister_script('wp-emoji');
-	}
-});
-
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 // /**
 //  * @snippet       Display "Quantity: #" @ WooCommerce Single Product Page
