@@ -340,7 +340,7 @@ function jk_dequeue_styles( $enqueue_styles ) {
 }
 
 // Or just remove them all in one line
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 /**
  * Enqueue scripts and styles.
  */
