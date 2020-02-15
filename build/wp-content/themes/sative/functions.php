@@ -528,22 +528,17 @@ add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
 //Remove Gutenberg Block Library CSS from loading on the frontend
 function smartwp_remove_wp_block_library_css()
 {
-wp_dequeue_style( 'wp-block-library' );
-wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
 }
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
 
 add_action('wp_enqueue_scripts', function() {
 	if (is_admin()) return; // don't dequeue on the backend
-	wp_deregister_script('jquery');
+	//wp_deregister_script('jquery');
 	wp_deregister_script('wp-embed');
 	wp_deregister_script('wp-emoji');
 });
-
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 // /**
 //  * @snippet       Display "Quantity: #" @ WooCommerce Single Product Page
