@@ -332,8 +332,8 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
 function jk_dequeue_styles( $enqueue_styles ) {
 	if (!is_admin()) {
-		//unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-		unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+		unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+		//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
 		//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
 		return $enqueue_styles;
 	}
@@ -352,6 +352,7 @@ function sative_scripts() {
 
 	//wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
 
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '', true );
 	wp_enqueue_script('sative-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array(), '', true );
 	wp_enqueue_script('sative-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '', true );
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/app.js', array(), '', true );
