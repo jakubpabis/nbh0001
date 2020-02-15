@@ -122,6 +122,8 @@
         }
 
         &-filter {
+            display: flex;
+            justify-content: flex-end;
 
             form {
                 position: relative;

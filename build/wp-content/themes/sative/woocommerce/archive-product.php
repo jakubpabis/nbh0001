@@ -33,8 +33,8 @@ get_header( 'shop' );
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12">
-				<div class="row products__list-top justify-content-center align-items-start">
-					<div class="col-xl-6 col-md-7 col-sm-6 products__list-title">
+				<div class="row products__list-top justify-content-between align-items-start">
+					<div class="col-xl-8 col-md-7 col-sm-6 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 						<h1><?php woocommerce_page_title(); ?></h1>
 					<?php endif; ?>

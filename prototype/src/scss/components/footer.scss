@@ -36,19 +36,17 @@
                 margin-top: 30px;
             }
 
-            @media(max-width: 400px) {
+            @media(max-width: 420px) {
                 text-align: center;
             }
 
             .line {
                 display: flex;
                 flex-wrap: nowrap;
-                justify-content: space-between;
                 align-items: center;
 
-                @media(max-width: 400px) {
+                @media(max-width: 420px) {
                     flex-wrap: wrap;
-                    justify-content: flex-start;
                 }
 
             }
@@ -56,10 +54,10 @@
             .check {
                 margin-top: 12px;
 
-                @media(max-width: 400px) {
+                @media(max-width: 420px) {
                     display: inline-block;
                     width: auto;
-                    max-width: 225px;
+                    max-width: 240px;
                     margin-right: 0;
                 }
 
@@ -104,7 +102,7 @@
             input[type="email"] {
                 appearance: none;
                 width: 100%;
-                max-width: 60%;
+                max-width: 53%;
                 border: 3px solid white;
                 font-size: 16px;
                 color: $color-tertiary!important;
@@ -115,36 +113,33 @@
                 outline: none!important;
 
                 @media(max-width: 991px) {
-                    max-width: 62%;
+                    max-width: 56%;
                 }
 
                 @media(max-width: 767px) {
-                    max-width: 59%;
+                    max-width: 54%;
                     border: 2px solid white;
                     height: 40px;
                 }
 
                 @media(max-width: 575px) {
-                    max-width: 66%;
+                    max-width: 59%;
                 }
 
                 @media(max-width: 510px) {
-                    max-width: 63%;
-                }
-
-                @media(max-width: 480px) {
-                    max-width: 60%;
-                }
-
-                @media(max-width: 440px) {
-                    max-width: 58%;
-                }
-
-                @media(max-width: 420px) {
                     max-width: 56%;
                 }
 
-                @media(max-width: 400px) {
+                @media(max-width: 480px) {
+                    max-width: 52%;
+                }
+
+                @media(max-width: 440px) {
+                    max-width: 49%;
+                    padding: 0 15px;
+                }
+
+                @media(max-width: 420px) {
                     max-width: 100%;
                     text-align: center;
                 }
@@ -158,16 +153,17 @@
             .btn {
                 padding: 10px 20px 9px;
                 font-size: 17px;
-                transform-origin: center left;
+                transform: translateX(15px);
 
-                @media(max-width: 400px) {
+                @media(max-width: 420px) {
                     margin-top: 10px;
+                    transform: translateX(0);
                 }
 
                 &.mobile {
                     display: none;
 
-                    @media(max-width: 400px) {
+                    @media(max-width: 420px) {
                         display: inline-block;
                     }
 
@@ -175,7 +171,7 @@
 
                 &.desktop {
 
-                    @media(max-width: 400px) {
+                    @media(max-width: 420px) {
                         display: none;
                     }
 
