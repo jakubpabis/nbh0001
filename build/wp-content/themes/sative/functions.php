@@ -533,12 +533,12 @@ wp_dequeue_style( 'wp-block-library-theme' );
 }
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
 
-if (!is_admin()) add_action('wp_enqueue_scripts', 'my_jquery_enqueue', 11);
-function my_jquery_enqueue() 
-{
-   wp_deregister_script('jquery');
-   wp_deregister_script('wp-embed');
-}
+add_action('wp_enqueue_scripts', function() {
+	if (is_admin()) return; // don't dequeue on the backend
+	wp_deregister_script('jquery');
+	wp_deregister_script('wp-embed');
+	wp_deregister_script('wp-emoji');
+});
 
 // /**
 //  * @snippet       Display "Quantity: #" @ WooCommerce Single Product Page
