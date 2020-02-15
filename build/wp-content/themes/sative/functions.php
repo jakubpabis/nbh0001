@@ -326,22 +326,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /**
- * Set WooCommerce image dimensions upon theme activation
- */
-// Remove each style one by one
-add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
-function jk_dequeue_styles( $enqueue_styles ) {
-	if (!is_admin()) {
-		unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-		//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-		//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
-		return $enqueue_styles;
-	}
-}
-
-// Or just remove them all in one line
-//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
-/**
  * Enqueue scripts and styles.
  */
 function sative_scripts() {
@@ -349,8 +333,6 @@ function sative_scripts() {
 	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
 	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css?family=Barlow:400,500,600,700&display=swap&subset=latin-ext' );
 	wp_enqueue_style( 'sative-prettycheckbox', 'https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css' );
-
-	//wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
 
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '', true );
 	wp_enqueue_script('sative-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array(), '', true );
