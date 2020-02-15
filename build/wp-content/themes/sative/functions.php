@@ -309,7 +309,8 @@ add_action( 'widgets_init', 'sative_widgets_init' );
  */
 function sative_scripts() {
 	// load bootstrap css
-    //wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
+	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
+	wp_enqueue_style( 'sative-prettycheckbox', 'https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css' );
 
 	//wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
 
