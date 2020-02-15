@@ -17,10 +17,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,500,500i,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,500,500i,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet">
-    </noscript>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" media="none" onload="if(media!='all')media='all'">
     <noscript>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">

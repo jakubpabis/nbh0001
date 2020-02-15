@@ -331,6 +331,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 function sative_scripts() {
 	// load bootstrap css
 	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
+	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css?family=Barlow:400,500,600,700&display=swap&subset=latin-ext' );
 	wp_enqueue_style( 'sative-prettycheckbox', 'https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css' );
 
 	//wp_enqueue_style( 'sative-style', get_stylesheet_uri() );
