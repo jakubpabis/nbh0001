@@ -245,6 +245,11 @@
                             color: $color-tertiary!important;
                         }
 
+                        &:active {
+                            background-color: transparent!important;
+                            color: $color-yellow2!important;
+                        }
+
                     }
 
                     &.all-link {
