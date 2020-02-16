@@ -1,21 +1,5 @@
-.main-navigation.shop_page + .breadcrumbs {
-    margin-top: 40px;
-
-    @media(max-width: 1199px) {
-        margin-top: 28px;
-    }
-
-    @media(max-width: 991px) {
-        margin-top: 20px;
-    }
-
-    @media(max-width: 767px) {
-        margin-top: 0;
-    }
-
-}
-
 .breadcrumbs {
+    margin-top: 25px;
     padding: 30px 0;
 
     @media(max-width: 767px) {

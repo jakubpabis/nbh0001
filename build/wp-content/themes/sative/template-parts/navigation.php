@@ -1,32 +1,10 @@
-<?php
-if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() || is_product_tag() ) {
-    $shop = true;
-} else {
-    $shop = false;
-}
-?>
-<nav role="navigation" class="main-navigation <?= $shop == true ? 'shop_page' : null ?>">
+<nav role="navigation" class="main-navigation">
 	<div class="container">
-		<div class="row justify-content-between align-items-center">
+		<div class="row main-navigation__upper justify-content-between align-items-center">
 			<div class="col-auto logo">
                 <a href="<?php echo esc_url( home_url( '/' )); ?>">
                     <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                 </a>
-            </div>
-            <div class="col-auto text-center main-menu-container">
-                <?php
-                    wp_nav_menu(array(
-                        'theme_location'    => 'primary',
-                        'container'       => '',
-                        'container_id'    => '',
-                        'container_class' => '',
-                        'menu_id'         => false,
-                        'menu_class'      => 'main-menu',
-                        'depth'           => 2,
-                        'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                        'walker'          => new wp_bootstrap_navwalker()
-                    ));
-                ?>
             </div>
             <div class="col-auto text-right side-menu-container d-md-block d-none">
 				<ul class="side-menu">
@@ -42,7 +20,10 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
                     <?php endif; ?>
 					</li>
 					<li>
-						<a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal">
+                        <div class="main-navigation__search">
+                            <?php echo do_shortcode('[wcas-search-form]'); ?>
+                        </div>
+						<a href="javascript:void(0)" class="searchOpen">
 							<i class="fas fa-search"></i>
 						</a>
 					</li>
@@ -52,6 +33,30 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
 						</a>
 					</li>
 				</ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center main-menu-container">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                <?php
+                    wp_nav_menu(array(
+                        'theme_location'    => 'primary',
+                        'container'       => '',
+                        'container_id'    => '',
+                        'container_class' => '',
+                        'menu_id'         => false,
+                        'menu_class'      => 'main-menu',
+                        'depth'           => 2,
+                        'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                        'walker'          => new wp_bootstrap_navwalker()
+                    ));
+                ?>
+                </div>
+                <?php /*<div class="col-auto main-navigation__search">
+                    <?php echo do_shortcode('[wcas-search-form]'); ?>
+                </div> */ ?>
             </div>
         </div>
     </div>
@@ -92,7 +97,7 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
             </div>
         </div>
     </div>
-    <?php if($shop): ?>
+    <?php /* if($shop): ?>
     <?php
         $categories = get_terms( ['taxonomy' => 'product_cat', 'parent' => 0] );
         //var_dump($categories);
@@ -116,5 +121,5 @@ if( is_shop() || is_product() || is_product_category() || is_product_taxonomy() 
                 </div>
             </div>
         </div>
-    <?php endif; ?>
+    <?php endif; */ ?>
 </nav>

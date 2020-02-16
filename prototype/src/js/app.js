@@ -182,6 +182,15 @@ function centerZoom()
 	});
 }
 
+function searchOpen()
+{
+	$('.searchOpen').on('click', function(e) {
+		e.preventDefault();
+		$(this).css({'display' : 'none'});
+		$('.main-navigation__search').fadeIn(200).find('input.dgwt-wcas-search-input').focus();
+	});
+}
+
 $(document).ready(function() {
 
 	if($('.products__single-modal')) {
@@ -189,6 +198,7 @@ $(document).ready(function() {
 	}
 	selectChange();
 	hideQty();
+	searchOpen();
 
 });
 
