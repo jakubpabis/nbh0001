@@ -135,6 +135,7 @@
 		<div class="fb-customerchat"
 		attribution=setup_tool
 		page_id="436289680462922"
+		theme_color="#F5A623"
 		logged_in_greeting="Siemanko! Potrzebujesz pomocy Ziomuś? Pisz co jest grane..."
 		logged_out_greeting="Siemanko! Potrzebujesz pomocy Ziomuś? Pisz co jest grane...">
 	</div>
