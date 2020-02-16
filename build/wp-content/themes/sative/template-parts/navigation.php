@@ -6,7 +6,18 @@
                     <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                 </a>
             </div>
-            <div class="col-auto text-right side-menu-container d-md-block d-none">
+            <div class="col-auto text-right side-menu-container d-md-flex d-none">
+                <ul class="social-menu">
+                    <li>
+                        <a href="https://www.facebook.com/Neighbourhood-Skateshop-436289680462922/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/nbhdskate.pl/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
 				<ul class="side-menu">
 					<li>
                     <?php if ( is_user_logged_in() ) : ?>
@@ -54,9 +65,6 @@
                     ));
                 ?>
                 </div>
-                <?php /*<div class="col-auto main-navigation__search">
-                    <?php echo do_shortcode('[wcas-search-form]'); ?>
-                </div> */ ?>
             </div>
         </div>
     </div>
@@ -97,29 +105,4 @@
             </div>
         </div>
     </div>
-    <?php /* if($shop): ?>
-    <?php
-        $categories = get_terms( ['taxonomy' => 'product_cat', 'parent' => 0] );
-        //var_dump($categories);
-        global $wp;
-        $curr = home_url( $wp->request ).'/';
-    ?>
-        <div class="shop-navigation d-md-block d-none">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-auto">
-                        <ul class="shop-menu">
-                            <?php foreach($categories as $cat) : ?>
-                            <li <?= get_term_link( $cat->term_id, 'product_cat' ) == $curr ? 'class="active"' : null ?>>
-                                <a href="<?= get_term_link( $cat->term_id, 'product_cat' ); ?>">
-                                    <?= $cat->name; ?>
-                                </a>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php endif; */ ?>
 </nav>

@@ -293,6 +293,83 @@
 
     }
 
+    .side-menu-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    ul.social-menu {
+        padding: 0;
+        margin: 0 35px 0 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        @media(max-width: 1199px) {
+            margin: 0 25px 0 0;
+        }
+
+        @media(max-width: 991px) {
+            margin: 0 20px 0 0;
+        }
+
+        > li {
+            padding: 0;
+
+            > a {
+                white-space: nowrap;
+                line-height: 1;
+                vertical-align: middle;
+                padding: 10px;
+
+                @media(max-width: 1199px) {
+                    padding: 8px;
+                }
+
+                @media(max-width: 991px) {
+                    padding: 6px;
+                }
+
+                @media(max-width: 767px) {
+                    color: $color-grey3!important;
+                }
+
+                i {
+                    color: black;
+                    font-size: 22px;
+
+                    @media(max-width: 767px) {
+                        color: white!important;
+                    }
+
+                    @media(max-width: 1199px) {
+                        font-size: 20px;
+                    }
+
+                    @media(max-width: 991px) {
+                        font-size: 18px;
+                    }
+
+                }
+
+                &:hover {
+                    
+                    i {
+                        color: $color-tertiary;
+                    }
+
+                }
+
+            }
+                
+        }
+
+    }
+
     ul.side-menu {
         padding: 0;
         margin: 0 -10px 0 0;
@@ -350,6 +427,14 @@
 
                     @media(max-width: 991px) {
                         font-size: 18px;
+                    }
+
+                }
+
+                &:hover {
+                    
+                    i {
+                        color: $color-tertiary!important;
                     }
 
                 }
