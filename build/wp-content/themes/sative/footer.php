@@ -123,7 +123,6 @@
 		logged_in_greeting="Siemanko! Potrzebujesz pomocy Ziomuś? Pisz co jest grane..."
 		logged_out_greeting="Siemanko! Potrzebujesz pomocy Ziomuś? Pisz co jest grane...">
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<?php wp_footer(); ?>
 </body>
 </html>
