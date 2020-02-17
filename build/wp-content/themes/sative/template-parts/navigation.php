@@ -15,7 +15,7 @@
                         <a href="https://www.instagram.com/nbhdskate.pl/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/channel/UCQAnw7wS8peE9UFIjT3EF2Q" target="_blank"><i class="fab fa-youtube"></i></a>
                     </li>
                 </ul>
 				<ul class="side-menu">

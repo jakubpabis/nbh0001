@@ -101,7 +101,7 @@
 								<h3>Social media:</h3>
 								<a href="https://www.facebook.com/Neighbourhood-Skateshop-436289680462922/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 								<a href="https://www.instagram.com/nbhdskate.pl/" target="_blank"><i class="fab fa-instagram"></i></a>
-								<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+								<a href="https://www.youtube.com/channel/UCQAnw7wS8peE9UFIjT3EF2Q" target="_blank"><i class="fab fa-youtube"></i></a>
 							</div>
 							<div class="col-lg-auto col-md-8 col-12 text-right text-bold text-size-small">
 								<span>Copyright &copy; <?php echo date('Y'); ?> NBHDSKATE</span>
