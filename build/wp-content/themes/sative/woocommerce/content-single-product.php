@@ -96,18 +96,38 @@ if ( post_password_required() ) {
             <div class="row justify-content-center">
                 <div class="col-md-10 col-12">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <?php if ($product->has_attributes() || $product->has_dimensions() || $product->has_weight()) {
+                            $notactiveT = false;
+                        } else {
+                            $notactiveT = true;
+                        }
+                        ?>
+                        <?php if(the_content()){
+                            $notactiveC = false;
+                        } else {
+                            $notactiveC = true;
+                        } 
+                        ?>
+                        <?php if($notactiveC == false): ?>
                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Opis stuff'u</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Technikalia</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Opinie mordeczek</a>
+                        <?php endif; ?>
+                        <?php if ($notactiveT == false): ?>
+                        <a class="nav-item nav-link <?= $notactiveC ? 'active' : null; ?>" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Technikalia</a>
+                        <?php endif; ?>
+                        <a class="nav-item nav-link <?= $notactiveC && $notactiveT ? 'active' : null; ?>" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Opinie mordeczek</a>
                     </div>
                     <div class="tab-content" id="nav-tabContent">
+                        <?php if($notactiveC == false): ?>
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <?php the_content(); ?>
                         </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <?php endif; ?>
+                        <?php if($notactiveT == false): ?>
+                        <div class="tab-pane fade <?= $notactiveC ? 'show active' : null; ?>" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
                         </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <?php endif; ?>
+                        <div class="tab-pane fade <?= $notactiveC && $notactiveT ? 'show active' : null; ?>" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                             <div id="reviews" class="woocommerce-Reviews">
                                 <div id="comments">
                                     <h2 class="woocommerce-Reviews-title">
@@ -290,6 +310,8 @@ if ( post_password_required() ) {
         </div>
     </div>
 </section>
+
+<?php woocommerce_output_related_products(); ?>
 
 <!-- Modal -->
 <div class="products__single-modal modal fade" id="sliderZoomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

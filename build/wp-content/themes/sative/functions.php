@@ -543,6 +543,7 @@ if ( ! function_exists( 'woocommerce_output_related_products' ) )
 		}
 	}
 }
+
 add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
 
 // /**
