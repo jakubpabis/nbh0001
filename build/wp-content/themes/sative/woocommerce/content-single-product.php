@@ -96,17 +96,18 @@ if ( post_password_required() ) {
             <div class="row justify-content-center">
                 <div class="col-md-10 col-12">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <?php if ($product->has_attributes() || $product->has_dimensions() || $product->has_weight()) {
-                            $notactiveT = false;
-                        } else {
-                            $notactiveT = true;
-                        }
-                        ?>
-                        <?php if(the_content()){
-                            $notactiveC = false;
-                        } else {
-                            $notactiveC = true;
-                        } 
+                        <?php 
+                            if(get_the_content()){
+                                $notactiveC = false;
+                            } else {
+                                $notactiveC = true;
+                            } 
+
+                            if ($product->has_attributes() || $product->has_dimensions() || $product->has_weight()) {
+                                $notactiveT = false;
+                            } else {
+                                $notactiveT = true;
+                            }
                         ?>
                         <?php if($notactiveC == false): ?>
                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Opis stuff'u</a>
