@@ -240,49 +240,45 @@ if ( post_password_required() ) {
                             <h4 class="text-upper title">Udostępniaj to ziom:</h4>
                         </div>
                         <div class="col-auto">
+                            <?php
+                                global $wp;
+                                $sh_url = home_url( add_query_arg( array(), $wp->request ) );
+                                $sh_title = get_the_title();
+                                $sh_img = get_the_post_thumbnail_url('', 'size640');
+                            ?>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.facebook.com/sharer.php?u=<?= $sh_url; ?>" target="_blank">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="" target="_blank">
                                         <i class="fab fa-facebook-messenger"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <i class="fab fa-snapchat-ghost"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
+                                    <a href="whatsapp://send?text=Obczaj%20to:%20<?= $sh_url; ?>" target="_blank">
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
+                                    <a href="https://twitter.com/share?url=<?= $sh_url; ?>&text=<?= $sh_title; ?>&hashtags=nbhdskate" target="_blank">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://pinterest.com/pin/create/bookmarklet/?media=<?= $sh_img; ?>&url=<?= $sh_url; ?>&description=<?= $sh_title; ?>" target="_blank">
                                         <i class="fab fa-pinterest-p"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="http://www.linkedin.com/shareArticle?url=<?= $sh_url; ?>&title=<?= $sh_title; ?>" target="_blank">
                                         <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="mailto:?subject=Obczaj to ziom!&body=<?= $sh_url; ?>" target="_blank">
                                         <i class="fas fa-at"></i>
                                     </a>
                                 </li>
@@ -313,21 +309,5 @@ if ( post_password_required() ) {
         </div>
     </div>
 </div>
-
-
-<?php
-//do_action( 'woocommerce_before_single_product_summary' );
-//do_action( 'woocommerce_single_product_summary' );
-/*
- * Hook: woocommerce_after_single_product_summary.
- *
- * @hooked woocommerce_output_product_data_tabs - 10
- * @hooked woocommerce_upsell_display - 15
- * @hooked woocommerce_output_related_products - 2
- */
- 
-//do_action( 'woocommerce_after_single_product_summary' ); 
-?>
-
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
