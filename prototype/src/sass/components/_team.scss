@@ -1,0 +1,34 @@
+.team {
+
+    &__people {
+
+        &-person {
+
+            .person-img {
+                padding: 15px 0;
+                overflow: hidden;
+                width: 100%;
+                padding-bottom: 100%;
+                position: relative;
+
+                img,
+                picture {
+                    min-height: 250px;
+                    @extend .trans;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @media(max-width: 991px) {
+                        min-height: 200px;
+                    }
+
+                }
+                
+            }
+
+        }
+
+    }
+
+}
