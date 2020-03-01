@@ -3361,6 +3361,10 @@ h5,
 	padding-left: 15px;
 }
 
+.team__people {
+	margin: 10px 0 60px;
+}
+
 .footer__upper .newsletter {
 	margin-top: 30px;
 }
