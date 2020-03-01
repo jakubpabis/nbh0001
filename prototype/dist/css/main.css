@@ -1252,9 +1252,25 @@ input[type=number] {
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 1;
+	position: relative;
 	vertical-align: middle;
 	white-space: nowrap;
 	color: #656565 !important;
+}
+
+.main-navigation ul.side-menu > li > a.cartOpen span {
+	font-size: 13px;
+	line-height: 20px;
+	position: absolute;
+	z-index: 9;
+	top: -18px;
+	right: -10px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	color: black;
+	border-radius: 20px;
+	background-color: #f5a623;
 }
 
 .main-navigation ul.side-menu > li > a i {

@@ -39,8 +39,12 @@
 						</a>
 					</li>
 					<li>
-						<a href="<?= wc_get_cart_url(); ?>" class="cartOpen">
-							<i class="fas fa-shopping-cart"></i>
+                        <a href="<?= wc_get_cart_url(); ?>" class="cartOpen">
+                            <?php global $woocommerce; ?>
+                            <?php if($woocommerce->cart->cart_contents_count > 0): ?>
+                            <span><?= $woocommerce->cart->cart_contents_count; ?></span>
+                            <?php endif; ?>
+                            <i class="fas fa-shopping-cart"></i>
 						</a>
 					</li>
 				</ul>

@@ -404,6 +404,7 @@
                 white-space: nowrap;
                 line-height: 1;
                 vertical-align: middle;
+                position: relative;
 
                 @media(max-width: 1199px) {
                     font-size: 13px;
@@ -411,6 +412,25 @@
 
                 @media(max-width: 767px) {
                     color: $color-grey3!important;
+                }
+
+                &.cartOpen {
+
+                    span {
+                        position: absolute;
+                        top: -18px;
+                        right: -10px;
+                        background-color: $color-tertiary;
+                        color: black;
+                        z-index: 9;
+                        text-align: center;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 13px;
+                        line-height: 20px;
+                        border-radius: 20px;
+                    }
+
                 }
 
                 i {
