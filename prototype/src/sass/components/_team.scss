@@ -35,8 +35,10 @@
             .person-text {
 
                 h2 {
-                    padding: 3px 8px;
-                    background-color: $color-tertiary;
+                    padding: 3px 10px;
+                    background-color: $color-gold;
+                    display: inline-block;
+                    transform: translateY(-100%);
                 }
 
             }
