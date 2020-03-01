@@ -45,7 +45,7 @@ $terms = get_terms( array(
         <?php 
             $size = $image['sizes']['medium_large'];
             $alt = $image['alt'];
-            $title = get_field('title', 'marka_'.$term->term_id);
+            $title = get_field('title', 'marka_'.$term->term_id) ? get_field('title', 'marka_'.$term->term_id) : $term->name;
             $text = $term->description;
             $link = get_term_link($term, 'marka');
         ?>
