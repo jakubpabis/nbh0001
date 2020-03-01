@@ -2575,11 +2575,6 @@ article.page,
 	margin: 30px 0 100px;
 }
 
-.team__people-person {
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-
 .team__people-person .person-img {
 	position: relative;
 	overflow: hidden;
