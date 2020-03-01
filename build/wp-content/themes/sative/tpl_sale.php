@@ -6,12 +6,13 @@
 get_header('shop'); 
 
 $query_args = array(
-    'posts_per_page'    => 1,
-    'no_found_rows'     => 1,
+    'posts_per_page'    => 6,
+    'no_found_rows'     => 0,
     'post_status'       => 'publish',
     'post_type'         => 'product',
     'meta_query'        => WC()->query->get_meta_query(),
-    'post__in'          => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
+	'post__in'          => array_merge( array( 0 ), wc_get_product_ids_on_sale() ),
+	'paged' 			=> get_query_var('paged') ? get_query_var('paged') : 1
 );
 $products = new WP_Query( $query_args ); ?>
 
@@ -73,7 +74,17 @@ $products = new WP_Query( $query_args ); ?>
 			</div>
 		</div>
 		<div class="row justify-content-center">
-			<?php do_action( 'woocommerce_after_shop_loop' ); ?>
+			<nav class="woocommerce-pagination">
+			<?php 
+			$big = 999999999; // need an unlikely integer
+			echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $products->max_num_pages
+			) ); 
+			?>
+			</nav>
 		</div>
 	</div>
 </section>
