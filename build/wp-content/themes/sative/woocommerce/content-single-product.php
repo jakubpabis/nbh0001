@@ -35,6 +35,11 @@ if ( post_password_required() ) {
 
 <section class="products__single" id="product-<?php the_ID(); ?>">
 	<div class="container">
+        <?php if( $product->is_on_sale() ) : ?>
+            <h4 class="text-size-xxxxlarge onsale">
+                On Sale!
+            </h4>
+        <?php endif; ?>
 		<div class="row justify-content-center align-items-center">
 			<div class="col-lg-7 col-md-10">
                 <div id="product_carousel" class="products__single-slider carousel slide" data-ride="carousel">
@@ -74,9 +79,16 @@ if ( post_password_required() ) {
                 <h1 class="text-upper mt-1">
                     <?= get_the_title(); ?>
                 </h1>
+                <?php if( $product->is_on_sale() ) : ?>
+                <h3 class="price text-size-xxxlarge" style="color: red;">
+                    <small><?= wc_price($product->get_regular_price()); ?></small>
+                    <?= wc_price(get_post_meta( get_the_ID(), '_price', true )); ?>
+                </h3>
+                <?php else: ?>
                 <h3 class="price text-grey3 text-size-xxxlarge">
                     <?= wc_price(get_post_meta( get_the_ID(), '_price', true )); ?>
                 </h3>
+                <?php endif; ?>
                 <?= wc_get_stock_html( $product ); ?>
                 <div class="addtocart">
                     <?php woocommerce_template_single_add_to_cart(); ?>
