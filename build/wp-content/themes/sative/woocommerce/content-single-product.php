@@ -93,6 +93,7 @@ if ( post_password_required() ) {
                 <div class="addtocart">
                     <?php woocommerce_template_single_add_to_cart(); ?>
                 </div>
+                <?php if($product->is_in_stock()): ?>
                 <div class="shipping">
                     <i class="fas fa-shipping-fast text-size-xxxlarge"></i>
                     <span class="text-size-normal text-bold">
@@ -100,6 +101,7 @@ if ( post_password_required() ) {
                         <strong>24h</strong> i towar jest u Ciebie! *
                     </span>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
     </div> 
