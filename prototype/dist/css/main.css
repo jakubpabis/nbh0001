@@ -34,7 +34,8 @@
 .cards__item-img img,
 .cards__item-img-cont,
 .team__people-person .person-img img,
-.team__people-person .person-img picture {
+.team__people-person .person-img picture,
+.team__people-person .socials {
 	transition: all 300ms cubic-bezier(.77, 0, .175, 1);
 }
 
@@ -2575,6 +2576,10 @@ article.page,
 	margin: 30px 0 100px;
 }
 
+.team__people-person {
+	overflow: hidden;
+}
+
 .team__people-person .person-img {
 	position: relative;
 	overflow: hidden;
@@ -2594,14 +2599,16 @@ article.page,
 
 .team__people-person .socials {
 	position: absolute;
-	top: 10px;
+	top: 60px;
 	left: 15px;
+	transform: translateX(-100%);
 }
 
 .team__people-person .socials a {
-	line-height: 36px;
-	width: 36px;
-	height: 36px;
+	line-height: 40px;
+	display: block;
+	width: 40px;
+	height: 40px;
 	margin-top: 5px;
 	text-align: center;
 	color: black;
@@ -2609,7 +2616,8 @@ article.page,
 }
 
 .team__people-person .socials a i {
-	font-size: 24px;
+	font-size: 25px;
+	line-height: 40px;
 }
 
 .team__people-person .person-text h2 {
@@ -2622,6 +2630,10 @@ article.page,
 .team__people-person:hover .person-img > * {
 	transform: translateY(-50%) scale(1.5) rotate(10deg);
 	opacity: .75;
+}
+
+.team__people-person:hover .socials {
+	transform: translateX(0);
 }
 
 .footer {

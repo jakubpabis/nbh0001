@@ -44,18 +44,18 @@ get_header(); ?>
             <div class="col-lg-4 team__people-person">
                 <div class="person-img">
                     <img src="<?= get_sub_field('img')['url']; ?>" alt="" class="bg-cover">
-                </div>
-                <div class="socials">
-                    <?php if(get_sub_field('fb')): ?>
-                        <a href="<?= get_sub_field('fb'); ?>" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    <?php endif; ?>
-                    <?php if(get_sub_field('insta')): ?>
-                        <a href="<?= get_sub_field('insta'); ?>" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    <?php endif; ?>
+                    <div class="socials">
+                        <?php if(get_sub_field('fb')): ?>
+                            <a href="<?= get_sub_field('fb'); ?>" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        <?php endif; ?>
+                        <?php if(get_sub_field('insta')): ?>
+                            <a href="<?= get_sub_field('insta'); ?>" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <div class="person-text">
                     <h2>
