@@ -26,8 +26,8 @@ get_header(); ?>
 
 <header class="team__header">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-auto text-center">
+        <div class="row">
+            <div class="col-lg-7">
                 <h1>
                     <?= get_field('team-title'); ?>
                 </h1>
@@ -39,11 +39,19 @@ get_header(); ?>
 <?php if(have_rows('people')) : ?>
 <section class="team__people">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
             <?php while(have_rows('people')) : the_row(); ?>
             <div class="col-lg-4 team__people-person">
                 <div class="person-img">
                     <img src="<?= get_sub_field('img')['url']; ?>" alt="" class="bg-cover">
+                </div>
+                <div class="person-text">
+                    <h2>
+                        <?= get_sub_field('name'); ?>
+                    </h2>
+                    <div class="socials">
+                        
+                    </div>
                 </div>
             </div>
             <?php endwhile; ?>
