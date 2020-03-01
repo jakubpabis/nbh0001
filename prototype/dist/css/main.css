@@ -2592,6 +2592,26 @@ article.page,
 	transform: translateY(-50%);
 }
 
+.team__people-person .socials {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+}
+
+.team__people-person .socials a {
+	line-height: 36px;
+	width: 36px;
+	height: 36px;
+	margin-top: 5px;
+	text-align: center;
+	color: black;
+	background-color: #fb0;
+}
+
+.team__people-person .socials a i {
+	font-size: 24px;
+}
+
 .team__people-person .person-text h2 {
 	display: inline-block;
 	padding: 3px 10px;

@@ -33,6 +33,28 @@
 
             }
 
+            .socials {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+
+                a {
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px;
+                    color: black;
+                    background-color: $color-gold;
+                    text-align: center;
+                    margin-top: 5px;
+
+                    i {
+                        font-size: 24px;
+                    }
+
+                }
+                
+            }
+
             .person-text {
 
                 h2 {
