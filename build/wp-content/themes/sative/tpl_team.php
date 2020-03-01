@@ -11,7 +11,6 @@ get_header(); ?>
             <div class="col-auto text-center">
                 <h1>
                     <?= get_field('team-title'); ?>
-                    Poznaj ziomeczków z naszego team'u!
                 </h1>
             </div>
         </div>
@@ -25,7 +24,7 @@ get_header(); ?>
             <?php while(have_rows('people')) : the_row(); ?>
             <div class="col-lg-4 team__people-person">
                 <div class="person-img">
-                    <img src="<?= get_sub_field('img'); ?>" alt="" class="bg-cover">
+                    <img src="<?= get_sub_field('img')['url']; ?>" alt="" class="bg-cover">
                 </div>
             </div>
             <?php endwhile; ?>
