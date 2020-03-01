@@ -109,7 +109,7 @@
 
         @media(max-width: 767px) {
             position: fixed;
-            top: 90px;
+            top: 110px;
             left: 0;
             transform: translateX(-120%);
             background-color: black;
@@ -142,11 +142,13 @@
 
         @media(max-width: 767px) {
             flex-wrap: wrap;
+            margin-top: 10px;
         }
 
         > li {
             padding: 0 20px;
             line-height: 1;
+            position: relative;
 
             @media(max-width: 1199px) {
                 padding: 0 15px;
@@ -160,7 +162,7 @@
                 display: block;
                 width: 100%;
                 text-align: left;
-                padding: 7px 0;
+                padding: 0;
             }
 
             &.color-red {
@@ -178,6 +180,12 @@
                     border-bottom-width: 6px;
                     padding-top: 12px;
                     padding-bottom: 10px;
+
+                    @media(max-width: 767px) {
+                        border: none;
+                        padding: 14px 0;
+                    }
+
                 }
 
             }
@@ -201,7 +209,7 @@
 
                 @media(max-width: 767px) {
                     color: white;
-                    font-size: 22px;
+                    font-size: 21px;
                 }
 
                 &:hover {
@@ -209,6 +217,12 @@
                     border-bottom-width: 6px;
                     padding-top: 12px;
                     padding-bottom: 10px;
+
+                    @media(max-width: 767px) {
+                        border: none;
+                        padding: 14px 0;
+                    }
+
                 }
 
                 &.dropdown-toggle {
@@ -229,6 +243,20 @@
                 background-color: $color-grey1;
                 border: 3px solid black;
                 z-index: 9999;
+
+                @media(max-width: 767px) {
+                    position: relative!important;
+                    transform: none!important;
+                    top: auto!important;
+                    left: auto!important;
+                    min-width: 100%!important;
+                    width: 240px!important;
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    border: none!important;
+                    background-color: #333;
+                    color: white;
+                }
                 
                 li {
                     padding: 0;
@@ -241,13 +269,28 @@
                         border-bottom: none;
                         color: black!important;
 
+                        @media(max-width: 767px) {
+                            color: white!important;
+                        }
+
                         &:hover {
                             color: $color-tertiary!important;
+
+                            @media(max-width: 767px) {
+                                color: white!important;
+                                background-color: transparent!important;
+                            }
+
                         }
 
                         &:active {
                             background-color: transparent!important;
                             color: $color-yellow2!important;
+
+                            @media(max-width: 767px) {
+                                color: white!important;
+                            }
+
                         }
 
                     }
@@ -273,9 +316,10 @@
                     padding-top: 12px;
                     padding-bottom: 10px;
 
-                    // @media(max-width: 991px) {
-                    //     //border-bottom: 2px solid $color-tertiary;
-                    // }
+                    @media(max-width: 767px) {
+                        border: none;
+                        padding: 14px 0;
+                    }
 
                 }
 
@@ -471,7 +515,6 @@
     background-color: black;
     color: white;
     padding: 6px 0;
-    margin-top: 10px;
 
     button#menuOpen {
         appearance: none;

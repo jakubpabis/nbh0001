@@ -1116,6 +1116,7 @@ input[type=number] {
 
 .main-navigation ul.main-menu > li {
 	line-height: 1;
+	position: relative;
 	padding: 0 20px;
 }
 
@@ -1287,7 +1288,6 @@ input[type=number] {
 }
 
 .mobile-navigation {
-	margin-top: 10px;
 	padding: 6px 0;
 	color: white;
 	background-color: black;
@@ -3251,7 +3251,7 @@ h5,
 
 .main-navigation .main-menu-container {
 	position: fixed;
-	top: 90px;
+	top: 110px;
 	left: 0;
 	width: 240px;
 	height: 100vh;
@@ -3265,19 +3265,63 @@ h5,
 }
 
 .main-navigation ul.main-menu {
+	margin-top: 10px;
 	flex-wrap: wrap;
 }
 
 .main-navigation ul.main-menu > li {
 	display: block;
 	width: 100%;
-	padding: 7px 0;
+	padding: 0;
 	text-align: left;
 }
 
+.main-navigation ul.main-menu > li.show a {
+	padding: 14px 0;
+	border: none;
+}
+
 .main-navigation ul.main-menu > li > a {
-	font-size: 22px;
+	font-size: 21px;
 	color: white;
+}
+
+.main-navigation ul.main-menu > li > a:hover {
+	padding: 14px 0;
+	border: none;
+}
+
+.main-navigation ul.main-menu > li ul.dropdown-menu {
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	width: 240px !important;
+	min-width: 100% !important;
+	margin-right: -15px;
+	margin-left: -15px;
+	transform: none !important;
+	color: white;
+	border: none !important;
+	background-color: #333;
+}
+
+.main-navigation ul.main-menu > li ul.dropdown-menu li a {
+	color: white !important;
+}
+
+.main-navigation ul.main-menu > li ul.dropdown-menu li a:hover {
+	color: white !important;
+	background-color: transparent !important;
+}
+
+.main-navigation ul.main-menu > li ul.dropdown-menu li a:active {
+	color: white !important;
+}
+
+.main-navigation ul.main-menu > li.active a,
+.main-navigation ul.main-menu > li.current_page_parent a {
+	padding: 14px 0;
+	border: none;
 }
 
 .main-navigation ul.main-menu > li.active ul.dropdown-menu,
