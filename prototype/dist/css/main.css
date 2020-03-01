@@ -2604,7 +2604,7 @@ article.page,
 }
 
 .team__people-person:hover .person-img > * {
-	transform: translateY(-50%) scale(1.3) rotate(5deg);
+	transform: translateY(-50%) scale(1.5) rotate(10deg);
 }
 
 .footer {
