@@ -37,7 +37,7 @@
             .socials {
                 position: absolute;
                 top: 60px;
-                left: 15px;
+                left: 0;
                 transform: translateX(-100%);
                 @extend .trans;
 
@@ -75,7 +75,7 @@
 
                 .person-img {
 
-                    > * {
+                    > img {
                         transform: translateY(-50%) scale(1.5) rotate(10deg);
                         opacity: 0.75;
                     }
