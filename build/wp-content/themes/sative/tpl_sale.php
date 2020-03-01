@@ -6,7 +6,7 @@
 get_header('shop'); 
 
 $query_args = array(
-    'posts_per_page'    => 9,
+    'posts_per_page'    => 1,
     'no_found_rows'     => 1,
     'post_status'       => 'publish',
     'post_type'         => 'product',
@@ -23,7 +23,7 @@ $products = new WP_Query( $query_args ); ?>
 				<div class="row products__list-top justify-content-between align-items-start">
 					<div class="col-xl-8 col-md-7 col-sm-6 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-						<h1><?php woocommerce_page_title(); ?></h1>
+						<h1 style="color: red;">SALE!</h1>
 					<?php endif; ?>
 					</div>
 					<div class="col-lg-4 col-md-5 col-sm-6 products__list-filter">
@@ -34,12 +34,26 @@ $products = new WP_Query( $query_args ); ?>
 
 					<?php if ( woocommerce_product_loop() ) {
 
-						if ( wc_get_loop_prop( 'total' ) ) {
-							while ( $products->have_posts() ) {
-								$products->the_post();
-								wc_get_template_part( 'content', 'product' );
-							}
-						}
+						while ( $products->have_posts() ) : $products->the_post(); ?>
+							
+							<div class="col-md-4 col-sm-6 col-10 products__list-item">
+								<div class="products__list-item-content text-center">
+									<div class="products__list-item-content-img">
+										<img src="<?= get_the_post_thumbnail_url('', 'medium') ?>" alt="" class="bg-cover">
+									</div>
+									<div class="products__list-item-content-text">
+										<h2 class="title text-size-normal text-bold">
+											<?= get_the_title(); ?>
+										</h2>
+										<span class="price text-size-xlarge">
+											<?= wc_price(get_post_meta( get_the_ID(), '_price', true )); ?>
+										</span>
+									</div>
+									<a href="<?= get_permalink(); ?>" class="whole-element-link"></a>
+								</div>
+							</div>
+
+						<?php endwhile;
 
 					} else {
 						
