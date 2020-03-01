@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-md-4 col-sm-6 col-10 products__list-item <?= $product->is_on_sale() ? 'salesale' : null ?>">
+<div class="col-md-4 col-sm-6 col-10 products__list-item <?= $product->is_on_sale() ? 'salesale' : null ?> <?= $product->is_in_stock() ? null : 'outstock' ?>">
 	<div class="products__list-item-content text-center">
 		<div class="products__list-item-content-img">
 			<img src="<?= get_the_post_thumbnail_url('', 'medium') ?>" alt="" class="bg-cover">
@@ -47,6 +47,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		</div>
 		<?php if( $product->is_on_sale() ) : ?>
 			<h4 class="onsale">SALE!</h4>
+		<?php endif; ?>
+		<?php if( ! $product->is_in_stock() ) : ?>
+			<h4 class="outstock">Na zamówienie</h4>
 		<?php endif; ?>
 		<a href="<?= get_permalink(); ?>" class="whole-element-link"></a>
 	</div>

@@ -16,3 +16,20 @@
     }
 
 }
+
+.woocommerce .col2-set .col-1, 
+.woocommerce-page .col2-set .col-1,
+.woocommerce .col2-set .col-2, 
+.woocommerce-page .col2-set .col-2 {
+    flex-basis: 50%;
+    max-width: 50%;
+    width: 50%;
+}
+
+.woocommerce-account {
+
+    .woocommerce {
+        margin: 0 -15px;
+    }
+
+}

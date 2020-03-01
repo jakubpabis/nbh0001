@@ -12,6 +12,12 @@ $query_args = array(
     'post_type'         => 'product',
     'meta_query'        => WC()->query->get_meta_query(),
 	'post__in'          => array_merge( array( 0 ), wc_get_product_ids_on_sale() ),
+	'meta_query' 		=> array(
+		array(
+			'key' 	=> '_stock_status',
+			'value' => 'instock'
+		)
+	),
 	'paged' 			=> get_query_var('paged') ? get_query_var('paged') : 1
 );
 $products = new WP_Query( $query_args ); ?>
@@ -37,6 +43,7 @@ $products = new WP_Query( $query_args ); ?>
 
 						while ( $products->have_posts() ) : $products->the_post(); ?>
 							
+							<?php if($product->is_in_stock()): ?>
 							<div class="col-md-4 col-sm-6 col-10 products__list-item <?= $product->is_on_sale() ? 'salesale' : null ?>">
 								<div class="products__list-item-content text-center">
 									<div class="products__list-item-content-img">
@@ -61,6 +68,7 @@ $products = new WP_Query( $query_args ); ?>
 									<a href="<?= get_permalink(); ?>" class="whole-element-link"></a>
 								</div>
 							</div>
+							<?php endif; ?>
 
 						<?php endwhile;
 

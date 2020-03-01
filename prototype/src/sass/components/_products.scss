@@ -136,6 +136,41 @@
 
             }
 
+            &.outstock {
+
+                .products__list-item-content {
+
+                    .outstock {
+                        position: absolute;
+                        top: 30px;
+                        left: 10px;
+                        transform: rotate(-25deg);
+                        font-size: 26px!important;
+                        line-height: 1.21!important;
+                        color: $color-grey4;
+                        @extend .trans;
+                    }
+
+                    &-img {
+                        opacity: 0.7;
+                    }
+
+                    &-text {
+
+                        .title {
+                            color: $color-grey4;
+                        }
+
+                        .price {
+                            color: $color-yellow0;
+                        }
+
+                    }
+
+                }
+
+            }
+
             &:hover {
 
                 .products__list-item-content {
@@ -143,6 +178,10 @@
 
                     .onsale {
                         transform: translateX(64px) translateY(12px) scale(3) rotate(-15deg);
+                    }
+
+                    .outstock {
+                        transform: translateX(45px) translateY(10px) scale(1.5) rotate(-10deg);
                     }
 
                     &-img {
@@ -191,6 +230,24 @@
 
                                 }
 
+                            }
+    
+                        }
+    
+                    }
+
+                }
+
+                &.outstock {
+
+                    .products__list-item-content {
+                        border-color: darken( $color-grey2, 15% );
+    
+                        &-text {
+                            background-color: $color-grey2;
+    
+                            .price {
+                                color: darken( $color-grey2, 20% )!important;
                             }
     
                         }
@@ -405,6 +462,10 @@
 
                 @media(max-width: 1199px) {
                     margin-top: 50px;
+                }
+
+                &+.stock.out-of-stock {
+                    font-weight: 700;
                 }
 
             }
