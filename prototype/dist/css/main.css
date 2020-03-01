@@ -2568,7 +2568,7 @@ article.page,
 }
 
 .team__header {
-	padding: 50px 0 60px;
+	padding: 40px 0;
 }
 
 .team__people {
@@ -2589,6 +2589,11 @@ article.page,
 	top: 50%;
 	min-height: 250px;
 	transform: translateY(-50%);
+}
+
+.team__people-person .person-text h2 {
+	padding: 3px 8px;
+	background-color: #f5a623;
 }
 
 .footer {
