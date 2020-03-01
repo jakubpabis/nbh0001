@@ -26,16 +26,20 @@ if ( ! $messages ) {
 ?>
 <div class="container">
 	<div class="row">
-		<div class="col-12">
-			<ul class="woocommerce-error" role="alert">
-				<?php foreach ( $messages as $message ) : ?>
-					<li>
-						<?php
-							echo wc_kses_notice( $message );
-						?>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+		<div class="col-12 woocommerce-error-cont">
+			<div class="woocommerce-error" role="alert">
+				<i class="fas fa-exclamation-triangle"></i>
+				<ul>
+					<?php foreach ( $messages as $message ) : ?>
+						<li>
+
+							<?php
+								echo wc_kses_notice( $message );
+							?>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

@@ -29,9 +29,12 @@ if ( ! $messages ) {
 		<div class="col-12">
 			<?php foreach ( $messages as $message ) : ?>
 				<div class="woocommerce-message" role="alert">
+					<i class="fas fa-check-circle"></i>
+					<div class="woocommerce-message-text">
 					<?php
 						echo wc_kses_notice( $message );
 					?>
+					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>

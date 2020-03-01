@@ -9,29 +9,49 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp-bootstrap-starter' ); ?></h1>
-	</header><!-- .page-header -->
+<?php if ( function_exists('yoast_breadcrumb') ) : ?>
+	<aside class="breadcrumbs scene_element scene_element--fadeindown scene_element--delayed">
+		<div class="container">
+			<div class="row">
+				<?php //yoast_breadcrumb( '<div class="col-12">','</div>' ); ?>
+				<?php 
+					$args = array(
+						'delimiter' => '➞',
+						'wrap_before' => '<div class="col-12"><span>',
+						'wrap_after' => '</span></div>',
+						'before' => '<span>',
+						'after' => '</span>'
+					);
+					woocommerce_breadcrumb($args);
+				?>
+			</div>
+		</div>
+	</aside>
+<?php endif; ?>
 
-	<div class="page-content">
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+<section id="singlePage" class="scene_element scene_element scene_element--fadeindown scene_element--delayed2">
+	<main id="main" class="site-main" role="main">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10 col-12">
 
-			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wp-bootstrap-starter' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+					<section class="error-404 not-found text-center">
+						<header class="page-header">
+							<h1 class="page-title mb-3"><?php esc_html_e( 'Nie ma bata!', 'sative' ); ?></h1>
+						</header><!-- .page-header -->
 
-		<?php elseif ( is_search() ) : ?>
+						<div class="page-content">
+							<h4 class="mb-3"><?php esc_html_e( 'Nie da rady tego znaleźć...', 'sative' ); ?></h4>
+							<h5><?php esc_html_e( 'Ale spróbuj szczęścia z szukajką poniżej, ziom!', 'sative' ); ?></h5>
+							<?php
+								get_search_form();
+							?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp-bootstrap-starter' ); ?></p>
-			<?php
-				get_search_form();
+						</div><!-- .page-content -->
+					</section><!-- .error-404 -->
 
-		else : ?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-bootstrap-starter' ); ?></p>
-			<?php
-				get_search_form();
-
-		endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+				</div>
+			</div>
+		</div>
+	</main><!-- #main -->
+</section><!-- #primary -->

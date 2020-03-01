@@ -330,6 +330,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  */
 function sative_scripts() {
 	// load bootstrap css
+	
 	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
 	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css?family=Barlow:400,500,600,700&display=swap&subset=latin-ext' );
 	wp_enqueue_style( 'sative-prettycheckbox', 'https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css' );
@@ -337,7 +338,7 @@ function sative_scripts() {
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '', false );
 	wp_enqueue_script('sative-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array(), '', true );
 	wp_enqueue_script('sative-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '', true );
-	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/app.js', array(), '', true );
+	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '', true );
 	// Internet Explorer HTML5 support
     wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
@@ -401,12 +402,40 @@ function sww_remove_wc_currency_symbols( $currency_symbol, $currency ) {
 }
 add_filter('woocommerce_currency_symbol', 'sww_remove_wc_currency_symbols', 10, 2);
 
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+	$fields['billing']['billing_address_2']['label'] = 'Ciąg dalszy adresu ';
+	$fields['shipping']['shipping_address_2']['label'] = 'Ciąg dalszy adresu ';
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+/**
+ * @snippet       Disable Payment Gateway For Specific Shipping Method
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @testedwith    WooCommerce 3.6.2
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+function gateway_disable_shipping( $available_gateways ) 
+{
+	//if ( ! is_admin() ) {
+	$chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+	$chosen_shipping = $chosen_methods[0];
+	if ( isset( $available_gateways['przelewy24'] ) && 0 === strpos( $chosen_shipping, 'flat_rate' ) ) {
+		unset( $available_gateways['przelewy24'] );
+	}
+	//}
+   	return $available_gateways;
+}
+add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_shipping' );
+
 
 // Register Custom Taxonomy
 function custom_taxonomy_marka()  {
 
 	$labels = array(
-		'name'                       => 'Marka',
+		'name'                       => 'Nasze marki',
 		'singular_name'              => 'Marka',
 		'menu_name'                  => 'Marki',
 		'all_items'                  => 'Wszystkie marki',
