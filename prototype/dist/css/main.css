@@ -2581,6 +2581,7 @@ article.page,
 	width: 100%;
 	padding: 15px 0;
 	padding-bottom: 100%;
+	background-color: black;
 }
 
 .team__people-person .person-img img,
@@ -2600,6 +2601,7 @@ article.page,
 
 .team__people-person:hover .person-img > * {
 	transform: translateY(-50%) scale(1.5) rotate(10deg);
+	opacity: .75;
 }
 
 .footer {
