@@ -12,6 +12,19 @@
             margin-bottom: 60px;
         }
 
+        &.brands {
+            margin-bottom: 150px;
+
+            @media(max-width: 991px) {
+                margin-bottom: 120px;
+            }
+
+            @media(max-width: 767px) {
+                margin-bottom: 90px;
+            }
+
+        }
+
         &-text {
             padding-right: 45px;
 

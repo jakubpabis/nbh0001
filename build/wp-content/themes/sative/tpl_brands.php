@@ -50,7 +50,7 @@ $terms = get_terms( array(
             $link = get_term_link($term, 'marka');
         ?>
 
-        <div class="row justify-content-center align-items-center cards__item">
+        <div class="row justify-content-center align-items-center cards__item brands">
             <?php if( $i % 2 == 0 ) : ?>
                 <div class="col-xl-6 col-md-7 col-sm-10 col-11 cards__item-img">
                     <div class="cards__item-img-cont">

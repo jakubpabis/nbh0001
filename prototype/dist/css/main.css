@@ -2580,6 +2580,10 @@ input[type=number] {
 	margin-bottom: 100px;
 }
 
+.cards__item.brands {
+	margin-bottom: 150px;
+}
+
 .cards__item-text {
 	padding-right: 45px;
 }
@@ -3112,6 +3116,10 @@ h5,
 	margin-left: -8px;
 }
 
+.cards__item.brands {
+	margin-bottom: 120px;
+}
+
 .team__people-person .person-img img,
 .team__people-person .person-img picture {
 	min-height: 200px;
@@ -3448,6 +3456,10 @@ h5,
 
 .cards__item {
 	margin-bottom: 60px;
+}
+
+.cards__item.brands {
+	margin-bottom: 90px;
 }
 
 .cards__item-text {
