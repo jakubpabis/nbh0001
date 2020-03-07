@@ -3367,7 +3367,7 @@ h5,
 .main-navigation .main-menu-container .container {
 	overflow-y: scroll;
 	height: 100%;
-	padding-bottom: 50px;
+	padding-bottom: 80px;
 }
 
 .main-navigation .main-menu-container.opened {
