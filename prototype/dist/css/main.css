@@ -2589,11 +2589,11 @@ input[type=number] {
 }
 
 .cards {
-	padding: 80px 0 5px;
+	padding: 120px 0 5px;
 }
 
 .cards__item {
-	margin-bottom: 120px;
+	margin-bottom: 150px;
 }
 
 .cards__item.brands {
@@ -3150,8 +3150,12 @@ input.dgwt-wcas-search-input {
 	margin-left: -8px;
 }
 
+.cards {
+	padding: 105px 0 3px;
+}
+
 .cards__item {
-	margin-bottom: 90px;
+	margin-bottom: 120px;
 }
 
 .cards__item.brands {
@@ -3589,11 +3593,11 @@ button.dgwt-wcas-search-submit {
 }
 
 .cards {
-	padding: 60px 0 1px;
+	padding: 90px 0 1px;
 }
 
 .cards__item {
-	margin-bottom: 75px;
+	margin-bottom: 90px;
 }
 
 .cards__item.brands {
