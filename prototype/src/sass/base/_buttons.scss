@@ -140,6 +140,17 @@
 
 }
 
+#sbi_load {
+	display: flex!important;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.sbi_load_btn,
+.sbi_follow_btn {
+	margin: 10px auto!important;
+}
 
 .sbi_load_btn,
 .sbi_follow_btn > a {
@@ -149,6 +160,7 @@
 	padding: 11px 40px!important;
 	line-height: 1!important;
 	border-radius: 0!important;
+	margin: 0 auto!important;
 
 	@media(max-width: 767px) {
 		padding: 9px 18px!important;
