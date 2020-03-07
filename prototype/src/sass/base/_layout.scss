@@ -234,6 +234,10 @@ input[type=number] {
 	font-size: 18px;
 	font-weight: 700;
 
+	@media(max-width: 767px) {
+		padding: 1em 1.5em!important;
+	}
+
 	i {
 		font-size: 24px;
 		margin-right: 15px;
@@ -245,6 +249,10 @@ input[type=number] {
 		font-weight: 700;
 		display: flex;
 		align-items: center;
+
+		@media(max-width: 767px) {
+			flex-wrap: wrap;
+		}
 
 		a {
 			text-decoration: underline;
@@ -273,6 +281,8 @@ input[type=number] {
 			padding: 11px 36px!important;
 
 			@media(max-width: 767px) {
+				margin-top: 15px!important;
+				margin-left: 0!important;
 				border-width: 2px!important;
 				font-size: 16px!important;
 				padding: 7px 24px!important;

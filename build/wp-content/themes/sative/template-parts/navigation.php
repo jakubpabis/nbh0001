@@ -19,7 +19,7 @@
                     </li>
                 </ul>
 				<ul class="side-menu">
-					<li>
+					<li class="loginLink">
                     <?php if ( is_user_logged_in() ) : ?>
                         <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Moje konto','sative'); ?>">
                             <?php _e('Moje konto','sative'); ?>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-auto">
                     <ul class="side-menu">
-                        <li class="d-sm-block d-none">
+                        <li class="loginLink">
                         <?php if ( is_user_logged_in() ) : ?>
                             <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Moje konto','sative'); ?>">
                                 <?php _e('Moje konto','sative'); ?>
@@ -95,12 +95,19 @@
                         <?php endif; ?>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">
+                            <div class="main-navigation__search">
+                                <?php echo do_shortcode('[wcas-search-form]'); ?>
+                            </div>
+                            <a href="javascript:void(0)" class="searchOpen">
                                 <i class="fas fa-search"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="<?= wc_get_cart_url(); ?>" class="cartOpen">
+                           <a href="<?= wc_get_cart_url(); ?>" class="cartOpen">
+                                <?php global $woocommerce; ?>
+                                <?php if($woocommerce->cart->cart_contents_count > 0): ?>
+                                <span><?= $woocommerce->cart->cart_contents_count; ?></span>
+                                <?php endif; ?>
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>

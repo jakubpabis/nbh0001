@@ -189,7 +189,13 @@ function searchOpen()
 	$('.searchOpen').on('click', function(e) {
 		e.preventDefault();
 		$(this).css({'display' : 'none'});
-		$('.main-navigation__search').fadeIn(200).find('input.dgwt-wcas-search-input').focus();
+		$('.loginLink').css({'display' : 'none'});
+		$('.main-navigation__search').css({'display' : 'block'}).find('input.dgwt-wcas-search-input').focus();
+	});
+	$('input.dgwt-wcas-search-input').on('focusout blur', function() {
+		$('.loginLink').css({'display' : 'block'});
+		$('.main-navigation__search').css({'display' : 'none'});
+		$('.searchOpen').css({'display' : 'block'});
 	});
 }
 
