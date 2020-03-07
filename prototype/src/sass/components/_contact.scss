@@ -1,0 +1,75 @@
+.contact {
+
+    &__text {
+        margin-bottom: 60px;
+
+        p {
+            margin-top: 25px;
+        }
+
+        a {
+
+            &:hover {
+                color: $color-tertiary;
+            }
+
+        }
+
+    }
+
+    &__form {
+
+        form {
+            margin-top: 30px;
+        }
+
+        label {
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+            line-height: 1.44;
+            font-weight: 700;
+            font-family: $font-primary;
+
+            span {
+                color: red;
+            }
+
+        }
+
+        input,
+        select,
+        textarea {
+            min-width: 100%;
+            width: 100%;
+            display: block;
+            font-family: $font-tertiary;
+            border-radius: 0;
+            margin-bottom: 20px;
+
+            &:focus,
+            &:active {
+                box-shadow: none;
+                border-color: $color-tertiary;
+            }
+
+        }
+
+        input,
+        select,
+        textarea {
+            border: 2px solid black;
+            font-weight: 600;
+            color: black;
+            padding: 10px;
+            height: auto;
+            line-height: 1;
+        }
+
+        textarea {
+            line-height: 1.5;
+        }
+
+    }
+
+}

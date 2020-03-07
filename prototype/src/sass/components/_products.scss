@@ -278,6 +278,11 @@
             display: flex;
             justify-content: flex-end;
 
+            @media(max-width: 767px) {
+                margin-top: 20px;
+                justify-content: flex-start;
+            }
+
             form {
                 position: relative;
                 margin-bottom: 0!important;
@@ -481,7 +486,6 @@
                 margin-bottom: 30px;
 
                 @media(max-width: 1199px) {
-                    margin-top: 20px;
                     margin-bottom: 20px;
                 }
 
@@ -491,9 +495,11 @@
 
                     label {
                         font-weight: 700;
-                        display: none;
+                        display: block;
                         position: absolute;
-                        top: -1.75em;
+                        top: 8px;
+                        left: 22px;
+                        pointer-events: none;
                     }
 
                     select {
@@ -530,6 +536,11 @@
             
                 @media(max-width: 1199px) {
                     margin-top: 15px;
+                }
+
+                .btn,
+                .button {
+                    padding: 11px 40px!important;
                 }
 
                 .number {
@@ -864,6 +875,8 @@
                 align-items: center;
 
                 @media(max-width: 991px) {
+                    margin-top: 3px;
+                    margin-bottom: 3px;
                     margin-left: -8px;
                 }
 
@@ -934,7 +947,12 @@
         }
 
         &-related {
-            padding: 80px 0;
+            padding: 80px 0!important;
+
+            @media(max-width: 991px) {
+                padding: 60px 0 40px!important;
+            }
+
         }
 
         &-modal {

@@ -9,6 +9,15 @@
         padding: 90px 0 1px;
     }
 
+    &.contact {
+        padding: 30px 0 0;
+
+        @media(max-width: 767px) {
+            padding: 0;
+        }
+
+    }
+
     &__item {
         margin-bottom: 150px;
 

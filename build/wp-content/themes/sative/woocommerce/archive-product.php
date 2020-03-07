@@ -34,12 +34,12 @@ get_header( 'shop' );
 		<div class="row justify-content-center">
 			<div class="col-12">
 				<div class="row products__list-top justify-content-between align-items-start">
-					<div class="col-xl-8 col-md-7 col-sm-6 products__list-title">
+					<div class="col-xl-8 col-md-7 col-12 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 						<h1><?php woocommerce_page_title(); ?></h1>
 					<?php endif; ?>
 					</div>
-					<div class="col-lg-4 col-md-5 col-sm-6 products__list-filter">
+					<div class="col-lg-4 col-md-5 col-12 products__list-filter">
 						<?php sative_catalog_ordering(); ?>
 					</div>
 				</div>

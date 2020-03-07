@@ -130,6 +130,10 @@ p {
 	line-height: 1.44;
 }
 
+.font-primary {
+	font-family: 'Gilroy';
+}
+
 .text-upper {
 	text-transform: uppercase;
 }
@@ -2255,8 +2259,10 @@ input[type=number] {
 .products__single-text .specs .select label {
 	font-weight: 700;
 	position: absolute;
-	top: -1.75em;
-	display: none;
+	top: 8px;
+	left: 22px;
+	display: block;
+	pointer-events: none;
 }
 
 .products__single-text .specs .select select {
@@ -2287,6 +2293,11 @@ input[type=number] {
 	display: flex;
 	margin-top: 20px;
 	align-items: center;
+}
+
+.products__single-text .addtocart .btn,
+.products__single-text .addtocart .button {
+	padding: 11px 40px !important;
 }
 
 .products__single-text .addtocart .number {
@@ -2560,7 +2571,7 @@ input[type=number] {
 }
 
 .products__single-related {
-	padding: 80px 0;
+	padding: 80px 0 !important;
 }
 
 .products__single-modal .modal-dialog {
@@ -2606,6 +2617,10 @@ input[type=number] {
 
 .cards {
 	padding: 120px 0 5px;
+}
+
+.cards.contact {
+	padding: 30px 0 0;
 }
 
 .cards__item {
@@ -2946,6 +2961,71 @@ article.page,
 	margin: 0 -15px;
 }
 
+.contact__text {
+	margin-bottom: 60px;
+}
+
+.contact__text p {
+	margin-top: 25px;
+}
+
+.contact__text a:hover {
+	color: #f5a623;
+}
+
+.contact__form form {
+	margin-top: 30px;
+}
+
+.contact__form label {
+	font-family: 'Gilroy';
+	font-weight: 700;
+	line-height: 1.44;
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.contact__form label span {
+	color: red;
+}
+
+.contact__form input,
+.contact__form select,
+.contact__form textarea {
+	font-family: 'Barlow', sans-serif;
+	display: block;
+	width: 100%;
+	min-width: 100%;
+	margin-bottom: 20px;
+	border-radius: 0;
+}
+
+.contact__form input:focus,
+.contact__form input:active,
+.contact__form select:focus,
+.contact__form select:active,
+.contact__form textarea:focus,
+.contact__form textarea:active {
+	border-color: #f5a623;
+	box-shadow: none;
+}
+
+.contact__form input,
+.contact__form select,
+.contact__form textarea {
+	font-weight: 600;
+	line-height: 1;
+	height: auto;
+	padding: 10px;
+	color: black;
+	border: 2px solid black;
+}
+
+.contact__form textarea {
+	line-height: 1.5;
+}
+
 @media (min-width: 1025px) {
 
 .main-navigation ul.side-menu > li > a:hover i {
@@ -3038,7 +3118,6 @@ input.dgwt-wcas-search-input {
 }
 
 .products__single-text .specs {
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
@@ -3163,7 +3242,13 @@ input.dgwt-wcas-search-input {
 }
 
 .products__single-share ul {
+	margin-top: 3px;
+	margin-bottom: 3px;
 	margin-left: -8px;
+}
+
+.products__single-related {
+	padding: 60px 0 40px !important;
 }
 
 .cards {
@@ -3510,6 +3595,10 @@ button.dgwt-wcas-search-submit {
 	top: -8px !important;
 }
 
+.dgwt-wcas-suggestions-wrapp {
+	top: 97px !important;
+}
+
 .breadcrumbs {
 	margin-top: 0;
 	padding: 12px 0;
@@ -3575,6 +3664,11 @@ button.dgwt-wcas-search-submit {
 	padding-bottom: 30px;
 }
 
+.products__list-filter {
+	margin-top: 20px;
+	justify-content: flex-start;
+}
+
 .products__list-filter select {
 	min-width: 200px;
 }
@@ -3610,6 +3704,10 @@ button.dgwt-wcas-search-submit {
 
 .cards {
 	padding: 90px 0 1px;
+}
+
+.cards.contact {
+	padding: 0;
 }
 
 .cards__item {
@@ -3669,7 +3767,6 @@ button.dgwt-wcas-search-submit {
 }
 
 .dgwt-wcas-suggestions-wrapp {
-	top: 97px !important;
 	right: 0 !important;
 	left: 0 !important;
 	min-width: 100vw !important;

@@ -125,13 +125,13 @@ function minusOne($el)
 function selectChange()
 {
 	if($(document).find('.select > select').prop('selectedIndex') > 0){
-		$(document).find('.select > select').prev('label').css({'display' : 'block'});
+		$(document).find('.select > select').prev('label').css({'top' : '-1.75em', 'left' : 0});
 	}
 	$(document).on('change', '.select > select', function() {
-		if($(this).prop('selectedIndex') > 0){
-			$(this).prev('label').fadeIn(200);
+		if($(this).prop('selectedIndex') > 0) {
+			$(this).prev('label').css({'top' : '-1.75em', 'left' : 0});
 		} else {
-			$(this).prev('label').fadeOut(200);
+			$(this).prev('label').css({'top' : '8px', 'left' : '22px'})
 		}
 		if($(document).find('input[name="quantity"]').attr('max') == 1) {
 			$(document).find('input[name="quantity"]').parent().parent().css({'display' : 'none'});
