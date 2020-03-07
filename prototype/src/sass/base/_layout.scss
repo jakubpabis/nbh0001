@@ -347,3 +347,13 @@ input[type=number] {
 	}
 
 }
+
+.fb_customer_chat_bubble_animated_no_badge,
+.fb_customer_chat_bubble_pop_in {
+	
+	@media(max-width: 767px) {
+		bottom: 15px!important;
+		right: 15px!important;
+	}
+
+}

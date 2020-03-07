@@ -3342,6 +3342,12 @@ h5,
 	border-width: 2px !important;
 }
 
+.fb_customer_chat_bubble_animated_no_badge,
+.fb_customer_chat_bubble_pop_in {
+	right: 15px !important;
+	bottom: 15px !important;
+}
+
 .main-navigation__upper {
 	padding: 12px 0;
 }
