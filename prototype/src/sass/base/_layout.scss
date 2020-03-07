@@ -167,6 +167,23 @@ section {
 	height: 0; 
 	overflow: hidden; 
 	max-width: 100%; 
+
+	&.full {
+		max-width: 300%; 
+		min-height: 100%;
+
+		iframe,
+		object,
+		embed {
+			min-height: 100%;
+			min-width: 100%;
+			max-width: 300%;
+			width: auto;
+			height: auto;
+		}
+
+	}
+
 } 
 
 .embed-container iframe, 

@@ -11,9 +11,18 @@
 		<div class="carousel-inner">
 		<?php while ( have_rows('slides') ) : the_row(); ?>
 			<div class="carousel-item <?= get_row_index() == 1 ? 'active' : null ?>">
-				<img data-src="<?= get_sub_field('image')['url']; ?>" class="bg-cover lazy" alt="<?= get_sub_field('image')['title']; ?>">
+				<?php if(get_sub_field('video')): ?>
+					<div class="embed-container full">
+						<iframe class="lazy" data-src="<?= get_sub_field('video'); ?>?controls=0&autoplay=1&mute=1&rel=0&loop=1&showinfo=0" allow="autoplay; encrypted-media;" frameborder="0" allowfullscreen></iframe>
+					</div>
+				<?php else: ?>
+					<img data-src="<?= get_sub_field('image')['url']; ?>" class="bg-cover lazy" alt="<?= get_sub_field('image')['title']; ?>">
+				<?php endif; ?>
+				<?php if(get_sub_field('title') || get_sub_field('text') || get_sub_field('button')): ?>
 				<div class="carousel-caption">
-					<h1><?= get_sub_field('title'); ?></h1>
+					<?php if(get_sub_field('title')): ?>
+						<h1><?= get_sub_field('title'); ?></h1>
+					<?php endif; ?>
 					<?php if(get_sub_field('text')):
 						get_sub_field('text');
 					endif; ?>
@@ -21,6 +30,7 @@
 						<a href="<?= get_sub_field('button')['url']; ?>" class="btn btn__border black box-shadow"><?= get_sub_field('button')['title']; ?></a>
 					<?php endif; ?>
 				</div>
+				<?php endif; ?>
 			</div>
 		<?php endwhile; ?>
 		</div>

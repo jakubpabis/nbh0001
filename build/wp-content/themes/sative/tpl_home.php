@@ -41,14 +41,22 @@ if(have_rows('section_big_cards')) : ?>
             <?php if( get_row_index() % 2 == 0 ) : ?>
                 <div class="col-xl-6 col-md-7 col-sm-10 col-11 cards__item-img">
                     <div class="cards__item-img-cont">
-                        <a href="<?= $button['url']; ?>">
-                            <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
-                        </a>
+                        <?php if(get_sub_field('video')): ?>
+                            <div class="embed-container">
+                                <iframe class="lazy" data-src="<?= get_sub_field('video'); ?>?controls=0&mute=1&rel=0&loop=1&showinfo=0" allow="autoplay; encrypted-media;" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        <?php else: ?>
+                            <a href="<?= $button['url']; ?>">
+                                <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-5 col-sm-10 col-11 cards__item-text">
                     <h2 class="text-upper text-tertiary title">
-                        <?= $title; ?>
+                        <a href="<?= $button['url']; ?>">
+                            <?= $title; ?>
+                        </a>
                     </h2>
                     <?= $text; ?>
                     <a href="<?= $button['url']; ?>" class="btn btn__border"><?= $button['title']; ?></a>
@@ -56,16 +64,24 @@ if(have_rows('section_big_cards')) : ?>
             <?php else : ?>
                 <div class="col-xl-4 col-md-5 col-sm-10 col-11 order-md-1 order-12 cards__item-text">
                     <h2 class="text-upper text-tertiary title">
-                        <?= $title; ?>
+                        <a href="<?= $button['url']; ?>">
+                            <?= $title; ?>
+                        </a>
                     </h2>
                     <?= $text; ?>
                     <a href="<?= $button['url']; ?>" class="btn btn__border"><?= $button['title']; ?></a>
                 </div>
                 <div class="col-xl-6 col-md-7 col-sm-10 col-11 order-md-12 order-1 cards__item-img">
                     <div class="cards__item-img-cont">
-                        <a href="<?= $button['url']; ?>">
-                            <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
-                        </a>
+                        <?php if(get_sub_field('video')): ?>
+                            <div class="embed-container">
+                                <iframe class="lazy" data-src="<?= get_sub_field('video'); ?>?controls=0&mute=1&rel=0&loop=1&showinfo=0" allow="autoplay; encrypted-media;" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        <?php else: ?>
+                            <a href="<?= $button['url']; ?>">
+                                <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endif; ?>

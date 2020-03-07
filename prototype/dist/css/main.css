@@ -532,6 +532,21 @@ section {
 	padding-bottom: 56.25%;
 }
 
+.embed-container.full {
+	max-width: 300%;
+	min-height: 100%;
+}
+
+.embed-container.full iframe,
+.embed-container.full object,
+.embed-container.full embed {
+	width: auto;
+	min-width: 100%;
+	max-width: 300%;
+	height: auto;
+	min-height: 100%;
+}
+
 .embed-container iframe,
 .embed-container object,
 .embed-container embed {
@@ -2593,6 +2608,10 @@ input[type=number] {
 	margin-bottom: 15px;
 }
 
+.cards__item-text .title a:hover {
+	color: inherit;
+}
+
 .cards__item-text .btn {
 	margin-top: 20px;
 	transform-origin: left center;
@@ -3365,6 +3384,7 @@ h5,
 }
 
 .main-navigation .main-menu-container .container {
+	overflow-x: hidden;
 	overflow-y: scroll;
 	height: 100%;
 	padding-bottom: 80px;
