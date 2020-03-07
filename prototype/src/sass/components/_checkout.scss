@@ -8,6 +8,10 @@
     min-width: 100%;
     margin: 0 -15px;
 
+    @media(max-width: 575px) {
+        justify-content: flex-start;
+    }
+
     .form-row {
         flex-basis: 50%!important;
         width: auto!important;
@@ -15,6 +19,14 @@
         padding: 25px 15px 0!important;
         //padding-bottom: 30px!important;
         float: none!important;
+
+        @media(max-width: 575px) {
+            flex-basis: 80%!important;
+        }
+
+        @media(max-width: 420px) {
+            flex-basis: 100%!important;
+        }
 
         &.notes { 
             flex-basis: 100%!important;
@@ -121,7 +133,7 @@
             font-size: 18px;
             font-weight: 700;
             color: black;
-            padding-left: 35px;
+            padding-left: 5px;
             white-space: normal;
             display: block;
 
@@ -147,10 +159,11 @@
     font-size: 18px;
 
     &.pretty.p-default.p-thick .state label {
+        display: inline-block;
         
         &:before,
         &:after {
-            top: 7px;
+            top: 1px;
         }
 
     }
@@ -163,7 +176,8 @@
             font-size: 18px;
             font-weight: 700;
             color: black;
-            padding-left: 30px;
+            padding-left: 0;
+            line-height: 1.44;
             white-space: normal;
             display: block;
         }
@@ -264,6 +278,13 @@
 
 .woocommerce-shipping-totals.shipping {
     vertical-align: top;
+    background-color: $color-grey2;
+
+    // @media(max-width: 767px) {
+    //     display: flex;
+    //     min-width: 100%;
+    //     flex-direction: column;
+    // }
 
     th {
         padding-top: 17px!important;
@@ -309,6 +330,37 @@
         padding: 15px!important;
         border-width: 1px!important;
         border-radius: 0!important;
+    }
+
+}
+
+.woocommerce .pretty .state label {
+    padding-left: 30px!important;
+    text-indent: 0!important;
+    white-space: normal!important;
+}
+
+.woocommerce table.shop_table {
+    border-collapse: collapse;
+}
+
+.checkout.woocommerce-checkout {
+
+    .woocommerce-error {
+
+        ul {
+    
+            li {
+                flex-direction: row;
+                
+                strong {
+                    margin-right: 5px;
+                }
+
+            }
+    
+        }
+
     }
 
 }

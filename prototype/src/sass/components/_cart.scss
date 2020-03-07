@@ -22,7 +22,20 @@
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {
-    min-width: 160px;    
+    min-width: 160px;
+
+    @media(max-width: 575px) {
+        width: 100%!important;
+    }
+
+}
+
+.woocommerce-page table.cart td.actions .coupon .button {
+
+    @media(max-width: 575px) {
+        width: 100%!important;
+    }
+
 }
 
 .cart_totals {
@@ -61,4 +74,9 @@
 .woocommerce .cart-collaterals .cart_totals, 
 .woocommerce-page .cart-collaterals .cart_totals {
     width: 60%;
+
+    @media(max-width: 767px) {
+        width: 100%;
+    }
+
 }

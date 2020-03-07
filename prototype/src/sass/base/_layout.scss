@@ -240,10 +240,17 @@ input[type=number] {
 
 .woocommerce-info {
 	display: flex;
-	align-items: center;
 	border-top: 4px solid $color-tertiary;
 	font-size: 18px;
 	font-weight: 700;
+
+	@media(max-width: 767px) {
+		padding: 1em 1.5em!important;
+	}
+
+	@media(max-width: 575px) {
+		padding: 1em!important;
+	}
 
 	i {
 		font-size: 24px;
@@ -254,6 +261,10 @@ input[type=number] {
 	&-text {
 		font-size: 18px;
 		font-weight: 700;
+
+		@media(max-width: 767px) {
+			flex-wrap: wrap;
+		}
 
 		a {
 			text-decoration: underline;
@@ -277,6 +288,10 @@ input[type=number] {
 
 	@media(max-width: 767px) {
 		padding: 1em 1.5em!important;
+	}
+
+	@media(max-width: 575px) {
+		padding: 1em!important;
 	}
 
 	i {
@@ -338,6 +353,14 @@ input[type=number] {
 .woocommerce-error {
 	display: flex;
 	border-top: 4px solid red;
+
+	@media(max-width: 767px) {
+		padding: 1em 1.5em!important;
+	}
+
+	@media(max-width: 575px) {
+		padding: 1em!important;
+	}
 
 	i {
 		font-size: 24px;

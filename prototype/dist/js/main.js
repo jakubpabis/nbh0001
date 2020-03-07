@@ -240,3 +240,12 @@ $(window).on('load', function() {
 	}, 5000);
 
 });
+
+// $(window).on('load resize', function() {
+
+// 	if($(window).width() <= 767) {
+// 		var $width = $('tr.cart-subtotal').find('td').outerWidth();
+// 		$('tr.woocommerce-shipping-totals.shipping').css({'margin-right' : '-'+$width});
+// 	}
+
+// });
