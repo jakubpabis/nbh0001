@@ -3034,6 +3034,13 @@ article.page,
 	border: 3px solid black;
 }
 
+div.wpcf7-response-output {
+	font-weight: 700 !important;
+	margin: 0 !important;
+	padding: 1em !important;
+	border-width: 3px !important;
+}
+
 @media (min-width: 1025px) {
 
 .main-navigation ul.side-menu > li > a:hover i {
