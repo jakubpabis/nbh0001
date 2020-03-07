@@ -112,9 +112,9 @@
 				</div>
 			</div>
 		</footer>
+		<!-- Load Facebook SDK for JavaScript -->
+		<div id="fb-root"></div>
 	</div><!-- #wrapper -->
-	<!-- Load Facebook SDK for JavaScript -->
-	<div id="fb-root"></div>
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat"
 		attribution=setup_tool

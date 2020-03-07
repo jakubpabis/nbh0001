@@ -32,8 +32,8 @@
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css">
 </head>
 <body <?php body_class(); ?>>
+    <?php get_template_part( 'template-parts/navigation' ); ?>
     <div id="wrapper">
-        <?php get_template_part( 'template-parts/navigation' ); ?>
         <?php if ( function_exists('yoast_breadcrumb') ) : ?>
             <aside class="breadcrumbs">
                 <div class="container">

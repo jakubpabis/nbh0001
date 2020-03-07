@@ -42,10 +42,6 @@
                     right: auto;
                     transform: translateX(-50%) translateY(-50%);
 
-                    @media(orientation: portrait) and (max-width: 767px) {
-                        padding: 15px;
-                    }
-
                     h1,
                     .text-size-xxxxlarge {
                         text-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.5);

@@ -63,10 +63,12 @@ function menuOpen(el)
 		$('.main-menu-container').removeClass('opened');
 		$(el).removeClass('opened');
 		$(el).find('i').removeClass().addClass('fas fa-bars');
+		$('#wrapper').removeClass('menuOpened');
 	} else {
 		$(el).find('i').removeClass().addClass('fas fa-times');
 		$(el).addClass('opened');
 		$('.main-menu-container').addClass('opened');
+		$('#wrapper').addClass('menuOpened');
 	}
 }
 
@@ -205,6 +207,13 @@ $(document).ready(function() {
 	selectChange();
 	hideQty();
 	searchOpen();
+
+	
+	$('#wrapper').on('click', function() {
+		if($('#wrapper').hasClass('menuOpened')) {
+			menuOpen('#menuOpen');
+		}
+	});
 
 });
 
