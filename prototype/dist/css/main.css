@@ -2593,7 +2593,7 @@ input[type=number] {
 }
 
 .cards__item {
-	margin-bottom: 100px;
+	margin-bottom: 120px;
 }
 
 .cards__item.brands {
@@ -3150,6 +3150,10 @@ input.dgwt-wcas-search-input {
 	margin-left: -8px;
 }
 
+.cards__item {
+	margin-bottom: 90px;
+}
+
 .cards__item.brands {
 	margin-bottom: 120px;
 }
@@ -3589,7 +3593,7 @@ button.dgwt-wcas-search-submit {
 }
 
 .cards__item {
-	margin-bottom: 60px;
+	margin-bottom: 75px;
 }
 
 .cards__item.brands {
