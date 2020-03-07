@@ -3041,6 +3041,11 @@ div.wpcf7-response-output {
 	border-width: 3px !important;
 }
 
+span.wpcf7-not-valid-tip {
+	margin-top: -15px;
+	margin-bottom: 20px;
+}
+
 @media (min-width: 1025px) {
 
 .main-navigation ul.side-menu > li > a:hover i {
