@@ -3026,6 +3026,14 @@ article.page,
 	line-height: 1.5;
 }
 
+.contact__form input[type='submit'] {
+	display: inline-block;
+	width: auto;
+	min-width: 0;
+	padding: 11px 40px;
+	border: 3px solid black;
+}
+
 @media (min-width: 1025px) {
 
 .main-navigation ul.side-menu > li > a:hover i {
@@ -3747,6 +3755,10 @@ button.dgwt-wcas-search-submit {
 	max-width: 54%;
 	height: 40px;
 	border: 2px solid white;
+}
+
+.contact__form input[type='submit'] {
+	padding: 9px 18px;
 }
 
 }

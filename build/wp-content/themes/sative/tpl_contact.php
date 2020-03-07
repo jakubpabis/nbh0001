@@ -61,27 +61,7 @@ get_header(); ?>
                 <h3 class="text-tertiary title">
                     Jakieś pytania?
                 </h3>
-                <form action="">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="">Jak Cię wołają? <span>*</span></label>
-                            <input type="text" placeholder="Twoja ksywa">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="">A email podasz? <span>*</span></label>
-                            <input type="email" placeholder="ziomus@skate.pl">
-                        </div>
-                        <div class="col-12">
-                            <label for="">Dawaj to pytanie!</label>
-                            <textarea name="" id="" rows="8" placeholder="No to tak: jak tego kickflipa mam zrobić?!"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn__normal">
-                                Wysyłaj!
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <?php the_content(); ?>
             </div>
         </div>
     </div>
