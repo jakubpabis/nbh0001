@@ -322,14 +322,17 @@ p {
 
 .sbi_load_btn,
 .sbi_follow_btn {
-	margin: 10px auto !important;
+	margin: 5px 10px !important;
+}
+
+.sbi_follow_btn > a {
+	margin: 0 !important;
 }
 
 .sbi_load_btn,
 .sbi_follow_btn > a {
 	font-weight: 700 !important;
 	line-height: 1 !important;
-	margin: 0 auto !important;
 	padding: 11px 40px !important;
 	text-align: center !important;
 	text-transform: uppercase !important;
