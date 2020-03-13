@@ -39,17 +39,6 @@
 							</form>
 						</div>
 						<!--End mc_embed_signup-->
-						<?php /*<div class="line">
-							<input type="email" name="email" placeholder="Twój email ziomuś...">
-							<button type="submit" class="btn btn__border desktop">Zapisuj mnie!</button>
-						</div>
-						<div class="check pretty p-default p-thick p-pulse">
-							<input type="checkbox" name="agree"/>
-							<div class="state p-warning-o">
-								<label><span>Daj znać, że zapoznałeś się z naszym <a href="">REGULAMINEM</a></span></label>
-							</div>
-						</div>
-						<button type="submit" class="btn btn__border mobile">Zapisuj mnie!</button>*/ ?>
 					</div>
 				</div>
 				<div class="row justify-content-center footer__mid">
