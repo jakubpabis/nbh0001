@@ -22,19 +22,34 @@
 						<span class="text-size-xlarge">
 							Zapisz się do newsletter’a
 						</span>
-						<form class="mt-3" action="">
-							<div class="line">
-								<input type="email" name="email" placeholder="Twój email ziomuś...">
-								<button type="submit" class="btn btn__border desktop">Zapisuj mnie!</button>
-							</div>
-							<div class="check pretty p-default p-thick p-pulse">
-								<input type="checkbox" name="agree"/>
-								<div class="state p-warning-o">
-									<label><span>Daj znać, że zapoznałeś się z naszym <a href="">REGULAMINEM</a></span></label>
+						<!-- Begin Mailchimp Signup Form -->
+						<div id="mc_embed_signup" class="mt-3">
+							<form action="https://nbhdskate.us19.list-manage.com/subscribe/post?u=db235ebb14bd6255c04b21a45&amp;id=f2471e3797" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+								<div id="mc_embed_signup_scroll" class="line">
+									<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Twój email ziomuś...">
+									<div id="mce-responses" class="clear">
+										<div class="response" id="mce-error-response" style="display:none"></div>
+										<div class="response" id="mce-success-response" style="display:none"></div>
+									</div>
+									<div style="position: absolute; left: -5000px;" aria-hidden="true">
+										<input type="text" name="b_db235ebb14bd6255c04b21a45_f2471e3797" tabindex="-1" value="">
+									</div>
+									<input type="submit" value="Zapisuj mnie!" name="subscribe" id="mc-embedded-subscribe" class="btn btn__border">
 								</div>
+							</form>
+						</div>
+						<!--End mc_embed_signup-->
+						<?php /*<div class="line">
+							<input type="email" name="email" placeholder="Twój email ziomuś...">
+							<button type="submit" class="btn btn__border desktop">Zapisuj mnie!</button>
+						</div>
+						<div class="check pretty p-default p-thick p-pulse">
+							<input type="checkbox" name="agree"/>
+							<div class="state p-warning-o">
+								<label><span>Daj znać, że zapoznałeś się z naszym <a href="">REGULAMINEM</a></span></label>
 							</div>
-							<button type="submit" class="btn btn__border mobile">Zapisuj mnie!</button>
-						</form>
+						</div>
+						<button type="submit" class="btn btn__border mobile">Zapisuj mnie!</button>*/ ?>
 					</div>
 				</div>
 				<div class="row justify-content-center footer__mid">

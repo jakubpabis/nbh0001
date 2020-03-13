@@ -3998,6 +3998,7 @@ h1,
 
 .footer__upper .newsletter .line {
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .footer__upper .newsletter .check {
