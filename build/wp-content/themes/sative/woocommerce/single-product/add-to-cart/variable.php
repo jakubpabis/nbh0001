@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
-		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'Sorry mordeczko, ale nie już tego nie ... ', 'woocommerce' ) ) ); ?></p>
+		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'Brak w magazynie', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
 		<div class="specs variations">
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>

@@ -2638,6 +2638,11 @@ input[type=number] {
 	margin: auto;
 }
 
+.woocommerce-variation-add-to-cart-disabled {
+	display: none !important;
+	visibility: hidden !important;
+}
+
 .cards {
 	padding: 120px 0 5px;
 }

@@ -90,10 +90,10 @@ if ( post_password_required() ) {
                 </h3>
                 <?php endif; ?>
                 <?= wc_get_stock_html( $product ); ?>
+                <?php if($product->is_in_stock()): ?>
                 <div class="addtocart">
                     <?php woocommerce_template_single_add_to_cart(); ?>
                 </div>
-                <?php if($product->is_in_stock()): ?>
                 <div class="shipping">
                     <i class="fas fa-shipping-fast text-size-xxxlarge"></i>
                     <span class="text-size-normal text-bold">
