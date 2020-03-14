@@ -1010,3 +1010,33 @@
     display: none!important;
     visibility: hidden!important;
 }
+
+.notifyme {
+    padding: 20px;
+    background-color: $color-grey2;
+    box-shadow: 4px 4px 0 0 $color-tertiary;
+
+    input[type="email"] {
+        min-width: 100%!important;
+        width: 100%!important;
+        display: block!important;
+        border-radius: 0!important;
+        border: 2px solid transparent!important;
+        font-weight: 700!important;
+        color: black!important;
+        padding: 10px!important;
+        height: auto!important;
+        line-height: 1!important;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+    }
+
+    p {
+        margin-bottom: 0!important;
+    }
+
+    &+.wpcf7-response-output {
+        margin-top: 15px!important;
+    }
+
+}

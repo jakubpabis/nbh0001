@@ -229,6 +229,17 @@ p {
 	background-color: #8b5702;
 }
 
+.btn__simple,
+.button__simple,
+.submit__simple {
+	font-size: 19px;
+	transform-origin: right bottom;
+	color: white !important;
+	border: 3px solid #f5a623;
+	background-color: #f5a623;
+	box-shadow: none;
+}
+
 .btn__full,
 .button__full,
 .submit__full {
@@ -243,7 +254,6 @@ p {
 .btn__full:hover,
 .button__full:hover,
 .submit__full:hover {
-	transform: translateX(-2px) translateY(-2px) scale(1.05) !important;
 	color: #8b5702 !important;
 	box-shadow: 5px 5px 0 0 #8b5702;
 }
@@ -2643,6 +2653,35 @@ input[type=number] {
 	visibility: hidden !important;
 }
 
+.notifyme {
+	padding: 20px;
+	background-color: #ebebeb;
+	box-shadow: 4px 4px 0 0 #f5a623;
+}
+
+.notifyme input[type='email'] {
+	font-size: 17px;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	display: block !important;
+	width: 100% !important;
+	min-width: 100% !important;
+	height: auto !important;
+	padding: 10px !important;
+	letter-spacing: .5px;
+	color: black !important;
+	border: 2px solid transparent !important;
+	border-radius: 0 !important;
+}
+
+.notifyme p {
+	margin-bottom: 0 !important;
+}
+
+.notifyme + .wpcf7-response-output {
+	margin-top: 15px !important;
+}
+
 .cards {
 	padding: 120px 0 5px;
 }
@@ -3442,6 +3481,12 @@ h5,
 .btn__border,
 .button__border,
 .submit__border {
+	font-size: 17px;
+}
+
+.btn__simple,
+.button__simple,
+.submit__simple {
 	font-size: 17px;
 }
 

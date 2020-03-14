@@ -101,6 +101,13 @@ if ( post_password_required() ) {
                         <strong>24h</strong> i towar jest u Ciebie! *
                     </span>
                 </div>
+                <?php else: ?>
+                    <?php get_template_part( 'template-parts/oosproduct', 'form' ); ?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#productformslug').val('<?= get_the_title(); ?> | <?= $product->get_slug(); ?>');
+                        });
+                    </script>
                 <?php endif; ?>
             </div>
         </div>

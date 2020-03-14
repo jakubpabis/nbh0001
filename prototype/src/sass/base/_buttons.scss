@@ -69,6 +69,20 @@
 
 	}
 
+	&__simple {
+		border: 3px solid $color-tertiary;
+		background-color: $color-tertiary;
+		color: white!important;
+		font-size: 19px;
+		transform-origin: right bottom;
+		box-shadow: none;
+
+		@media(max-width: 767px) {
+			font-size: 17px;
+		}
+
+	}
+
 	&__full {
 		border: 3px solid $color-tertiary;
 		background-color: $color-tertiary;
@@ -84,7 +98,6 @@
 		&:hover {
 			color: $color-yellow3!important;
 			box-shadow: 5px 5px 0 0 $color-yellow3;
-			transform: translateX(-2px) translateY(-2px) scale(1.05)!important;
 		}
 
 	}
