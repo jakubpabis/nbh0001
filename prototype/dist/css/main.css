@@ -2678,6 +2678,11 @@ input[type=number] {
 	margin-bottom: 0 !important;
 }
 
+.notifyme span.wpcf7-not-valid-tip {
+	font-weight: 700 !important;
+	margin-top: 5px !important;
+}
+
 .notifyme + .wpcf7-response-output {
 	margin-top: 15px !important;
 }
