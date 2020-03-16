@@ -29,6 +29,42 @@ get_header( 'shop' );
 //do_action( 'woocommerce_before_main_content' );
 ?>
 
+<?php if( is_tax('marka') ): 
+	$taxID = get_queried_object()->term_id; 
+	$term = get_term($taxID);
+	$image = get_field('img', 'marka_'.$term->term_id); 
+	//var_dump($image);
+	if($image): 
+		$size = $image['sizes']['medium_large'];
+		$alt = $image['alt'];
+		$title = get_field('title', 'marka_'.$term->term_id) ? get_field('title', 'marka_'.$term->term_id) : $term->name;
+		$text = $term->description;
+	endif; ?>
+
+	<section class="cards bg-grey">
+		<div class="container">
+		
+			<div class="row justify-content-center align-items-end cards__item brands">
+				<?php if($image): ?>
+				<div class="col-xl-4 col-md-5 col-sm-10 col-11 cards__item-img">
+					<div class="cards__item-img-cont">
+						<img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
+					</div>
+				</div>
+				<?php endif; ?>
+				<div class="col-xl-8 col-md-7 col-sm-10 col-11 cards__item-text">
+					<h1 class="text-upper text-tertiary title">
+						<?= $title; ?>
+					</h1>
+					<?= $text; ?>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+<?php endif; ?>
+
 <section class="products__list">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -36,7 +72,11 @@ get_header( 'shop' );
 				<div class="row products__list-top justify-content-between align-items-start">
 					<div class="col-xl-8 col-md-7 col-12 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-						<h1><?php woocommerce_page_title(); ?></h1>
+						<?php if( is_tax('marka') ): ?>
+							<h2 class="text-size-xxxxlarge"><?php woocommerce_page_title(); ?></h2>
+						<?php else: ?>
+							<h1><?php woocommerce_page_title(); ?></h1>
+						<?php endif; ?>
 					<?php endif; ?>
 					</div>
 					<div class="col-lg-4 col-md-5 col-12 products__list-filter">
