@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header( 'shop' );
+get_header();
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -28,6 +28,25 @@ get_header( 'shop' );
  */
 //do_action( 'woocommerce_before_main_content' );
 ?>
+
+<?php if ( function_exists('yoast_breadcrumb') ) : ?>
+	<aside class="breadcrumbs <?= is_tax('marka') ? 'bg-grey1' : null ?>">
+		<div class="container">
+			<div class="row">
+				<?php 
+					$args = array(
+						'delimiter' => '➞',
+						'wrap_before' => '<div class="col-12"><span>',
+						'wrap_after' => '</span></div>',
+						'before' => '<span>',
+						'after' => '</span>'
+					);
+					woocommerce_breadcrumb($args);
+				?>
+			</div>
+		</div>
+	</aside>
+<?php endif; ?>
 
 <?php if( is_tax('marka') ): 
 	$taxID = get_queried_object()->term_id; 
@@ -41,23 +60,34 @@ get_header( 'shop' );
 		$text = $term->description;
 	endif; ?>
 
-	<section class="cards bg-grey">
+	<section class="cards bg-grey brands__archive">
 		<div class="container">
 		
-			<div class="row justify-content-center align-items-end cards__item brands">
+			<div class="row cards__item brands__archive">
 				<?php if($image): ?>
-				<div class="col-xl-4 col-md-5 col-sm-10 col-11 cards__item-img">
+				<div class="col-12 mb-4">
+					<h1 class="text-size-giant text-upper text-tertiary title">
+						<?= $title; ?>
+					</h1>
+				</div>
+				<div class="col-lg-3 col-sm-4 col-12 cards__item-img mb-4">
 					<div class="cards__item-img-cont">
 						<img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
 					</div>
 				</div>
-				<?php endif; ?>
-				<div class="col-xl-8 col-md-7 col-sm-10 col-11 cards__item-text">
-					<h1 class="text-upper text-tertiary title">
-						<?= $title; ?>
-					</h1>
+				<div class="col-sm-8 col-12 cards__item-text">
 					<?= $text; ?>
 				</div>
+				<?php else: ?>
+				<div class="col-12 mb-4">
+					<h1 class="text-size-giant text-upper text-tertiary title">
+						<?= $title; ?>
+					</h1>
+				</div>
+				<div class="col-sm-9 cards__item-text">
+					<?= $text; ?>
+				</div>
+				<?php endif; ?>
 			</div>
 
 		</div>
@@ -69,21 +99,21 @@ get_header( 'shop' );
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12">
-				<div class="row products__list-top justify-content-between align-items-start">
+				<div class="row products__list-top justify-content-between align-items-end">
+					<?php if( !is_tax('marka') ): ?>
 					<div class="col-xl-8 col-md-7 col-12 products__list-title">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-						<?php if( is_tax('marka') ): ?>
-							<h2 class="text-size-xxxxlarge"><?php woocommerce_page_title(); ?></h2>
-						<?php else: ?>
-							<h1><?php woocommerce_page_title(); ?></h1>
-						<?php endif; ?>
+						<h1 class="text-size-huge"><?php woocommerce_page_title(); ?></h1>
 					<?php endif; ?>
 					</div>
 					<div class="col-lg-4 col-md-5 col-12 products__list-filter">
+					<?php else: ?>
+					<div class="col-auto products__list-filter">
+					<?php endif; ?>
 						<?php sative_catalog_ordering(); ?>
 					</div>
 				</div>
-				<div class="row justify-content-center">
+				<div class="row">
 
 					<?php if ( woocommerce_product_loop() ) {
 

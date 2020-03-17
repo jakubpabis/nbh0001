@@ -478,9 +478,9 @@ if ( ! function_exists( 'sative_catalog_ordering' ) ) {
 		$catalog_orderby_options = apply_filters(
 			'woocommerce_catalog_orderby',
 			array(
-				'default'	 => __( 'Weź to posortuj...', 'woocommerce' ),
 				'menu_order' => __( 'Normalnie', 'woocommerce' ),
 				'popularity' => __( 'Popularność', 'woocommerce' ),
+				'rating'     => __( 'Po ocenach', 'woocommerce' ),
 				'date'       => __( 'Po świeżości', 'woocommerce' ),
 				'price'      => __( 'Hajs rosnąco', 'woocommerce' ),
 				'price-desc' => __( 'Hajs malejąco', 'woocommerce' ),

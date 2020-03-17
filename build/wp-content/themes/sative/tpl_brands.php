@@ -33,7 +33,7 @@ $terms = get_terms( array(
 ?>
 
 <?php if(count($terms) > 0): ?>
-<section class="cards bg-grey">
+<section class="cards bg-grey brands__archive">
 	<div class="container">
 
         <?php $i = 0; foreach($terms as $term): ?>
@@ -50,38 +50,39 @@ $terms = get_terms( array(
             $link = get_term_link($term, 'marka');
         ?>
 
-        <div class="row justify-content-center align-items-center cards__item brands">
-            <?php if( $i % 2 == 0 ) : ?>
-                <div class="col-xl-6 col-md-7 col-sm-10 col-11 cards__item-img">
+        <?php if( $i % 2 == 0 ) : ?>
+            <div class="row justify-content-lg-center justify-content-md-start cards__item brands">
+                <div class="col-xl-6 col-lg-7 col-md-6 col-sm-10 col-12 cards__item-img">
                     <div class="cards__item-img-cont">
                         <a href="<?= $link; ?>">
                             <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-10 col-11 cards__item-text">
-                    <h2 class="text-upper text-tertiary title">
+                <div class="col-lg-5 col-12 cards__item-text">
+                    <h2 class="text-size-xxxxlarge text-upper text-tertiary title">
                         <?= $title; ?>
                     </h2>
                     <?= $text; ?>
                     <a href="<?= $link; ?>" class="btn btn__border">Obczaj <?= $term->name; ?></a>
                 </div>
-            <?php else : ?>
-                <div class="col-md-5 col-sm-10 col-11 order-md-1 order-12 cards__item-text">
-                    <h2 class="text-upper text-tertiary title">
+        <?php else : ?>
+            <div class="row justify-content-lg-center justify-content-md-end cards__item brands">
+                <div class="col-lg-5 col-12 order-lg-1 order-12 cards__item-text text-md-right">
+                    <h2 class="text-size-xxxxlarge text-upper text-tertiary title">
                         <?= $title; ?>
                     </h2>
                     <?= $text; ?>
                     <a href="<?= $link; ?>" class="btn btn__border">Obczaj <?= $term->name; ?></a>
                 </div>
-                <div class="col-xl-6 col-md-7 col-sm-10 col-11 order-md-12 order-1 cards__item-img">
+                <div class="col-xl-6 col-lg-7 col-md-6 col-sm-10 col-12 order-lg-12 order-1 cards__item-img">
                     <div class="cards__item-img-cont">
                         <a href="<?= $link; ?>">
                             <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
                         </a>
                     </div>
                 </div>
-            <?php endif; ?>
+        <?php endif; ?>
         </div>
 
         <?php $i++; endif; ?>

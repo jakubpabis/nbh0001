@@ -18,8 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Sortowanie', 'sative' ); ?>">
+<form class="woocommerce-ordering d-block" method="get">
+	<label for="orderby" class="d-block mb-1 text-size-large">
+		<strong class="text-bold">Sortowanie</strong>
+	</label>
+	<select name="orderby" class="orderby pl-3" aria-label="<?php esc_attr_e( 'Sortowanie', 'sative' ); ?>">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
 			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
 		<?php endforeach; ?>

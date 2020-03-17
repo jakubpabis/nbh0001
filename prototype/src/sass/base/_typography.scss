@@ -1,9 +1,76 @@
+.text-size-giant {
+	font-size: 96px;
+	font-weight: 700;
+	line-height: 0.8;
+	letter-spacing: -3px;
+	margin: 0;
+	word-break: break-word;
+	white-space: normal;
+	hyphens: auto;
+
+	@media(max-width: 1199px) {
+		font-size: 90px;
+	}
+
+	@media(max-width: 991px) {
+		font-size: 80px;
+	}
+
+	@media(max-width: 767px) {
+		font-size: 72px;
+	}
+
+	@media(max-width: 575px) {
+		font-size: 64px;
+	}
+
+	@media(max-width: 420px) {
+		font-size: 52px;
+	}
+
+}
+
+.text-size-huge {
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 0.9;
+	letter-spacing: -2px;
+	margin: 0;
+	word-break: break-word;
+	white-space: normal;
+	hyphens: auto;
+
+	@media(max-width: 1199px) {
+		font-size: 66px;
+	}
+
+	@media(max-width: 991px) {
+		font-size: 60px;
+	}
+
+	@media(max-width: 767px) {
+		font-size: 54px;
+	}
+
+	@media(max-width: 575px) {
+		font-size: 48px;
+	}
+
+	@media(max-width: 420px) {
+		font-size: 42px;
+	}
+
+}
+
 h1,
 .text-size-xxxxlarge {
 	font-size: 52px;
 	font-weight: 700;
 	line-height: 1.1;
 	margin: 0;
+	word-break: break-word;
+	white-space: normal;
+	hyphens: auto;
 
 	@media(max-width: 1199px) {
 		font-size: 48px;
@@ -25,6 +92,9 @@ h2,
 	font-weight: 700;
 	line-height: 1.21;
 	margin: 0;
+	word-break: break-word;
+	white-space: normal;
+	hyphens: auto;
 
 	@media(max-width: 1199px) {
 		font-size: 32px;
