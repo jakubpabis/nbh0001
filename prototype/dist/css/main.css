@@ -1899,6 +1899,7 @@ input[type=number] {
 	right: auto;
 	bottom: auto;
 	left: 50%;
+	min-width: 75%;
 	transform: translateX(-50%) translateY(-50%);
 }
 
