@@ -138,6 +138,7 @@
 					"background": "#F5A623"
 				}
 			},
+			"position": "bottom-left",
 			"content": {
 				"message": "Używamy ciasteczek jak każdy, wiadomo... Kliknij, że wiesz o co kaman, albo sobie poczytaj, jak wolisz...",
 				"dismiss": "Czaje, czaje...",
