@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </noscript>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" media="none" onload="if(media!='all')media='all'"/>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    </noscript>
 </head>
 <body <?php body_class(); ?>>
     <?php get_template_part( 'template-parts/navigation' ); ?>

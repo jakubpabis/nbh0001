@@ -127,6 +127,25 @@
 		logged_in_greeting="Siemanko! Potrzebujesz pomocy Ziomuś? Pisz co jest grane..."
 		logged_out_greeting="Siemanko! Potrzebujesz pomocy Ziomuś? Pisz co jest grane...">
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+	<script>
+		window.cookieconsent.initialise({
+			"palette": {
+				"popup": {
+					"background": "#000"
+				},
+				"button": {
+					"background": "#F5A623"
+				}
+			},
+			"content": {
+				"message": "Używamy ciasteczek jak każdy, wiadomo... Kliknij, że wiesz o co kaman, albo sobie poczytaj, jak wolisz...",
+				"dismiss": "Czaje, czaje...",
+				"link": "Chce poczytać o cookies",
+				"href": "/polityka-prywatnosci/"
+			}
+		});
+	</script>
 	<?php wp_footer(); ?>
 </body>
 </html>
