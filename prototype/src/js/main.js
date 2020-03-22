@@ -192,11 +192,11 @@ function searchOpen()
 		$('.loginLink').css({'display' : 'none'});
 		$('.main-navigation__search').css({'display' : 'block'}).find('input.dgwt-wcas-search-input').focus();
 	});
-	$('input.dgwt-wcas-search-input').on('focusout blur', function() {
-		$('.loginLink').css({'display' : 'block'});
-		$('.main-navigation__search').css({'display' : 'none'});
-		$('.searchOpen').css({'display' : 'block'});
-	});
+	// $('input.dgwt-wcas-search-input').on('focusout blur', function() {
+	// 	$('.loginLink').css({'display' : 'block'});
+	// 	$('.main-navigation__search').css({'display' : 'none'});
+	// 	$('.searchOpen').css({'display' : 'block'});
+	// });
 }
 
 $(document).ready(function() {
