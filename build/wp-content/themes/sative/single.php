@@ -13,7 +13,6 @@ get_header(); ?>
 	<aside class="breadcrumbs">
 		<div class="container">
 			<div class="row">
-				<?php //yoast_breadcrumb( '<div class="col-12">','</div>' ); ?>
 				<?php 
 					$args = array(
 						'delimiter' => '➞',

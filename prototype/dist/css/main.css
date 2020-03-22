@@ -76,12 +76,7 @@
 	font-weight: 700;
 	line-height: .8;
 	margin: 0;
-	white-space: normal;
 	letter-spacing: -3px;
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-	-ms-hyphens: auto;
 }
 
 .text-size-huge {
@@ -89,12 +84,7 @@
 	font-weight: 700;
 	line-height: .9;
 	margin: 0;
-	white-space: normal;
 	letter-spacing: -2px;
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-	-ms-hyphens: auto;
 }
 
 h1,
@@ -103,11 +93,6 @@ h1,
 	font-weight: 700;
 	line-height: 1.1;
 	margin: 0;
-	white-space: normal;
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-	-ms-hyphens: auto;
 }
 
 h2,
@@ -116,11 +101,6 @@ h2,
 	font-weight: 700;
 	line-height: 1.21;
 	margin: 0;
-	white-space: normal;
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-	-ms-hyphens: auto;
 }
 
 h3,
@@ -3180,6 +3160,11 @@ span.wpcf7-not-valid-tip {
 
 .text-size-giant {
 	font-size: 90px;
+	white-space: normal;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	-ms-hyphens: auto;
 }
 
 .text-size-huge {
@@ -3301,6 +3286,11 @@ input.dgwt-wcas-search-input {
 
 .text-size-huge {
 	font-size: 60px;
+	white-space: normal;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	-ms-hyphens: auto;
 }
 
 #wrapper {
@@ -3532,6 +3522,11 @@ input.dgwt-wcas-search-input {
 h1,
 .text-size-xxxxlarge {
 	font-size: 46px;
+	white-space: normal;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	-ms-hyphens: auto;
 }
 
 h2,
@@ -3978,6 +3973,15 @@ button.dgwt-wcas-search-submit {
 
 .text-size-huge {
 	font-size: 48px;
+}
+
+h2,
+.text-size-xxxlarge {
+	white-space: normal;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	-ms-hyphens: auto;
 }
 
 .woocommerce-info {

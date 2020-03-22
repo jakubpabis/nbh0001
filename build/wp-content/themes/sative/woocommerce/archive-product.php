@@ -54,7 +54,7 @@ get_header();
 	$image = get_field('img', 'marka_'.$term->term_id); 
 	//var_dump($image);
 	if($image): 
-		$size = $image['sizes']['medium_large'];
+		$size = $image['sizes']['medium'];
 		$alt = $image['alt'];
 		$title = get_field('title', 'marka_'.$term->term_id) ? get_field('title', 'marka_'.$term->term_id) : $term->name;
 		$text = $term->description;

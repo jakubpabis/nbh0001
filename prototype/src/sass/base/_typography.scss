@@ -4,12 +4,12 @@
 	line-height: 0.8;
 	letter-spacing: -3px;
 	margin: 0;
-	word-break: break-word;
-	white-space: normal;
-	hyphens: auto;
 
 	@media(max-width: 1199px) {
 		font-size: 90px;
+		word-break: break-word;
+		white-space: normal;
+		hyphens: auto;
 	}
 
 	@media(max-width: 991px) {
@@ -36,9 +36,6 @@
 	line-height: 0.9;
 	letter-spacing: -2px;
 	margin: 0;
-	word-break: break-word;
-	white-space: normal;
-	hyphens: auto;
 
 	@media(max-width: 1199px) {
 		font-size: 66px;
@@ -46,6 +43,9 @@
 
 	@media(max-width: 991px) {
 		font-size: 60px;
+		word-break: break-word;
+		white-space: normal;
+		hyphens: auto;
 	}
 
 	@media(max-width: 767px) {
@@ -68,9 +68,6 @@ h1,
 	font-weight: 700;
 	line-height: 1.1;
 	margin: 0;
-	word-break: break-word;
-	white-space: normal;
-	hyphens: auto;
 
 	@media(max-width: 1199px) {
 		font-size: 48px;
@@ -78,6 +75,9 @@ h1,
 
 	@media(max-width: 767px) {
 		font-size: 46px;
+		word-break: break-word;
+		white-space: normal;
+		hyphens: auto;
 	}
 
 	@media(max-width: 480px) {
@@ -92,9 +92,6 @@ h2,
 	font-weight: 700;
 	line-height: 1.21;
 	margin: 0;
-	word-break: break-word;
-	white-space: normal;
-	hyphens: auto;
 
 	@media(max-width: 1199px) {
 		font-size: 32px;
@@ -102,6 +99,12 @@ h2,
 
 	@media(max-width: 767px) {
 		font-size: 28px;
+	}
+
+	@media(max-width: 575px) {
+		word-break: break-word;
+		white-space: normal;
+		hyphens: auto;
 	}
 
 }

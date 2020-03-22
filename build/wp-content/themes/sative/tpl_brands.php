@@ -44,6 +44,7 @@ $terms = get_terms( array(
 
         <?php 
             $size = $image['sizes']['medium_large'];
+            $sizeS = $image['sizes']['medium'];
             $alt = $image['alt'];
             $title = get_field('title', 'marka_'.$term->term_id) ? get_field('title', 'marka_'.$term->term_id) : $term->name;
             $text = $term->description;
@@ -55,7 +56,11 @@ $terms = get_terms( array(
                 <div class="col-xl-6 col-lg-7 col-md-6 col-sm-10 col-12 cards__item-img">
                     <div class="cards__item-img-cont">
                         <a href="<?= $link; ?>">
-                            <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
+                            <picture class="bg-cover">
+                                <source class="lazyset" media="(max-width: 991px)" data-srcset="<?= esc_url($sizeS); ?>">
+                                <source class="lazyset" data-srcset="<?= esc_url($size); ?>">
+                                <img class="bg-cover lazy" data-src="<?= esc_url($size); ?>" alt="<?= $alt; ?>">
+                            </picture>
                         </a>
                     </div>
                 </div>

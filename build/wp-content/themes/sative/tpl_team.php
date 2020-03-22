@@ -43,7 +43,7 @@ get_header(); ?>
             <?php while(have_rows('people')) : the_row(); ?>
             <div class="col-lg-4 col-sm-6 col-12 team__people-person">
                 <div class="person-img">
-                    <img src="<?= get_sub_field('img')['url']; ?>" alt="" class="bg-cover">
+                    <img src="<?= esc_url(get_sub_field('img')['sizes']['medium']); ?>" alt="" class="bg-cover">
                     <div class="socials">
                         <?php if(get_sub_field('fb')): ?>
                             <a href="<?= get_sub_field('fb'); ?>" target="_blank">
