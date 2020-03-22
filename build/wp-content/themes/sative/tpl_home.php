@@ -32,6 +32,7 @@ if(have_rows('section_big_cards')) : ?>
 		<div class="row justify-content-center align-items-center cards__item">
             <?php 
                 $image = get_sub_field('img');
+                $sizeS = $image['sizes']['medium'];
                 $size = $image['sizes']['medium_large'];
                 $alt = $image['alt'];
                 $title = get_sub_field('title');
@@ -47,7 +48,11 @@ if(have_rows('section_big_cards')) : ?>
                             </div>
                         <?php else: ?>
                             <a href="<?= $button['url']; ?>">
-                                <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
+                                <picture class="bg-cover">
+                                    <source class="lazyset" media="(max-width: 400px)" data-srcset="<?= esc_url($sizeS); ?>">
+                                    <source class="lazyset" data-srcset="<?= esc_url($size); ?>">
+                                    <img class="bg-cover lazy" data-src="<?= esc_url($size); ?>" alt="<?= $alt; ?>">
+                                </picture>
                             </a>
                         <?php endif; ?>
                     </div>
@@ -79,7 +84,11 @@ if(have_rows('section_big_cards')) : ?>
                             </div>
                         <?php else: ?>
                             <a href="<?= $button['url']; ?>">
-                                <img data-src="<?= esc_url($size); ?>" class="bg-cover lazy" alt="<?= $alt; ?>">
+                                <picture class="bg-cover">
+                                    <source class="lazyset" media="(max-width: 400px)" data-srcset="<?= esc_url($sizeS); ?>">
+                                    <source class="lazyset" data-srcset="<?= esc_url($size); ?>">
+                                    <img class="bg-cover lazy" data-src="<?= esc_url($size); ?>" alt="<?= $alt; ?>">
+                                </picture>
                             </a>
                         <?php endif; ?>
                     </div>

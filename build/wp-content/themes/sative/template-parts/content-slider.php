@@ -15,8 +15,18 @@
 					<div class="embed-container full">
 						<iframe class="lazy" data-src="<?= get_sub_field('video'); ?>?controls=0&autoplay=1&mute=1&rel=0&loop=1&showinfo=0" allow="autoplay; encrypted-media;" frameborder="0" allowfullscreen></iframe>
 					</div>
-				<?php else: ?>
-					<img data-src="<?= get_sub_field('image')['url']; ?>" class="bg-cover lazy" alt="<?= get_sub_field('image')['title']; ?>">
+				<?php else: 
+					$mobileS = get_sub_field('image')['sizes']['medium'];
+					$mobileL = get_sub_field('image')['sizes']['medium_large'];
+					$tablet = get_sub_field('image')['sizes']['large'];
+					?>
+					<picture class="bg-cover">
+						<source class="lazyset" media="(max-width: 400px)" data-srcset="<?= esc_url($mobileS); ?>">
+						<source class="lazyset" media="(max-width: 720px)" data-srcset="<?= esc_url($mobileL); ?>">
+						<source class="lazyset" media="(max-width: 1200px)" data-srcset="<?= esc_url($tablet); ?>">
+						<source class="lazyset" data-srcset="<?= get_sub_field('image')['url']; ?>">
+						<img class="bg-cover lazy" data-src="<?= get_sub_field('image')['url']; ?>" alt="<?= get_sub_field('image')['title']; ?>">
+					</picture>
 				<?php endif; ?>
 				<?php if(get_sub_field('title') || get_sub_field('text') || get_sub_field('button')): ?>
 				<div class="carousel-caption">
