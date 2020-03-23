@@ -46,7 +46,7 @@ function menuScroll()
 {
 	var $nav = $('.main-navigation');
 	var $scroll = $(window).scrollTop();
-	if($scroll >= 100) {
+	if($scroll >= 200) {
 		if(!$nav.hasClass('scrolled')) {
 			$nav.addClass('scrolled');
 		}
@@ -207,7 +207,7 @@ $(document).ready(function() {
 	selectChange();
 	hideQty();
 	searchOpen();
-
+	menuScroll();
 	
 	$('#wrapper').on('click', function() {
 		if($('#wrapper').hasClass('menuOpened')) {
@@ -237,6 +237,10 @@ $(window).on('load', function() {
 		}(document, 'script', 'facebook-jssdk'));
 	}, 5000);
 
+});
+
+$(window).on('scroll', function() {
+	menuScroll();
 });
 
 // $(window).on('load resize', function() {

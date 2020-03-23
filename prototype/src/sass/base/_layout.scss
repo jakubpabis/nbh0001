@@ -83,19 +83,19 @@ section {
 #wrapper {
 	position: relative;
 	display: block;
-	overflow: hidden;
-	padding-top: 100px;
+	padding-top: 0;
+	padding-top: 179px;
 
 	@media(max-width: 1199px) {
-        padding-top: 80px;
-    }
+		padding-top: 165px;
+	}
 
 	@media(max-width: 991px) {
-        padding-top: 70px;
+		padding-top: 147px;
 	}
 	
 	@media(max-width: 767px) {
-		padding-top: 97px;
+		padding-top: 92px;
 
 		&:after {
 			content: '';

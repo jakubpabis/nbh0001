@@ -71,6 +71,10 @@ $font-tertiary: 'Barlow', sans-serif;
 
 }
 
+.trans3 {
+    transition: all 200ms ease-out!important;
+}
+
 .text-shadow {
     text-shadow: 1px 1px 5px rgba($color: #000000, $alpha: .25);
 }
