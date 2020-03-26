@@ -1469,10 +1469,8 @@ input[type=number] {
 
 .dgwt-wcas-suggestions-wrapp {
 	font-weight: 700 !important;
-	position: fixed !important;
-	top: 64px !important;
+	position: relative;
 	min-width: 480px !important;
-	margin-left: -280px !important;
 	color: black !important;
 	border: 2px solid black !important;
 }
@@ -3389,6 +3387,13 @@ input.dgwt-wcas-search-input {
 	margin-top: 20px;
 }
 
+.products__single-modal .modal-dialog {
+	max-width: 100vw;
+	min-height: 100%;
+	max-height: 100%;
+	margin: 0 auto;
+}
+
 .cards__item-text {
 	padding-right: 30px;
 }
@@ -3977,10 +3982,6 @@ button.dgwt-wcas-search-submit {
 	top: -8px !important;
 }
 
-.dgwt-wcas-suggestions-wrapp {
-	top: 97px !important;
-}
-
 .woocommerce .cart-collaterals .cart_totals,
 .woocommerce-page .cart-collaterals .cart_totals {
 	width: 100%;
@@ -4201,11 +4202,8 @@ h2,
 }
 
 .dgwt-wcas-suggestions-wrapp {
-	right: 0 !important;
-	left: 0 !important;
 	min-width: 100vw !important;
 	max-width: 100vw !important;
-	margin-left: auto !important;
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {

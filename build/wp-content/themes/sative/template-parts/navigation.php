@@ -41,7 +41,7 @@
                         <div class="main-navigation__search">
                             <?php echo do_shortcode('[wcas-search-form]'); ?>
                         </div>
-						<a href="javascript:void(0)" class="searchOpen">
+						<a href="javascript:void(0)"  data-toggle="modal" data-target="#searchModal">
 							<i class="fas fa-search"></i>
 						</a>
 					</li>
@@ -59,7 +59,7 @@
             <div class="col-auto text-right d-md-none d-flex">
                 <ul class="side-menu">
                     <li>
-                        <a href="javascript:void(0)" class="searchOpen">
+                        <a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal">
                             <i class="fas fa-search"></i>
                         </a>
                     </li>
