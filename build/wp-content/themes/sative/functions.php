@@ -403,12 +403,12 @@ function sww_remove_wc_currency_symbols( $currency_symbol, $currency ) {
 add_filter('woocommerce_currency_symbol', 'sww_remove_wc_currency_symbols', 10, 2);
 
 // Our hooked in function - $fields is passed via the filter!
-function custom_override_checkout_fields( $fields ) {
+function custom_override_checkout_fields_sative( $fields ) {
 	$fields['billing']['billing_address_2']['label'] = 'Ciąg dalszy adresu ';
 	$fields['shipping']['shipping_address_2']['label'] = 'Ciąg dalszy adresu ';
 	return $fields;
 }
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_sative' );
 
 /**
  * @snippet       Disable Payment Gateway For Specific Shipping Method
