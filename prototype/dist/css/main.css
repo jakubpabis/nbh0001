@@ -3437,6 +3437,62 @@ h5,
 	padding: 25px 0;
 }
 
+.products__list-item:hover .products__list-item-content {
+	border-color: transparent;
+}
+
+.products__list-item:hover .products__list-item-content .onsale {
+	transform: rotate(-30deg);
+}
+
+.products__list-item:hover .products__list-item-content .outstock {
+	transform: rotate(-25deg);
+}
+
+.products__list-item:hover .products__list-item-content-img > * {
+	transform: translateY(-50%);
+}
+
+.products__list-item:hover .products__list-item-content-text {
+	background-color: transparent;
+}
+
+.products__list-item:hover .products__list-item-content-text .price {
+	transform: none;
+	color: #f5a623;
+}
+
+.products__list-item:hover.salesale .products__list-item-content {
+	border-color: transparent;
+}
+
+.products__list-item:hover.salesale .products__list-item-content-text {
+	background-color: transparent;
+}
+
+.products__list-item:hover.salesale .products__list-item-content-text .price {
+	color: red !important;
+}
+
+.products__list-item:hover.salesale .products__list-item-content-text .price small .woocommerce-Price-amount:before,
+.products__list-item:hover.salesale .products__list-item-content-text .price small .woocommerce-Price-amount:after,
+.products__list-item:hover.salesale .products__list-item-content-text .price small .amount:before,
+.products__list-item:hover.salesale .products__list-item-content-text .price small .amount:after {
+	background-color: red !important;
+}
+
+.products__list-item:hover.outstock .products__list-item-content {
+	border-color: transparent;
+}
+
+.products__list-item:hover.outstock .products__list-item-content-text {
+	background-color: transparent;
+}
+
+.products__list-item:hover.outstock .products__list-item-content-text .price {
+	color: #ffc465 !important;
+}
+
 .products__single-text .price {
 	margin-top: 50px;
 }
