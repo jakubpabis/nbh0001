@@ -1731,30 +1731,44 @@ input.dgwt-wcas-search-input::placeholder {
 	border-color: red !important;
 }
 
+.form-row.mailchimp-newsletter {
+	width: 100%;
+}
+
 #ship-to-different-address,
+#createaccount_checkbox,
+.form-row.mailchimp-newsletter,
 .terms-check {
 	font-size: 20px;
 	margin-top: 40px;
 }
 
 #ship-to-different-address.pretty.p-default.p-thick .state label:before,
+#createaccount_checkbox.pretty.p-default.p-thick .state label:before,
+.form-row.mailchimp-newsletter.pretty.p-default.p-thick .state label:before,
 .terms-check.pretty.p-default.p-thick .state label:before {
 	top: -2px;
 	border: 2px solid black;
 }
 
 #ship-to-different-address.pretty.p-default.p-thick .state label:after,
+#createaccount_checkbox.pretty.p-default.p-thick .state label:after,
+.form-row.mailchimp-newsletter.pretty.p-default.p-thick .state label:after,
 .terms-check.pretty.p-default.p-thick .state label:after {
 	top: -2px;
 }
 
 #ship-to-different-address.pretty .state label,
+#createaccount_checkbox.pretty .state label,
+.form-row.mailchimp-newsletter.pretty .state label,
 .terms-check.pretty .state label {
 	text-align: left;
 	text-indent: 0;
 }
 
 #ship-to-different-address.pretty .state label > span,
+#createaccount_checkbox.pretty .state label > span,
+.form-row.mailchimp-newsletter.pretty .state label > span,
 .terms-check.pretty .state label > span {
 	font-size: 18px;
 	font-weight: 700;
@@ -1765,6 +1779,8 @@ input.dgwt-wcas-search-input::placeholder {
 }
 
 #ship-to-different-address.pretty .state label > span a,
+#createaccount_checkbox.pretty .state label > span a,
+.form-row.mailchimp-newsletter.pretty .state label > span a,
 .terms-check.pretty .state label > span a {
 	position: relative;
 	z-index: 999;
@@ -1772,30 +1788,47 @@ input.dgwt-wcas-search-input::placeholder {
 }
 
 #ship-to-different-address.pretty .state label > span a:hover,
+#createaccount_checkbox.pretty .state label > span a:hover,
+.form-row.mailchimp-newsletter.pretty .state label > span a:hover,
 .terms-check.pretty .state label > span a:hover {
 	color: #8b5702;
 }
 
-.terms-check {
+#createaccount_checkbox {
+	margin-top: 15px !important;
+}
+
+.form-row.mailchimp-newsletter {
+	margin-bottom: 20px !important;
+	padding: 0 !important;
+}
+
+.terms-check,
+.form-row.mailchimp-newsletter {
 	font-size: 18px;
 	margin-top: 0;
 }
 
-.terms-check.pretty.p-default.p-thick .state label {
+.terms-check.pretty.p-default.p-thick .state label,
+.form-row.mailchimp-newsletter.pretty.p-default.p-thick .state label {
 	display: inline-block;
 }
 
 .terms-check.pretty.p-default.p-thick .state label:before,
-.terms-check.pretty.p-default.p-thick .state label:after {
+.terms-check.pretty.p-default.p-thick .state label:after,
+.form-row.mailchimp-newsletter.pretty.p-default.p-thick .state label:before,
+.form-row.mailchimp-newsletter.pretty.p-default.p-thick .state label:after {
 	top: 1px;
 }
 
-.terms-check.pretty .state label {
+.terms-check.pretty .state label,
+.form-row.mailchimp-newsletter.pretty .state label {
 	text-align: left;
 	text-indent: 0;
 }
 
-.terms-check.pretty .state label > span {
+.terms-check.pretty .state label > span,
+.form-row.mailchimp-newsletter.pretty .state label > span {
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 1.44;
@@ -1891,7 +1924,8 @@ input.dgwt-wcas-search-input::placeholder {
 	padding-top: 17px !important;
 }
 
-.woocommerce-form-coupon-toggle {
+.woocommerce-form-coupon-toggle,
+.woocommerce-form-login-toggle {
 	margin: 0 -15px;
 }
 

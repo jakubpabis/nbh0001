@@ -215,11 +215,18 @@ $(document).ready(function() {
 		}
 	});
 
+	jQuery( document.body ).on( 'updated_checkout', function(){
+		console.log('cos');
+		$('.form-row.mailchimp-newsletter').addClass('pretty p-default p-thick p-pulse').find('label').wrap('<div class="state p-warning-o"></div>');
+	});
+
 });
 
 $(window).on('load', function() {
 
 	lazyImages();
+
+	$('.form-row.mailchimp-newsletter').addClass('pretty p-default p-thick p-pulse').find('label').wrap('<div class="state p-warning-o"></div>');
 
 	setTimeout(function() {
 		window.fbAsyncInit = function() {

@@ -111,7 +111,13 @@
 
 }
 
+.form-row.mailchimp-newsletter {
+    width: 100%;
+}
+
 #ship-to-different-address,
+#createaccount_checkbox,
+.form-row.mailchimp-newsletter,
 .terms-check {
     margin-top: 40px;
     font-size: 20px;
@@ -154,7 +160,23 @@
 
 }
 
-.terms-check {
+#createaccount_checkbox {
+    margin-top: 15px!important;
+}
+
+.form-row.mailchimp-newsletter  {
+    padding: 0!important;
+    margin-bottom: 20px!important;
+
+    // label {
+    //     line-height: 1!important;
+    //     display: inline-block!important;
+    // }
+
+}
+
+.terms-check,
+.form-row.mailchimp-newsletter {
     margin-top: 0;
     font-size: 18px;
 
@@ -292,7 +314,8 @@
 
 }
 
-.woocommerce-form-coupon-toggle {
+.woocommerce-form-coupon-toggle,
+.woocommerce-form-login-toggle {
     margin: 0 -15px;
 }
 
