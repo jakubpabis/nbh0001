@@ -4609,6 +4609,10 @@ h1,
 
 @media (max-width: 374px) {
 
+#wrapper {
+	padding-top: 90px;
+}
+
 .main-navigation__info {
 	font-size: 13px;
 }
