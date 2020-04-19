@@ -55,7 +55,11 @@ $products = new WP_Query( $query_args ); ?>
 										</h2>
 										<?php if( $product->is_on_sale() ) : ?>
 										<span class="price text-size-xlarge" style="color: red;">
-											<small><?= wc_price($product->get_regular_price()); ?></small>
+											<?php if( $product->is_type( 'variable' ) ): ?>
+												<small><?= wc_price($product->get_variation_regular_price('min')); ?></small>
+											<?php else: ?>
+												<small><?= wc_price($product->get_regular_price()); ?></small>
+											<?php endif; ?>
 											<i class="fas fa-long-arrow-alt-right"></i>
 											<?= wc_price(get_post_meta( get_the_ID(), '_price', true )); ?>
 										</span>
