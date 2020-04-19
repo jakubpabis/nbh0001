@@ -84,7 +84,7 @@ section {
 	position: relative;
 	display: block;
 	padding-top: 0;
-	padding-top: 179px;
+	padding-top: 173px;
 
 	@media(max-width: 1199px) {
 		padding-top: 165px;
@@ -120,6 +120,10 @@ section {
 
 		}
 
+	}
+
+	@media(max-width: 349px) {
+		padding-top: 88px;
 	}
 	
 }

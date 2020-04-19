@@ -23,8 +23,14 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-?>
-<div class="col-lg-4 col-md-6 products__list-item <?= $product->is_on_sale() ? 'salesale' : null ?> <?= $product->is_in_stock() ? null : 'outstock' ?>">
+
+if( !$product->is_in_stock() ) : ?>
+<div class="col-lg-4 col-md-6 products__list-item outstock">
+<?php elseif( $product->is_on_sale() ) : ?>
+<div class="col-lg-4 col-md-6 products__list-item salesale">
+<?php else: ?>
+<div class="col-lg-4 col-md-6 products__list-item">
+<?php endif; ?>
 	<div class="products__list-item-content text-center">
 		<div class="products__list-item-content-img">
 			<img src="<?= get_the_post_thumbnail_url('', 'medium') ?>" alt="" class="bg-cover">
@@ -33,7 +39,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<h2 class="title text-size-normal text-bold">
 				<?= get_the_title(); ?>
 			</h2>
-			<?php if( $product->is_on_sale() ) : ?>
+			<?php if( $product->is_on_sale() && $product->is_in_stock() ) : ?>
 			<span class="price text-size-xlarge" style="color: red;">
 				<small><?= wc_price($product->get_regular_price()); ?></small>
 				<i class="fas fa-long-arrow-alt-right"></i>
@@ -45,11 +51,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			</span>
 			<?php endif; ?>
 		</div>
-		<?php if( $product->is_on_sale() ) : ?>
-			<h4 class="onsale">SALE!</h4>
-		<?php endif; ?>
-		<?php if( ! $product->is_in_stock() ) : ?>
+		<?php if( !$product->is_in_stock() ) : ?>
 			<h4 class="outstock">Na zamówienie</h4>
+		<?php elseif( $product->is_on_sale() ) : ?>
+			<h4 class="onsale">SALE!</h4>
 		<?php endif; ?>
 		<a href="<?= get_permalink(); ?>" class="whole-element-link"></a>
 	</div>

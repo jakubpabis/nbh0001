@@ -538,7 +538,7 @@ section {
 	position: relative;
 	display: block;
 	padding-top: 0;
-	padding-top: 179px;
+	padding-top: 173px;
 }
 
 .bg-cover {
@@ -4616,6 +4616,10 @@ h1,
 }
 
 @media (max-width: 349px) {
+
+#wrapper {
+	padding-top: 88px;
+}
 
 .main-navigation__info {
 	font-size: 12px;
