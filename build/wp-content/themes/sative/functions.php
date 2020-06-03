@@ -236,11 +236,11 @@ add_action( 'after_setup_theme', 'sative_setup' );
 /**
  * Remove Post from menu
  */
-function post_remove() 
-{ 
-   remove_menu_page('edit.php');
-}
-add_action('admin_menu', 'post_remove'); 
+// function post_remove() 
+// { 
+//    remove_menu_page('edit.php');
+// }
+// add_action('admin_menu', 'post_remove'); 
 
 /* Disable WordPress Admin Bar for all users but admins. */
 show_admin_bar(false);
