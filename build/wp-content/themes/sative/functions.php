@@ -420,13 +420,13 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_sat
  */
 function gateway_disable_shipping( $available_gateways ) 
 {
-	//if ( ! is_admin() ) {
-	$chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
-	$chosen_shipping = $chosen_methods[0];
-	if ( isset( $available_gateways['przelewy24'] ) && 0 === strpos( $chosen_shipping, 'flat_rate' ) ) {
-		unset( $available_gateways['przelewy24'] );
+	if ( ! is_admin() ) {
+		$chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+		$chosen_shipping = $chosen_methods[0];
+		if ( isset( $available_gateways['przelewy24'] ) && 0 === strpos( $chosen_shipping, 'flat_rate' ) ) {
+			unset( $available_gateways['przelewy24'] );
+		}
 	}
-	//}
    	return $available_gateways;
 }
 add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_shipping' );
