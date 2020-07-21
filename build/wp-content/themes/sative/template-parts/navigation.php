@@ -1,7 +1,7 @@
 <nav role="navigation" class="main-navigation">
     <aside class="main-navigation__info text-center">
         <div class="container-fluid">
-            <strong><span><u>Darmowa dostawa</u></span> przy zamówieniu powyżej 200PLN!</strong>
+            <strong><span><u>Darmowa dostawa</u></span> przy zamówieniu powyżej 250PLN!</strong>
         </div>
     </aside>
 	<div class="container">
