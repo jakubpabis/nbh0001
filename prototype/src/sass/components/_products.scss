@@ -489,6 +489,18 @@
                 margin-top: 50px;
             }
 
+            h2 {
+
+                a {
+
+                    &:hover {
+                        color: $color-tertiary;
+                    }
+
+                }
+
+            }
+
             .price {
                 margin-top: 80px;
 

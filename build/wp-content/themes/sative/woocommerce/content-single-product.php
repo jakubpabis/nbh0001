@@ -73,7 +73,7 @@ if ( post_password_required() ) {
                     if($marki) :
                 ?>
                 <h2 class="text-size-small text-bold text-tertiary text-upper nomargin">
-                    <?= $marki->name; ?>
+                    <a href="<?= get_term_link($marki); ?>"><?= $marki->name; ?></a>
                 </h2>
                 <?php endif; ?>
                 <h1 class="text-upper mt-1">

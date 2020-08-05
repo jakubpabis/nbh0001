@@ -2408,6 +2408,10 @@ input.dgwt-wcas-search-input::placeholder {
 	border-width: 2px;
 }
 
+.products__single-text h2 a:hover {
+	color: #f5a623;
+}
+
 .products__single-text .price {
 	margin-top: 80px;
 }
