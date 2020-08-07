@@ -30,9 +30,6 @@
                         <?= wc_price($product->get_price(), array()); ?>
                     </span>
                     <?php endif; ?>
-                    <span class="price text-size-xlarge">
-                        <?= wc_price($product->get_price(), array()); ?>
-                    </span>
                 </div>
                 <?php if( $product->is_on_sale() ) : ?>
                     <h4 class="onsale">SALE!</h4>
