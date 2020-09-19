@@ -132,6 +132,58 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id="open-modal-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 560px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">
+						Zapisz się do newslettera i odbierz <br/><span style="color: #ff0000;">kod rabatowy -10%</span>
+					</h3>
+					<button type="button" class="close text-size-xxxlarge" data-dismiss="modal" aria-label="Zamknij">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="d-flex align-items-center flex-wrap" method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" accept-charset="UTF-8" role="form" id="newsletter-form-modal" enctype="multipart/form-data">
+						<input class="mr-3 my-2" type="email" name="newsletter-email" value="" placeholder="Wpisz tutaj swój e-mail" required>
+						<input type="hidden" name="action" value="newsletter_form">
+						<?php wp_nonce_field( 'newsletter_form', 'newsletter_form_nonce' ); ?>
+						<button type="submit" class="btn btn__normal my-2"><span>Zapisz się</span></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php if( isset( $_GET['already'] ) ): ?>
+	<div class="modal fade" id="already-modal-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Sorka, ale przyznaliśmy Ci już kupon...</h3>
+					<button type="button" class="close text-size-xxxlarge" data-dismiss="modal" aria-label="Zamknij">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php endif; ?>
+	<?php if( isset( $_GET['code'] ) ): ?>
+	<div class="modal fade" id="code-modal-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">
+						Dzięki! Wysłaliśmy właśnie twój kod rabatowy na maila!
+					</h3>
+					<button type="button" class="close text-size-xxxlarge" data-dismiss="modal" aria-label="Zamknij">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php endif; ?>
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat"
 		attribution=setup_tool

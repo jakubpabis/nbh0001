@@ -589,3 +589,188 @@ add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
 // 	if ( $product->is_in_stock() && $product->managing_stock() ) $availability = __( 'Ostatnia sztuka!', 'woocommerce' );
 // 	return $availability;
 // }
+
+
+function custom_post_type_newsletter_users() 
+{
+ 
+// Set UI labels for Custom Post Type
+$labels = array(
+    'name'                => _x( 'Newsletter Users', 'Post Type General Name', 'sative' ),
+    'singular_name'       => _x( 'Newsletter Users', 'Post Type Singular Name', 'sative' ),
+    'menu_name'           => __( 'Newsletter Users', 'sative' ),
+    'parent_item_colon'   => __( 'Parent Newsletter Users', 'sative' ),
+    'all_items'           => __( 'All Newsletter Users', 'sative' ),
+    'view_item'           => __( 'View Newsletter Users', 'sative' ),
+    'add_new_item'        => __( 'Add New Newsletter Users', 'sative' ),
+    'add_new'             => __( 'Add New', 'sative' ),
+    'edit_item'           => __( 'Edit Newsletter Users', 'sative' ),
+    'update_item'         => __( 'Update Newsletter Users', 'sative' ),
+    'search_items'        => __( 'Search Newsletter Users', 'sative' ),
+    'not_found'           => __( 'Not Found', 'sative' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+);
+    
+// Set other options for Custom Post Type
+$args = array(
+    'label'               => __( 'newsletter-users', 'sative' ),
+    'description'         => __( 'Newsletter Users', 'sative' ),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'custom-fields' ),
+    // You can associate this CPT with a taxonomy or custom taxonomy. 
+    'taxonomies'          => array(),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */ 
+    'hierarchical'        => false,
+    'public'              => false,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => false,
+    'show_in_admin_bar'   => false,
+    'menu_position'       => 20,
+    'menu_icon'           => 'dashicons-groups',
+    'can_export'          => true,
+    'has_archive'         => false,
+    'exclude_from_search' => true,
+    'publicly_queryable'  => false,
+    'capability_type'     => 'post',
+);   
+// Registering your Custom Post Type
+register_post_type( 'newsletter-users', $args );
+}
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+add_action( 'init', 'custom_post_type_newsletter_users', 0 );
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+function generateCouponCode( $email )
+{
+	$coupon_code = generateRandomString(10); // Code - perhaps generate this from the user ID + the order ID
+	$amount = '10'; // Amount
+	$discount_type = 'percent'; // Type: fixed_cart, percent, fixed_product, percent_product
+
+	$coupon = array(
+		'post_title' => $coupon_code,
+		'post_content' => '',
+		'post_status' => 'publish',
+		'post_author' => 1,
+		'post_type' => 'shop_coupon'
+	);    
+
+	$new_coupon_id = wp_insert_post( $coupon );
+
+	// Add meta
+	update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
+	update_post_meta( $new_coupon_id, 'coupon_amount', $amount );
+	update_post_meta( $new_coupon_id, 'customer_email', $email );
+	update_post_meta( $new_coupon_id, 'individual_use', 'yes' );
+	update_post_meta( $new_coupon_id, 'product_ids', '' );
+	update_post_meta( $new_coupon_id, 'exclude_sale_items', 'yes' );   
+	//update_post_meta( $new_coupon_id, 'exclude_product_categories', array( 95, 91, 93, 969, 94, 97, 977, 96, 89, 88, 92, 1002, 441, 457, 1215, 1213, 449, 445, 455, 443, 451, 453, 447, 1217 ) );
+	update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
+	update_post_meta( $new_coupon_id, 'usage_limit', '1' );
+	//update_post_meta( $new_coupon_id, 'expiry_date', date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "+1 month" ) ) );
+	update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
+	update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+
+	return $coupon_code;
+
+}
+
+function sative_newsletter_form_submit() {
+
+    if( !post_exists( $_POST['newsletter-email'] ) ) {
+		$coupon_code = generateCouponCode( $_POST['newsletter-email'] );
+		$newsletterArray = array(
+			'post_type'     => 'newsletter-users',
+			'post_status'   => 'private',
+			'post_title'    => $_POST['newsletter-email'],
+			'post_content'  => $coupon_code
+		);
+		wp_insert_post( $newsletterArray, true );
+
+		function wpdocs_set_html_mail_content_type() {
+			return 'text/html';
+		}
+		add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+	
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+		$to = $_POST['newsletter-email'];
+		$subject = 'Kod rabatowy -10% | Neighbourhood Skateshop';
+		$body = newsTemplate( $coupon_code );
+		$email = wp_mail( $to, $subject, $body, $headers );
+
+		remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+
+		if($email) {
+			$redirect = '/?code='.$coupon_code;
+		}
+		
+    } else {
+		$redirect = '/?already=exist';
+	}
+    
+    header("Location: $redirect");
+
+}
+add_action( 'admin_post_nopriv_newsletter_form', 'sative_newsletter_form_submit' );
+add_action( 'admin_post_newsletter_form', 'sative_newsletter_form_submit' );
+
+function newsTemplate( $coupon_code )
+{
+    $body = '<html>
+                <head>
+                    <style type="text/css" media="screen">
+                        * {
+                            font-family: Helvetica!important;
+                            font-size: 10pt;
+                        }
+                        td, tr, th, table {
+                            padding: 0px;
+                            margin: 0px;
+                        }
+                        p {
+                            margin: 10px 0;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <table style="max-width: 100%; width: 100%; margin: 15px;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1 style="font-size: 20px!important; font-weight: 400!important;">
+										Siema! <br/><br/>Twój kod rabatowy to: <strong style="font-weight: 700!important;">'.$coupon_code.'</strong><br/><br/>
+                                    </h1>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<hr/>
+					<table style="max-width: 320px; width: 100%; margin: 0 15px;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 16px!important;">Pozdro, zespół Neighbourhood Skateshop</span>
+                                </td>
+							</tr>
+						</tbody>
+					</table>
+                </body>
+            </html>';
+    return $body;
+}
