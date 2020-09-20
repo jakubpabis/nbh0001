@@ -270,6 +270,7 @@ $(document).ready(function() {
 		} else {
 			setTimeout(function() {
 				$('#open-modal-newsletter').modal('show');
+				setCookie('newsletter-coupon', 'showed', 1);
 			}, 5000);
 		}
 	}
