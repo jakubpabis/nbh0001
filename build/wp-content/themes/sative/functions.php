@@ -33,11 +33,11 @@ class WP_HTML_Compression
     {
 		$raw = strlen($raw);
 		$compressed = strlen($compressed);
-		
+
 		$savings = ($raw-$compressed) / $raw * 100;
-		
+
 		$savings = round($savings, 2);
-		
+
 		return '<!--HTML compressed, size saved '.$savings.'%. From '.$raw.' bytes, now '.$compressed.' bytes-->';
     }
     protected function minifyHTML($html)
@@ -51,9 +51,9 @@ class WP_HTML_Compression
 		foreach ($matches as $token)
 		{
 			$tag = (isset($token['tag'])) ? strtolower($token['tag']) : null;
-			
+
 			$content = $token[0];
-			
+
 			if (is_null($tag))
 			{
 				if ( !empty($token['script']) )
@@ -67,7 +67,7 @@ class WP_HTML_Compression
 				else if ($content == '<!--wp-html-compression no compression-->')
 				{
 					$overriding = !$overriding;
-					
+
 					// Don't print the comment
 					continue;
 				}
@@ -99,50 +99,50 @@ class WP_HTML_Compression
 					else
 					{
 						$strip = true;
-						
+
 						// Remove any empty attributes, except:
 						// action, alt, content, src
 						$content = preg_replace('/(\s+)(\w++(?<!\baction|\balt|\bcontent|\bsrc)="")/', '$1', $content);
-						
+
 						// Remove any space before the end of self-closing XHTML tags
 						// JavaScript excluded
 						$content = str_replace(' />', '/>', $content);
 					}
 				}
 			}
-			
+
 			if ($strip)
 			{
 				$content = $this->removeWhiteSpace($content);
 			}
-			
+
 			$html .= $content;
    	 }
-   	 
+
    	 return $html;
     }
-   	 
+
     public function parseHTML($html)
     {
 		$this->html = $this->minifyHTML($html);
-		
+
 		if ($this->info_comment)
 		{
 			$this->html .= "\n" . $this->bottomComment($html, $this->html);
 		}
     }
-    
+
     protected function removeWhiteSpace($str)
     {
 		$str = str_replace("\t", ' ', $str);
 		$str = str_replace("\n",  '', $str);
 		$str = str_replace("\r",  '', $str);
-		
+
 		while (stristr($str, '  '))
 		{
 			$str = str_replace('  ', ' ', $str);
 		}
-		
+
 		return $str;
     }
 }
@@ -236,11 +236,11 @@ add_action( 'after_setup_theme', 'sative_setup' );
 /**
  * Remove Post from menu
  */
-function post_remove() 
-{ 
+function post_remove()
+{
    remove_menu_page('edit.php');
 }
-add_action('admin_menu', 'post_remove'); 
+add_action('admin_menu', 'post_remove');
 
 /* Disable WordPress Admin Bar for all users but admins. */
 show_admin_bar(false);
@@ -323,9 +323,9 @@ add_action('wp_enqueue_scripts', function(){
 	}
 });
 
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /**
@@ -333,7 +333,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  */
 function sative_scripts() {
 	// load bootstrap css
-	
+
 	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
 	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css?family=Barlow:400,500,600,700&display=swap&subset=latin-ext' );
 	wp_enqueue_style( 'sative-prettycheckbox', 'https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css' );
@@ -418,7 +418,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_sat
  * @testedwith    WooCommerce 3.6.2
  * @donate $9     https://businessbloomer.com/bloomer-armada/
  */
-function gateway_disable_shipping( $available_gateways ) 
+function gateway_disable_shipping( $available_gateways )
 {
 	if ( ! is_admin() ) {
 		$chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
@@ -461,7 +461,7 @@ function custom_taxonomy_marka()  {
 		'show_tagcloud'              => true,
 	);
 	register_taxonomy( 'marka', 'product', $args );
-	
+
 }
 add_action( 'init', 'custom_taxonomy_marka', 0 );
 
@@ -534,10 +534,10 @@ if ( ! function_exists( 'sative_catalog_ordering' ) ) {
 /**
  * Ensure variation combinations are working properly - standard limit is 30
  */
-function woo_custom_ajax_variation_threshold( $qty, $product ) 
+function woo_custom_ajax_variation_threshold( $qty, $product )
 {
     return 500;
-}       
+}
 add_filter( 'woocommerce_ajax_variation_threshold', 'woo_custom_ajax_variation_threshold', 10, 2 );
 
 /**
@@ -545,7 +545,7 @@ add_filter( 'woocommerce_ajax_variation_threshold', 'woo_custom_ajax_variation_t
  * https://github.com/woocommerce/woocommerce/blob/826af31e1e3b6e8e5fc3c1004cc517c5c5ec25b1/includes/class-wc-product-variation.php
  * @return Boolean
  */
-function wcbv_variation_is_active( $active, $variation ) 
+function wcbv_variation_is_active( $active, $variation )
 {
 	if( ! $variation->is_in_stock() ) {
 		return false;
@@ -558,12 +558,12 @@ add_filter( 'woocommerce_variation_is_active', 'wcbv_variation_is_active', 10, 2
 /**
  * Output the related products.
  */
-if ( ! function_exists( 'woocommerce_output_related_products' ) ) 
+if ( ! function_exists( 'woocommerce_output_related_products' ) )
 {
-	function woocommerce_output_related_products() 
+	function woocommerce_output_related_products()
 	{
 		global $upsellsused;
-		if($upsellsused == false) { 
+		if($upsellsused == false) {
 			$args = array(
 				'posts_per_page' => 3,
 				'columns'        => 3,
@@ -582,8 +582,8 @@ add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
 //  * @author        Rodolfo Melogli
 //  * @testedwith    WooCommerce 3.6.2
 //  */
-// add_filter( 'woocommerce_get_availability_text', 'bbloomer_custom_get_availability_text', 99, 2 );  
-// function bbloomer_custom_get_availability_text( $availability, $product ) 
+// add_filter( 'woocommerce_get_availability_text', 'bbloomer_custom_get_availability_text', 99, 2 );
+// function bbloomer_custom_get_availability_text( $availability, $product )
 // {
 // 	$stock = $product->get_stock_quantity();
 // 	if ( $product->is_in_stock() && $product->managing_stock() ) $availability = __( 'Ostatnia sztuka!', 'woocommerce' );
@@ -591,9 +591,9 @@ add_filter( 'woocommerce_hide_invisible_variations', '__return_true' );
 // }
 
 
-function custom_post_type_newsletter_users() 
+function custom_post_type_newsletter_users()
 {
- 
+
 // Set UI labels for Custom Post Type
 $labels = array(
     'name'                => _x( 'Newsletter Users', 'Post Type General Name', 'sative' ),
@@ -610,7 +610,7 @@ $labels = array(
     'not_found'           => __( 'Not Found', 'sative' ),
     'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
 );
-    
+
 // Set other options for Custom Post Type
 $args = array(
     'label'               => __( 'newsletter-users', 'sative' ),
@@ -618,12 +618,12 @@ $args = array(
     'labels'              => $labels,
     // Features this CPT supports in Post Editor
     'supports'            => array( 'title', 'editor', 'custom-fields' ),
-    // You can associate this CPT with a taxonomy or custom taxonomy. 
+    // You can associate this CPT with a taxonomy or custom taxonomy.
     'taxonomies'          => array(),
     /* A hierarchical CPT is like Pages and can have
     * Parent and child items. A non-hierarchical CPT
     * is like Posts.
-    */ 
+    */
     'hierarchical'        => false,
     'public'              => false,
     'show_ui'             => true,
@@ -637,13 +637,13 @@ $args = array(
     'exclude_from_search' => true,
     'publicly_queryable'  => false,
     'capability_type'     => 'post',
-);   
+);
 // Registering your Custom Post Type
 register_post_type( 'newsletter-users', $args );
 }
 /* Hook into the 'init' action so that the function
-* Containing our post type registration is not 
-* unnecessarily executed. 
+* Containing our post type registration is not
+* unnecessarily executed.
 */
 add_action( 'init', 'custom_post_type_newsletter_users', 0 );
 
@@ -669,7 +669,7 @@ function generateCouponCode( $email )
 		'post_status' => 'publish',
 		'post_author' => 1,
 		'post_type' => 'shop_coupon'
-	);    
+	);
 
 	$new_coupon_id = wp_insert_post( $coupon );
 
@@ -679,7 +679,7 @@ function generateCouponCode( $email )
 	update_post_meta( $new_coupon_id, 'customer_email', $email );
 	update_post_meta( $new_coupon_id, 'individual_use', 'yes' );
 	update_post_meta( $new_coupon_id, 'product_ids', '' );
-	update_post_meta( $new_coupon_id, 'exclude_sale_items', 'yes' );   
+	update_post_meta( $new_coupon_id, 'exclude_sale_items', 'yes' );
 	//update_post_meta( $new_coupon_id, 'exclude_product_categories', array( 95, 91, 93, 969, 94, 97, 977, 96, 89, 88, 92, 1002, 441, 457, 1215, 1213, 449, 445, 455, 443, 451, 453, 447, 1217 ) );
 	update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
 	update_post_meta( $new_coupon_id, 'usage_limit', '1' );
@@ -707,7 +707,7 @@ function sative_newsletter_form_submit() {
 			return 'text/html';
 		}
 		add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
-	
+
 		$headers = array('Content-Type: text/html; charset=UTF-8');
 		$to = $_POST['newsletter-email'];
 		$subject = 'Kod rabatowy -10% | Neighbourhood Skateshop';
@@ -719,11 +719,11 @@ function sative_newsletter_form_submit() {
 		if($email) {
 			$redirect = '/?code='.$coupon_code;
 		}
-		
+
     } else {
 		$redirect = '/?already=exist';
 	}
-    
+
     header("Location: $redirect");
 
 }
